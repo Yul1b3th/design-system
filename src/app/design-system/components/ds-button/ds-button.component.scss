@@ -34,13 +34,14 @@ $button-states: (
   text-align: center;
   text-decoration: none;
   border-radius: 9999px;
-  @include apply-transition(all, 0.3s, ease-in-out);
+
   cursor: pointer;
   border: 2px solid;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); // Sombra ligera en reposo
 
   &:hover {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); // Sombra más fuerte en hover
+    @include apply-transition(all, 0.3s, ease-in-out);
   }
 
   &.dark-mode {

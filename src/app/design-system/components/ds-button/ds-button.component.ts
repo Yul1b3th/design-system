@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  effect,
   inject,
   Input,
 } from '@angular/core';
@@ -25,6 +26,12 @@ export class DsButtonComponent {
   @Input() outline: boolean = false;
   @Input() disabled: boolean = false;
   @Input() ariaLabel: string = '';
+
+  constructor() {
+    effect(() => {
+      console.log('Button theme:', this.themeService.theme());
+    });
+  }
 
   get buttonClasses(): string[] {
     const themeClass = this.themeService.theme();
