@@ -1,0 +1,51 @@
+@use "sass:color";
+@use "sass:map";
+@use "../../styles/abstracts/functions" as *;
+@use "../../styles/abstracts/mixins" as *;
+@use "../../styles/abstracts/variables" as *;
+
+.sidebar {
+  // display: none;
+  // width: 250px;
+  // height: 100vh;
+  // @include background("default");
+  // @include padding-margin("padding", "md");
+  // @include box-shadow(0, 0, 10px, 0, rgba(0, 0, 0, 0.1));
+  padding: 30px;
+  overflow-y: auto;
+
+  ul {
+    list-style: none;
+
+    li {
+      padding: 8px 10px;
+      // @include padding-margin("margin", "md");
+
+      a {
+        text-decoration: none;
+        padding: 8px 10px;
+        border-radius: 4px;
+        @include apply-color(color, neutral, "dark-300");
+        // @include color("color", "dark");
+        // @include typography("base");
+        // @include transition(color, 0.3s);
+
+        &:hover {
+          // @include color("color", "primary");
+        }
+
+        &.active {
+          @include apply-color(background-color, primary, light);
+          // border-radius: 4px;
+          // color: red;
+        }
+      }
+    }
+  }
+  @include apply-media-breakpoint(md) {
+    // background-color: yellow;
+  }
+  // @include media-breakpoint-up(md) {
+  //   display: block;
+  // }
+}

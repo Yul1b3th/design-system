@@ -1,0 +1,78 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/variables" as *;
+
+body {
+  @include apply-font-family(primary);
+  font-size: get-font-size(base);
+  line-height: get-line-height(base);
+}
+
+h1 {
+  @include apply-typography("5xl", "xl", 700, "md");
+}
+
+h2 {
+  @include apply-typography("4xl", "lg", 600, "md");
+}
+
+h3 {
+  @include apply-typography("3xl", "lg", 600, "md");
+}
+
+h4 {
+  @include apply-typography("2xl", "lg", 600, "md");
+}
+
+h5 {
+  @include apply-typography("xl", "lg", 500, "md");
+}
+
+h6 {
+  @include apply-typography("lg", "lg", 500, "md");
+}
+
+p:not(:last-child) {
+  @include apply-typography("base", "base", 400, "md");
+}
+
+small {
+  @include apply-typography("sm", "base", 400, "sm");
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+blockquote {
+  font-size: get-font-size("lg");
+  line-height: get-line-height("lg");
+  margin: get-spacing("md") 0;
+  padding: get-spacing("md");
+}
+
+code,
+pre {
+  font-family: "Courier New", Courier, monospace;
+  font-size: get-font-size(sm);
+  padding: get-spacing(xs);
+  border-radius: 4px;
+  @include apply-color(color, utility, white);
+  @include apply-background-color("dark-100");
+}
+
+pre {
+  overflow-x: auto;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

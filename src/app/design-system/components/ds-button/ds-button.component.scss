@@ -1,0 +1,139 @@
+@use "sass:color";
+@use "sass:map";
+@use "../../styles/abstracts/functions" as *;
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/mixins" as *;
+
+$button-states: (
+  primary: get-color(primary, default),
+  secondary: get-color(secondary, default),
+  success: get-color(status, success),
+  danger: get-color(status, danger),
+  warning: get-color(status, warning),
+  info: get-color(status, info),
+  light: get-color(neutral, light),
+  dark: get-color(neutral, dark),
+);
+
+// Mixin para tamaños de botones
+@mixin button-size($size, $padding-x, $padding-y, $font-size) {
+  &.btn-#{$size} {
+    padding: get-spacing($padding-x) get-spacing($padding-y);
+    font-size: get-font-size($font-size);
+  }
+}
+
+.btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: get-spacing(xs) get-spacing(sm);
+  font-size: get-font-size(sm);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 9999px;
+  @include apply-transition(all, 0.3s, ease-in-out);
+  cursor: pointer;
+  border: 2px solid;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); // Sombra ligera en reposo
+
+  &:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); // Sombra más fuerte en hover
+  }
+
+  &.dark-mode {
+    @each $state, $color in $button-states {
+      &.btn-#{$state} {
+        background-color: if(
+          $state == "dark",
+          get-color(utility, white),
+          $color
+        );
+        color: get-color(neutral, "dark-300");
+        border-color: if($state == "dark", get-color(utility, white), $color);
+        &:hover {
+          color: if(
+            $state == "dark",
+            get-color(utility, white),
+            get-color(neutral, "dark-300")
+          );
+          $hover-bg: if(
+            $state == "dark",
+            get-color(neutral, dark),
+            color.adjust($color, $lightness: -15%)
+          );
+          background-color: $hover-bg;
+          border-color: $hover-bg;
+        }
+      }
+
+      &.btn-outline-#{$state} {
+        background-color: transparent;
+        border-color: if($state == "dark", get-color(utility, white), $color);
+        color: get-color(utility, white);
+
+        &:hover {
+          background-color: $color;
+          color: if(
+            $state == "dark",
+            get-color(utility, white),
+            get-color(neutral, dark)
+          );
+        }
+      }
+    }
+  }
+
+  &.light-mode {
+    @each $state, $color in $button-states {
+      &.btn-#{$state} {
+        background-color: $color;
+        color: if(
+          $state == "dark",
+          get-color(utility, white),
+          get-color(neutral, "dark-300")
+        );
+        border-color: $color;
+
+        &:hover {
+          $hover-bg: if(
+            $state == "dark",
+            get-color(neutral, "dark-300"),
+            color.adjust($color, $lightness: -15%)
+          );
+          background-color: $hover-bg;
+          border-color: $hover-bg;
+        }
+      }
+
+      &.btn-outline-#{$state} {
+        background-color: transparent;
+        border-color: $color;
+        color: get-color(neutral, "dark-300");
+
+        &:hover {
+          background-color: to-hsla($color, 0.3);
+          color: get-color(neutral, "dark-300");
+        }
+      }
+    }
+  }
+
+  // Button Sizes
+  @include button-size(sm, xs, sm, sm);
+  @include button-size(md, sm, md, base);
+  @include button-size(lg, md, lg, lg);
+
+  &.btn-block {
+    display: block;
+    width: 100%;
+  }
+
+  // Disabled State
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
