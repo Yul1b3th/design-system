@@ -1,1 +1,85 @@
-<p>slider works!</p>
+<section class="slider">
+  <div class="container">
+    <div>
+      <h1>Slider</h1>
+      <p>
+        El componente de control deslizante (<code>ds-slider</code>) se utiliza
+        para permitir a los usuarios seleccionar un valor de un rango continuo o
+        discreto. Este componente es altamente personalizable y soporta
+        múltiples configuraciones para adaptarse a diferentes contextos de uso.
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- Uso -->
+    <div>
+      <h2>Uso</h2>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>&lt;ds-slider [(ngModel)]="sliderValue" [min]="0" [max]="100" [step]="1"&gt;&lt;/ds-slider&gt;</code></pre>
+    </div>
+
+    <hr />
+
+    <!-- Configuración -->
+    <div>
+      <h2>Configuración</h2>
+      <p>
+        El componente de control deslizante acepta las siguientes propiedades de
+        entrada (<code>&#64;Input</code>):
+      </p>
+      <ul>
+        <li>
+          <strong>ngModel</strong> (<code>number</code>): El valor seleccionado
+          del control deslizante.
+        </li>
+        <li>
+          <strong>min</strong> (<code>number</code>): El valor mínimo del rango.
+        </li>
+        <li>
+          <strong>max</strong> (<code>number</code>): El valor máximo del rango.
+        </li>
+        <li>
+          <strong>step</strong> (<code>number</code>): El incremento entre
+          valores del rango.
+        </li>
+        <li>
+          <strong>disabled</strong> (<code>boolean</code>): Indica si el control
+          deslizante está deshabilitado. Valor por defecto: <code>false</code>.
+        </li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <!-- Ejemplos de Control Deslizante -->
+    <div>
+      <h2>Ejemplos de Control Deslizante</h2>
+      <!-- <ds-slider [(ngModel)]="sliderValue" [min]="0" [max]="100" [step]="1"></ds-slider> -->
+    </div>
+
+    <hr />
+
+    <!-- Accesibilidad -->
+    <div>
+      <h2>Accesibilidad</h2>
+      <p>
+        El componente de control deslizante incluye soporte para accesibilidad
+        mediante el uso de atributos <code>aria</code> y roles adecuados.
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- Conclusión -->
+    <div>
+      <h2>Conclusión</h2>
+      <p>
+        El componente de control deslizante es una herramienta útil para
+        permitir a los usuarios seleccionar un valor de un rango continuo o
+        discreto. Con sus múltiples opciones de configuración y soporte para
+        accesibilidad, es una adición valiosa para cualquier aplicación.
+      </p>
+    </div>
+  </div>
+</section>

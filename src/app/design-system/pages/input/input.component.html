@@ -1,1 +1,428 @@
-<p>input works!</p>
+<section class="input">
+  <div class="container">
+    <div>
+      <h1>Inputs</h1>
+      <p>
+        Los componentes de entrada (<code>ds-input</code>) se utilizan para
+        permitir a los usuarios ingresar datos en la aplicación. Estos
+        componentes son altamente personalizables y soportan múltiples tipos de
+        entradas para adaptarse a diferentes contextos de uso.
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- Tipos de Inputs -->
+    <div>
+      <h2>Tipos de Inputs</h2>
+      <p>
+        A continuación se presentan los diferentes tipos de componentes de
+        entrada disponibles:
+      </p>
+      <ul>
+        <li><a href="#text-input">Text Input</a></li>
+        <li><a href="#number-input">Number Input</a></li>
+        <li><a href="#email-input">Email Input</a></li>
+        <li><a href="#password-input">Password Input</a></li>
+        <li><a href="#date-input">Date Input</a></li>
+        <li><a href="#select-input">Select Input</a></li>
+        <li><a href="#checkbox">Checkbox</a></li>
+        <li><a href="#radio">Radio</a></li>
+        <li><a href="#textarea">Textarea</a></li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <!-- Text Input -->
+    <div id="text-input">
+      <h2>Text Input</h2>
+      <p>
+        El componente de entrada de texto (<code>ds-text-input</code>) se
+        utiliza para permitir a los usuarios ingresar texto. Este componente es
+        altamente personalizable y soporta múltiples configuraciones.
+      </p>
+
+      <h3>Uso</h3>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>&lt;ds-text-input [(ngModel)]="textValue"&gt;&lt;/ds-text-input&gt;</code></pre>
+
+      <h3>Configuración</h3>
+      <p>
+        El componente de entrada de texto acepta las siguientes propiedades de
+        entrada (<code>&#64;Input</code>):
+      </p>
+      <ul>
+        <li>
+          <strong>ngModel</strong> (<code>string</code>): El valor del texto
+          ingresado.
+        </li>
+        <li>
+          <strong>placeholder</strong> (<code>string</code>): Texto que se
+          mostrará cuando el campo esté vacío.
+        </li>
+        <li>
+          <strong>disabled</strong> (<code>boolean</code>): Indica si el campo
+          de texto está deshabilitado. Valor por defecto: <code>false</code>.
+        </li>
+      </ul>
+
+      <h3>Ejemplos de Entrada de Texto</h3>
+      <!-- <ds-text-input [(ngModel)]="textValue" placeholder="Enter text"></ds-text-input> -->
+    </div>
+
+    <hr />
+
+    <!-- Number Input -->
+    <div id="number-input">
+      <h2>Number Input</h2>
+      <p>
+        El componente de entrada numérica (<code>ds-number-input</code>) se
+        utiliza para permitir a los usuarios ingresar números. Este componente
+        es altamente personalizable y soporta múltiples configuraciones.
+      </p>
+
+      <h3>Uso</h3>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>&lt;ds-number-input [(ngModel)]="numberValue"&gt;&lt;/ds-number-input&gt;</code></pre>
+
+      <h3>Configuración</h3>
+      <p>
+        El componente de entrada numérica acepta las siguientes propiedades de
+        entrada (<code>&#64;Input</code>):
+      </p>
+      <ul>
+        <li>
+          <strong>ngModel</strong> (<code>number</code>): El valor numérico
+          ingresado.
+        </li>
+        <li>
+          <strong>placeholder</strong> (<code>string</code>): Texto que se
+          mostrará cuando el campo esté vacío.
+        </li>
+        <li>
+          <strong>disabled</strong> (<code>boolean</code>): Indica si el campo
+          numérico está deshabilitado. Valor por defecto: <code>false</code>.
+        </li>
+        <li>
+          <strong>min</strong> (<code>number</code>): El valor mínimo permitido.
+        </li>
+        <li>
+          <strong>max</strong> (<code>number</code>): El valor máximo permitido.
+        </li>
+      </ul>
+
+      <h3>Ejemplos de Entrada Numérica</h3>
+      <!-- <ds-number-input
+        [(ngModel)]="numberValue"
+        placeholder="Enter number"
+      ></ds-number-input> -->
+    </div>
+
+    <hr />
+
+    <!-- Email Input -->
+    <div id="email-input">
+      <h2>Email Input</h2>
+      <p>
+        El componente de entrada de correo electrónico
+        (<code>ds-email-input</code>) se utiliza para permitir a los usuarios
+        ingresar direcciones de correo electrónico. Este componente es altamente
+        personalizable y soporta múltiples configuraciones.
+      </p>
+
+      <h3>Uso</h3>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>&lt;ds-email-input [(ngModel)]="emailValue"&gt;&lt;/ds-email-input&gt;</code></pre>
+
+      <h3>Configuración</h3>
+      <p>
+        El componente de entrada de correo electrónico acepta las siguientes
+        propiedades de entrada (<code>&#64;Input</code>):
+      </p>
+      <ul>
+        <li>
+          <strong>ngModel</strong> (<code>string</code>): El valor del correo
+          electrónico ingresado.
+        </li>
+        <li>
+          <strong>placeholder</strong> (<code>string</code>): Texto que se
+          mostrará cuando el campo esté vacío.
+        </li>
+        <li>
+          <strong>disabled</strong> (<code>boolean</code>): Indica si el campo
+          de correo electrónico está deshabilitado. Valor por defecto:
+          <code>false</code>.
+        </li>
+      </ul>
+
+      <h3>Ejemplos de Entrada de Correo Electrónico</h3>
+      <!-- <ds-email-input
+        [(ngModel)]="emailValue"
+        placeholder="Enter email"
+      ></ds-email-input> -->
+    </div>
+
+    <hr />
+
+    <!-- Password Input -->
+    <div id="password-input">
+      <h2>Password Input</h2>
+      <p>
+        El componente de entrada de contraseña (<code>ds-password-input</code>)
+        se utiliza para permitir a los usuarios ingresar contraseñas. Este
+        componente es altamente personalizable y soporta múltiples
+        configuraciones.
+      </p>
+
+      <h3>Uso</h3>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>&lt;ds-password-input [(ngModel)]="passwordValue"&gt;&lt;/ds-password-input&gt;</code></pre>
+
+      <h3>Configuración</h3>
+      <p>
+        El componente de entrada de contraseña acepta las siguientes propiedades
+        de entrada (<code>&#64;Input</code>):
+      </p>
+      <ul>
+        <li>
+          <strong>ngModel</strong> (<code>string</code>): El valor de la
+          contraseña ingresada.
+        </li>
+        <li>
+          <strong>placeholder</strong> (<code>string</code>): Texto que se
+          mostrará cuando el campo esté vacío.
+        </li>
+        <li>
+          <strong>disabled</strong> (<code>boolean</code>): Indica si el campo
+          de contraseña está deshabilitado. Valor por defecto:
+          <code>false</code>.
+        </li>
+      </ul>
+
+      <h3>Ejemplos de Entrada de Contraseña</h3>
+      <!-- <ds-password-input [(ngModel)]="passwordValue" placeholder="Enter password"></ds-password-input> -->
+    </div>
+
+    <hr />
+
+    <!-- Date Input -->
+    <div id="date-input">
+      <h2>Date Input</h2>
+      <p>
+        El componente de entrada de fecha (<code>ds-date-input</code>) se
+        utiliza para permitir a los usuarios seleccionar una fecha. Este
+        componente es altamente personalizable y soporta múltiples
+        configuraciones.
+      </p>
+
+      <h3>Uso</h3>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>&lt;ds-date-input [(ngModel)]="dateValue"&gt;&lt;/ds-date-input&gt;</code></pre>
+
+      <h3>Configuración</h3>
+      <p>
+        El componente de entrada de fecha acepta las siguientes propiedades de
+        entrada (<code>&#64;Input</code>):
+      </p>
+      <ul>
+        <li>
+          <strong>ngModel</strong> (<code>Date</code>): La fecha seleccionada.
+        </li>
+        <li>
+          <strong>placeholder</strong> (<code>string</code>): Texto que se
+          mostrará cuando el campo esté vacío.
+        </li>
+        <li>
+          <strong>disabled</strong> (<code>boolean</code>): Indica si el campo
+          de fecha está deshabilitado. Valor por defecto: <code>false</code>.
+        </li>
+      </ul>
+
+      <h3>Ejemplos de Entrada de Fecha</h3>
+      <!-- <ds-date-input [(ngModel)]="dateValue" placeholder="Select date"></ds-date-input> -->
+    </div>
+
+    <hr />
+
+    <!-- Select Input -->
+    <div id="select-input">
+      <h2>Select Input</h2>
+      <p>
+        El componente de entrada de selección (<code>ds-select-input</code>) se
+        utiliza para permitir a los usuarios seleccionar una opción de una lista
+        desplegable. Este componente es altamente personalizable y soporta
+        múltiples configuraciones.
+      </p>
+
+      <h3>Uso</h3>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>&lt;ds-select-input [(ngModel)]="selectedOption" [options]="options"&gt;&lt;/ds-select-input&gt;</code></pre>
+
+      <h3>Configuración</h3>
+      <p>
+        El componente de entrada de selección acepta las siguientes propiedades
+        de entrada (<code>&#64;Input</code>):
+      </p>
+      <ul>
+        <li>
+          <strong>ngModel</strong> (<code>any</code>): La opción seleccionada.
+        </li>
+        <li>
+          <strong>options</strong> (<code
+            >Array&lt;&#123; label: string, value: any &#125;&gt;</code
+          >): Lista de opciones que se mostrarán en el menú desplegable. Cada
+          opción debe tener una etiqueta (<code>label</code>) y un valor
+          (<code>value</code>).
+        </li>
+        <li>
+          <strong>placeholder</strong> (<code>string</code>): Texto que se
+          mostrará cuando no se haya seleccionado ninguna opción.
+        </li>
+        <li>
+          <strong>disabled</strong> (<code>boolean</code>): Indica si el menú
+          desplegable está deshabilitado. Valor por defecto: <code>false</code>.
+        </li>
+      </ul>
+
+      <h3>Ejemplos de Entrada de Selección</h3>
+      <!-- <ds-select-input [(ngModel)]="selectedOption" [options]="[
+        { label: 'Option 1', value: 1 },
+        { label: 'Option 2', value: 2 },
+        { label: 'Option 3', value: 3 }
+      ]" placeholder="Select an option"></ds-select-input> -->
+    </div>
+
+    <hr />
+
+    <!-- Checkbox -->
+    <div id="checkbox">
+      <h2>Checkbox</h2>
+      <p>
+        El componente de casilla de verificación (<code>ds-checkbox</code>) se
+        utiliza para permitir a los usuarios seleccionar una o más opciones de
+        una lista. Este componente es altamente personalizable y soporta
+        múltiples configuraciones.
+      </p>
+
+      <h3>Uso</h3>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>&lt;ds-checkbox [(ngModel)]="isChecked"&gt;&lt;/ds-checkbox&gt;</code></pre>
+
+      <h3>Configuración</h3>
+      <p>
+        El componente de casilla de verificación acepta las siguientes
+        propiedades de entrada (<code>&#64;Input</code>):
+      </p>
+      <ul>
+        <li>
+          <strong>ngModel</strong> (<code>boolean</code>): El estado de la
+          casilla de verificación.
+        </li>
+        <li>
+          <strong>label</strong> (<code>string</code>): Texto que se mostrará
+          junto a la casilla de verificación.
+        </li>
+        <li>
+          <strong>disabled</strong> (<code>boolean</code>): Indica si la casilla
+          de verificación está deshabilitada. Valor por defecto:
+          <code>false</code>.
+        </li>
+      </ul>
+
+      <h3>Ejemplos de Casilla de Verificación</h3>
+      <!-- <ds-checkbox [(ngModel)]="isChecked" label="Accept terms and conditions"></ds-checkbox> -->
+    </div>
+
+    <hr />
+
+    <!-- Radio -->
+    <div id="radio">
+      <h2>Radio</h2>
+      <p>
+        El componente de botón de opción (<code>ds-radio</code>) se utiliza para
+        permitir a los usuarios seleccionar una opción de un grupo de opciones.
+        Este componente es altamente personalizable y soporta múltiples
+        configuraciones.
+      </p>
+
+      <h3>Uso</h3>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>&lt;ds-radio [(ngModel)]="selectedOption" [options]="options"&gt;&lt;/ds-radio&gt;</code></pre>
+
+      <h3>Configuración</h3>
+      <p>
+        El componente de botón de opción acepta las siguientes propiedades de
+        entrada (<code>&#64;Input</code>):
+      </p>
+      <ul>
+        <li>
+          <strong>ngModel</strong> (<code>any</code>): La opción seleccionada.
+        </li>
+        <li>
+          <strong>options</strong> (<code
+            >Array&lt;&#123; label: string, value: any &#125;&gt;</code
+          >): Lista de opciones que se mostrarán en el grupo de botones de
+          opción. Cada opción debe tener una etiqueta (<code>label</code>) y un
+          valor (<code>value</code>).
+        </li>
+        <li>
+          <strong>disabled</strong> (<code>boolean</code>): Indica si el grupo
+          de botones de opción está deshabilitado. Valor por defecto:
+          <code>false</code>.
+        </li>
+      </ul>
+
+      <h3>Ejemplos de Botón de Opción</h3>
+      <!-- <ds-radio [(ngModel)]="selectedOption" [options]="[
+        { label: 'Option 1', value: 1 },
+        { label: 'Option 2', value: 2 },
+        { label: 'Option 3', value: 3 }
+      ]"></ds-radio> -->
+    </div>
+
+    <hr />
+
+    <!-- Textarea -->
+    <div id="textarea">
+      <h2>Textarea</h2>
+      <p>
+        El componente de área de texto (<code>ds-textarea</code>) se utiliza
+        para permitir a los usuarios ingresar texto en múltiples líneas. Este
+        componente es altamente personalizable y soporta múltiples
+        configuraciones.
+      </p>
+
+      <h3>Uso</h3>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>&lt;ds-textarea [(ngModel)]="textValue"&gt;&lt;/ds-textarea&gt;</code></pre>
+
+      <h3>Configuración</h3>
+      <p>
+        El componente de área de texto acepta las siguientes propiedades de
+        entrada (<code>&#64;Input</code>):
+      </p>
+      <ul>
+        <li>
+          <strong>ngModel</strong> (<code>string</code>): El valor del texto
+          ingresado.
+        </li>
+        <li>
+          <strong>placeholder</strong> (<code>string</code>): Texto que se
+          mostrará cuando el campo esté vacío.
+        </li>
+        <li>
+          <strong>rows</strong> (<code>number</code>): El número de filas
+          visibles en el área de texto.
+        </li>
+        <li>
+          <strong>disabled</strong> (<code>boolean</code>): Indica si el área de
+          texto está deshabilitada. Valor por defecto: <code>false</code>.
+        </li>
+      </ul>
+
+      <h3>Ejemplos de Área de Texto</h3>
+      <!-- <ds-textarea [(ngModel)]="textValue" placeholder="Enter text" rows="4"></ds-textarea> -->
+    </div>
+  </div>
+</section>

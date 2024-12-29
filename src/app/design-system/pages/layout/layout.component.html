@@ -3,7 +3,7 @@
     <div>
       <h1>Layout</h1>
       <p>
-        En esta sección, exploraremos el sistema de diseño de layout que se
+        En esta sección, se explora el sistema de diseño de layout que se
         utiliza para crear estructuras de página consistentes y responsivas.
       </p>
     </div>
@@ -21,24 +21,24 @@
 
       <h3>Contenedor</h3>
       <pre><code class="language-scss">
-    .container &#123;
-      width: 100%;
-      max-width: 100%; // Por defecto ocupa todo el ancho
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: get-spacing(xs);
-      padding-right: get-spacing(xs);
+      .container &#123;
+        width: 100%;
+        max-width: 100%; // Por defecto ocupa todo el ancho
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: get-spacing(xs);
+        padding-right: get-spacing(xs);
 
-      &#64;each $breakpoint, $value in $breakpoints &#123;
-        &#64;if $breakpoint != xs &#123;
-          // Evita el breakpoint más pequeño
-          &#64;include media-breakpoint-up($breakpoint) &#123;
-            max-width: $value; // Ancho máximo basado en el breakpoint
+        &#64;each $breakpoint, $value in $breakpoints &#123;
+          &#64;if $breakpoint != xs &#123;
+            // Evita el breakpoint más pequeño
+            &#64;include apply-media-breakpoint($breakpoint) &#123;
+              max-width: $value; // Ancho máximo basado en el breakpoint
+            &#125;
           &#125;
         &#125;
       &#125;
-    &#125;
-    </code></pre>
+      </code></pre>
       <p>
         La clase <code>.container</code> se utiliza para envolver el contenido y
         aplicar márgenes y rellenos automáticos, asegurando que el contenido
@@ -48,13 +48,13 @@
 
       <h3>Fila</h3>
       <pre><code class="language-scss">
-    .row &#123;
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: -get-spacing(xs);
-      margin-right: -get-spacing(xs);
-    &#125;
-    </code></pre>
+      .row &#123;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -get-spacing(xs);
+        margin-right: -get-spacing(xs);
+      &#125;
+      </code></pre>
       <p>
         La clase <code>.row</code> se utiliza para crear una fila de columnas.
         Utiliza flexbox para asegurar que las columnas se distribuyan
@@ -63,31 +63,31 @@
 
       <h3>Columnas</h3>
       <pre><code class="language-scss">
-    [class*="col-"] &#123;
-      padding-left: get-spacing(xs);
-      padding-right: get-spacing(xs);
-      flex: 0 0 auto;
-      width: 100%;
+      [class*="col-"] &#123;
+        padding-left: get-spacing(xs);
+        padding-right: get-spacing(xs);
+        flex: 0 0 auto;
+        width: 100%;
 
-      &#64;for $i from 1 through 12 &#123;
-        &.col-#&#123;$i&#125; &#123;
-          width: math.div(100%, 12) * $i;
+        &#64;for $i from 1 through 12 &#123;
+          &.col-#&#123;$i&#125; &#123;
+            width: math.div(100%, 12) * $i;
+          &#125;
         &#125;
-      &#125;
 
-      &#64;each $breakpoint, $value in $breakpoints &#123;
-        &#64;if $breakpoint != xs &#123;
-          &#64;include media-breakpoint-up($breakpoint) &#123;
-            &#64;for $i from 1 through 12 &#123;
-              &.col-#&#123;$breakpoint&#125;-#&#123;$i&#125; &#123;
-                width: math.div(100%, 12) * $i;
+        &#64;each $breakpoint, $value in $breakpoints &#123;
+          &#64;if $breakpoint != xs &#123;
+            &#64;include apply-media-breakpoint($breakpoint) &#123;
+              &#64;for $i from 1 through 12 &#123;
+                &.col-#&#123;$breakpoint&#125;-#&#123;$i&#125; &#123;
+                  width: math.div(100%, 12) * $i;
+                &#125;
               &#125;
             &#125;
           &#125;
         &#125;
       &#125;
-    &#125;
-    </code></pre>
+      </code></pre>
       <p>
         Las clases de columna se utilizan para definir el ancho de las columnas
         en diferentes breakpoints. Utilizan un sistema de 12 columnas para
