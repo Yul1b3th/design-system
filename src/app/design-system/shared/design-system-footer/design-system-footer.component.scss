@@ -1,0 +1,13 @@
+@use "../../styles/abstracts/mixins" as *;
+
+footer {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  @include apply-color(background-color, neutral, "dark-200");
+
+  p {
+    @include apply-color(color, utility, white);
+    padding: 1rem;
+  }
+}
