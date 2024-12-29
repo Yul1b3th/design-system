@@ -99,6 +99,10 @@
   );
 }
 
+@function is-color($value) {
+  @return meta.type-of($value) == "color";
+}
+
 // === Funciones relacionadas con diseño responsivo ===
 
 // Obtiene un breakpoint

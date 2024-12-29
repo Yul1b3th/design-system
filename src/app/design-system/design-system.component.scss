@@ -3,9 +3,10 @@
 @use "./styles/abstracts/functions" as *;
 @use "./styles/abstracts/mixins" as *;
 @use "./styles/abstracts/variables" as *;
+@use "./shared/design-system-header/design-system-header.component" as header;
 
-$header-height: 70px;
-$footer-height: 70px;
+// $header-height: 70px;
+// $footer-height: 70px;
 
 :host {
   width: 100%;
@@ -13,19 +14,9 @@ $footer-height: 70px;
   flex-direction: column;
   min-height: 100vh;
 
-  header {
-    position: fixed;
-    width: 100%;
-    height: $header-height;
-    top: 0;
-    z-index: 1;
-    background-color: #333;
-    color: white;
-    text-align: center;
-  }
   .main-layout {
     width: 100%;
-    margin: $header-height auto 0;
+    margin: header.$header-height auto 0;
     aside {
       // background-color: red;
     }
@@ -47,8 +38,8 @@ $footer-height: 70px;
     aside {
       position: -webkit-sticky;
       position: sticky;
-      top: $header-height;
-      height: calc(100vh - $header-height);
+      top: header.$header-height;
+      height: calc(100vh - header.$header-height);
       overflow-y: auto;
       // background-color: yellow;
     }

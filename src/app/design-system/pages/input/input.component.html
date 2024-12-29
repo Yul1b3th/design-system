@@ -34,6 +34,86 @@
 
     <hr />
 
+    <!-- States -->
+    <div>
+      <h2>States</h2>
+      <p>
+        Los diferentes estados del componente de entrada de texto muestran cómo
+        se comporta el componente en diversas situaciones.
+      </p>
+      <div>
+        <div>
+          <h3>Default</h3>
+          <ds-text-input
+            id="default"
+            label="Default"
+            placeholder="Enter text"
+          ></ds-text-input>
+        </div>
+        <div>
+          <h3>Hover</h3>
+          <p>
+            El estado hover se muestra cuando el usuario pasa el cursor sobre el
+            campo de entrada.
+          </p>
+          <ds-text-input
+            id="hover"
+            label="Hover"
+            placeholder="Hover over this input"
+          ></ds-text-input>
+        </div>
+        <div>
+          <h3>Typing (Focus)</h3>
+          <p>
+            El estado de enfoque se muestra cuando el usuario hace clic en el
+            campo de entrada y comienza a escribir.
+          </p>
+          <ds-text-input
+            id="focus"
+            label="Focus"
+            placeholder="Focus on this input"
+          ></ds-text-input>
+        </div>
+        <div>
+          <h3>Disabled</h3>
+          <ds-text-input
+            id="disabled"
+            label="Disabled"
+            placeholder="This input is disabled"
+            [disabled]="true"
+          ></ds-text-input>
+        </div>
+        <div>
+          <h3>Verification</h3>
+          <p>
+            El estado de verificación se muestra cuando el campo de entrada ha
+            sido verificado.
+          </p>
+          <ds-text-input
+            id="verification"
+            label="Verification"
+            placeholder="Verified input"
+            class="verification"
+          ></ds-text-input>
+        </div>
+        <div>
+          <h3>Error</h3>
+          <p>
+            El estado de error se muestra cuando hay un error en el campo de
+            entrada.
+          </p>
+          <ds-text-input
+            id="error"
+            label="Error"
+            placeholder="Input with error"
+            class="error"
+          ></ds-text-input>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
     <!-- Text Input -->
     <div id="text-input">
       <h2>Text Input</h2>
@@ -68,7 +148,12 @@
       </ul>
 
       <h3>Ejemplos de Entrada de Texto</h3>
-      <!-- <ds-text-input [(ngModel)]="textValue" placeholder="Enter text"></ds-text-input> -->
+      <ds-text-input
+        id="name"
+        label="Name"
+        placeholder="Enter text"
+        [ariaRequired]="true"
+      ></ds-text-input>
     </div>
 
     <hr />
@@ -331,7 +416,10 @@
       </ul>
 
       <h3>Ejemplos de Casilla de Verificación</h3>
-      <!-- <ds-checkbox [(ngModel)]="isChecked" label="Accept terms and conditions"></ds-checkbox> -->
+      <!-- <ds-checkbox
+        [(ngModel)]="isChecked"
+        label="Accept terms and conditions"
+      ></ds-checkbox> -->
     </div>
 
     <hr />
@@ -374,11 +462,14 @@
       </ul>
 
       <h3>Ejemplos de Botón de Opción</h3>
-      <!-- <ds-radio [(ngModel)]="selectedOption" [options]="[
-        { label: 'Option 1', value: 1 },
-        { label: 'Option 2', value: 2 },
-        { label: 'Option 3', value: 3 }
-      ]"></ds-radio> -->
+      <!-- <ds-radio
+        [(ngModel)]="selectedOption"
+        [options]="[
+          { label: 'Option 1', value: 1 },
+          { label: 'Option 2', value: 2 },
+          { label: 'Option 3', value: 3 },
+        ]"
+      ></ds-radio> -->
     </div>
 
     <hr />
@@ -422,7 +513,11 @@
       </ul>
 
       <h3>Ejemplos de Área de Texto</h3>
-      <!-- <ds-textarea [(ngModel)]="textValue" placeholder="Enter text" rows="4"></ds-textarea> -->
+      <!-- <ds-textarea
+        [(ngModel)]="textValue"
+        placeholder="Enter text"
+        rows="4"
+      ></ds-textarea> -->
     </div>
   </div>
 </section>

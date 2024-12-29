@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 
 import { DesignSystemSidebarComponent } from './shared/design-system-sidebar/design-system-sidebar.component';
 import { DesignSystemFooterComponent } from './shared/design-system-footer/design-system-footer.component';
+import { DesignSystemHeaderComponent } from './shared/design-system-header/design-system-header.component';
 
 @Component({
   selector: 'design-system',
@@ -13,6 +14,7 @@ import { DesignSystemFooterComponent } from './shared/design-system-footer/desig
     RouterOutlet,
     DesignSystemSidebarComponent,
     DesignSystemFooterComponent,
+    DesignSystemHeaderComponent,
   ],
 })
 export default class DesignSystemComponent {}

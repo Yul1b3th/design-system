@@ -70,7 +70,9 @@ pre {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
 
   &:hover {
     text-decoration: underline;
