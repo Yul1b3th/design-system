@@ -9,6 +9,8 @@
       [attr.aria-required]="ariaRequired"
       [disabled]="disabled"
       [ngClass]="themeService.theme()"
+      (input)="handleInput($event)"
+      (blur)="handleBlur()"
     />
     <svg
       xmlns="http://www.w3.org/2000/svg"

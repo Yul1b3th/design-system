@@ -1,0 +1,91 @@
+@use "sass:color";
+@use "sass:map";
+@use "../../../styles/abstracts/variables" as *;
+@use "../../../styles/abstracts/mixins" as *;
+@use "../../../styles/abstracts/functions" as *;
+
+.form-group {
+  margin-bottom: get-spacing(md);
+
+  label {
+    display: block;
+    margin-bottom: get-spacing(xs);
+    font-size: get-font-size(base);
+    @include apply-color(color, neutral, dark);
+  }
+
+  .input-wrapper {
+    position: relative;
+
+    .input-number {
+      width: 100%;
+      padding: get-spacing(sm);
+      padding-right: 2.5rem;
+      font-size: get-font-size(base);
+      border: 1px solid;
+      @include apply-color(border-color, neutral, gray);
+      border-radius: 4px;
+      @include apply-transition(all, 0.3s, ease-in-out);
+
+      // Default state
+      @include apply-color(background-color, neutral, light);
+      @include apply-color(color, neutral, dark);
+
+      // Hover state
+      &:hover {
+        @include apply-color(border-color, primary, light);
+      }
+
+      // Typing state (focus)
+      &:focus {
+        @include apply-color(border-color, primary, default);
+        outline: none;
+        box-shadow: 0 0 0 3px
+          color.scale(get-color(primary, default), $alpha: -50%);
+      }
+
+      // Disabled state
+      &:disabled {
+        @include apply-color(background-color, neutral, light);
+        @include apply-color(color, neutral, "gray-dark");
+        @include apply-color(border-color, neutral, gray);
+        cursor: not-allowed;
+      }
+
+      &.dark-mode {
+        @include apply-color(background-color, neutral, "dark-200");
+        @include apply-color(color, utility, white);
+        @include apply-color(border-color, neutral, "gray-dark");
+
+        &:focus {
+          @include apply-color(border-color, primary, light);
+          box-shadow: 0 0 0 3px
+            color.scale(get-color(primary, light), $alpha: -50%);
+        }
+      }
+
+      &.light-mode {
+        @include apply-color(background-color, neutral, light);
+        @include apply-color(color, neutral, dark);
+        @include apply-color(border-color, neutral, gray);
+
+        &:focus {
+          @include apply-color(border-color, primary, default);
+          box-shadow: 0 0 0 3px
+            color.scale(get-color(primary, default), $alpha: -50%);
+        }
+      }
+    }
+
+    .input-icon {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      width: 1.5rem;
+      height: 1.5rem;
+      @include apply-color(color, neutral, "gray-dark");
+    }
+  }
+}

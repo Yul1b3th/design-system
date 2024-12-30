@@ -20,15 +20,17 @@
         entrada disponibles:
       </p>
       <ul>
-        <li><a href="#text-input">Text Input</a></li>
-        <li><a href="#number-input">Number Input</a></li>
-        <li><a href="#email-input">Email Input</a></li>
-        <li><a href="#password-input">Password Input</a></li>
-        <li><a href="#date-input">Date Input</a></li>
-        <li><a href="#select-input">Select Input</a></li>
-        <li><a href="#checkbox">Checkbox</a></li>
-        <li><a href="#radio">Radio</a></li>
-        <li><a href="#textarea">Textarea</a></li>
+        <li><a [routerLink]="[]" fragment="text-input">Text Input</a></li>
+        <li><a [routerLink]="[]" fragment="number-input">Number Input</a></li>
+        <li><a [routerLink]="[]" fragment="email-input">Email Input</a></li>
+        <li>
+          <a [routerLink]="[]" fragment="password-input">Password Input</a>
+        </li>
+        <li><a [routerLink]="[]" fragment="date-input">Date Input</a></li>
+        <li><a [routerLink]="[]" fragment="select-input">Select Input</a></li>
+        <li><a [routerLink]="[]" fragment="checkbox">Checkbox</a></li>
+        <li><a [routerLink]="[]" fragment="radio">Radio</a></li>
+        <li><a [routerLink]="[]" fragment="textarea">Textarea</a></li>
       </ul>
     </div>
 
@@ -125,7 +127,15 @@
 
       <h3>Uso</h3>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-text-input [(ngModel)]="textValue"&gt;&lt;/ds-text-input&gt;</code></pre>
+      <pre><code>&lt;form [formGroup]="form"&gt;
+  &lt;ds-text-input
+    formControlName="textInput"
+    id="name"
+    label="Name"
+    placeholder="Enter text"
+    [ariaRequired]="true"
+  &gt;&lt;/ds-text-input&gt;
+&lt;/form&gt;</code></pre>
 
       <h3>Configuración</h3>
       <p>
@@ -134,8 +144,8 @@
       </p>
       <ul>
         <li>
-          <strong>ngModel</strong> (<code>string</code>): El valor del texto
-          ingresado.
+          <strong>formControlName</strong> (<code>string</code>): El nombre del
+          control de formulario al que está vinculado el componente.
         </li>
         <li>
           <strong>placeholder</strong> (<code>string</code>): Texto que se
@@ -148,12 +158,15 @@
       </ul>
 
       <h3>Ejemplos de Entrada de Texto</h3>
-      <ds-text-input
-        id="name"
-        label="Name"
-        placeholder="Enter text"
-        [ariaRequired]="true"
-      ></ds-text-input>
+      <form [formGroup]="form">
+        <ds-text-input
+          formControlName="textInput"
+          id="name"
+          label="Name"
+          placeholder="Enter text"
+          [ariaRequired]="true"
+        ></ds-text-input>
+      </form>
     </div>
 
     <hr />
@@ -169,7 +182,18 @@
 
       <h3>Uso</h3>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-number-input [(ngModel)]="numberValue"&gt;&lt;/ds-number-input&gt;</code></pre>
+      <pre><code>&lt;form [formGroup]="form"&gt;
+  &lt;ds-number-input
+    formControlName="numberInput"
+    id="age"
+    label="Age"
+    placeholder="Enter age"
+    [ariaRequired]="true"
+    [min]="0"
+    [max]="100"
+    [step]="1"
+  &gt;&lt;/ds-number-input&gt;
+&lt;/form&gt;</code></pre>
 
       <h3>Configuración</h3>
       <p>
@@ -178,8 +202,8 @@
       </p>
       <ul>
         <li>
-          <strong>ngModel</strong> (<code>number</code>): El valor numérico
-          ingresado.
+          <strong>formControlName</strong> (<code>string</code>): El nombre del
+          control de formulario al que está vinculado el componente.
         </li>
         <li>
           <strong>placeholder</strong> (<code>string</code>): Texto que se
@@ -195,13 +219,25 @@
         <li>
           <strong>max</strong> (<code>number</code>): El valor máximo permitido.
         </li>
+        <li>
+          <strong>step</strong> (<code>number</code>): El incremento entre
+          valores del rango.
+        </li>
       </ul>
 
       <h3>Ejemplos de Entrada Numérica</h3>
-      <!-- <ds-number-input
-        [(ngModel)]="numberValue"
-        placeholder="Enter number"
-      ></ds-number-input> -->
+      <form [formGroup]="form">
+        <ds-number-input
+          formControlName="numberInput"
+          id="age"
+          label="Age"
+          placeholder="Enter age"
+          [ariaRequired]="true"
+          [min]="0"
+          [max]="100"
+          [step]="1"
+        ></ds-number-input>
+      </form>
     </div>
 
     <hr />
@@ -218,7 +254,15 @@
 
       <h3>Uso</h3>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-email-input [(ngModel)]="emailValue"&gt;&lt;/ds-email-input&gt;</code></pre>
+      <pre><code>&lt;form [formGroup]="form"&gt;
+  &lt;ds-email-input
+    formControlName="emailInput"
+    id="email"
+    label="Email"
+    placeholder="Enter email"
+    [ariaRequired]="true"
+  &gt;&lt;/ds-email-input&gt;
+&lt;/form&gt;</code></pre>
 
       <h3>Configuración</h3>
       <p>
@@ -227,8 +271,8 @@
       </p>
       <ul>
         <li>
-          <strong>ngModel</strong> (<code>string</code>): El valor del correo
-          electrónico ingresado.
+          <strong>formControlName</strong> (<code>string</code>): El nombre del
+          control de formulario al que está vinculado el componente.
         </li>
         <li>
           <strong>placeholder</strong> (<code>string</code>): Texto que se
@@ -242,10 +286,15 @@
       </ul>
 
       <h3>Ejemplos de Entrada de Correo Electrónico</h3>
-      <!-- <ds-email-input
-        [(ngModel)]="emailValue"
-        placeholder="Enter email"
-      ></ds-email-input> -->
+      <form [formGroup]="form">
+        <ds-email-input
+          formControlName="emailInput"
+          id="email"
+          label="Email"
+          placeholder="Enter email"
+          [ariaRequired]="true"
+        ></ds-email-input>
+      </form>
     </div>
 
     <hr />
@@ -262,7 +311,15 @@
 
       <h3>Uso</h3>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-password-input [(ngModel)]="passwordValue"&gt;&lt;/ds-password-input&gt;</code></pre>
+      <pre><code>&lt;form [formGroup]="form"&gt;
+  &lt;ds-password-input
+    formControlName="passwordInput"
+    id="password"
+    label="Password"
+    placeholder="Enter password"
+    [ariaRequired]="true"
+  &gt;&lt;/ds-password-input&gt;
+&lt;/form&gt;</code></pre>
 
       <h3>Configuración</h3>
       <p>
@@ -271,8 +328,8 @@
       </p>
       <ul>
         <li>
-          <strong>ngModel</strong> (<code>string</code>): El valor de la
-          contraseña ingresada.
+          <strong>formControlName</strong> (<code>string</code>): El nombre del
+          control de formulario al que está vinculado el componente.
         </li>
         <li>
           <strong>placeholder</strong> (<code>string</code>): Texto que se
@@ -286,7 +343,15 @@
       </ul>
 
       <h3>Ejemplos de Entrada de Contraseña</h3>
-      <!-- <ds-password-input [(ngModel)]="passwordValue" placeholder="Enter password"></ds-password-input> -->
+      <form [formGroup]="form">
+        <ds-password-input
+          formControlName="passwordInput"
+          id="password"
+          label="Password"
+          placeholder="Enter password"
+          [ariaRequired]="true"
+        ></ds-password-input>
+      </form>
     </div>
 
     <hr />
