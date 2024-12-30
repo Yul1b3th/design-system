@@ -1,1 +1,4 @@
-<p>ds-scroll-top-button works!</p>
+<button class="scroll-top-button" *ngIf="isVisible" (click)="scrollToTop()">
+  <ng-content></ng-content>
+  <!-- Proyección de contenido -->
+</button>
