@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import {
   AfterContentInit,
+  ChangeDetectionStrategy,
   Component,
   ContentChildren,
   ElementRef,
@@ -15,6 +16,7 @@ import { ThemeService } from '@design-system/services/theme.service';
   imports: [CommonModule],
   templateUrl: './ds-card.component.html',
   styleUrl: './ds-card.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DsCardComponent implements AfterContentInit {
   private readonly themeService = inject(ThemeService);

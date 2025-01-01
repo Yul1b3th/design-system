@@ -1,24 +1,24 @@
 <div class="form-group">
-  <label [for]="id">{{ label }}</label>
   <div class="input-wrapper">
-    <textarea
+    <input
+      type="checkbox"
+      role="switch"
       [id]="id"
-      class="input-textarea"
-      #textarea
+      class="input-switch"
       [ngClass]="{
         'dark-mode': themeService.theme() === 'dark',
         'light-mode': themeService.theme() === 'light',
         error: !!errorMessage,
       }"
-      [placeholder]="placeholder"
-      [value]="value"
+      [checked]="value"
       [attr.aria-required]="ariaRequired"
       [attr.aria-invalid]="!!errorMessage"
       [attr.aria-describedby]="errorMessage ? 'error-msg' : null"
       [disabled]="disabled"
-      (input)="handleInput($event)"
+      (change)="handleInput($event)"
       (blur)="handleBlur()"
-    ></textarea>
+    />
+    <label [for]="id">{{ label }}</label>
   </div>
   <div *ngIf="errorMessage" class="error-message" id="error-msg">
     {{ errorMessage }}

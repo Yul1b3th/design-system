@@ -140,3 +140,15 @@
 ) {
   transition: $properties $duration $timing-function;
 }
+
+// === Mixins relacionados con inputs ===
+
+@mixin input-state-hover {
+  @include apply-color(border-color, primary, light);
+}
+
+@mixin input-state-focus($color) {
+  border-color: $color;
+  box-shadow: 0 0 0 3px color.scale($color, $alpha: -50%);
+  outline: none;
+}

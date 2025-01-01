@@ -1,8 +1,8 @@
 @use "sass:color";
 @use "sass:map";
+@use "../../../styles/abstracts/functions" as *;
 @use "../../../styles/abstracts/variables" as *;
 @use "../../../styles/abstracts/mixins" as *;
-@use "../../../styles/abstracts/functions" as *;
 
 .form-group {
   margin-bottom: get-spacing(md);
@@ -33,15 +33,12 @@
 
       // Hover state
       &:hover {
-        @include apply-color(border-color, primary, light);
+        @include input-state-hover;
       }
 
       // Typing state (focus)
       &:focus {
-        @include apply-color(border-color, primary, default);
-        outline: none;
-        box-shadow: 0 0 0 3px
-          color.scale(get-color(primary, default), $alpha: -50%);
+        @include input-state-focus(get-color(primary, default));
       }
 
       // Disabled state
@@ -97,11 +94,15 @@
             color.scale(get-color(primary, default), $alpha: -50%);
         }
       }
+
+      &.has-icon {
+        padding-left: 2.5rem;
+      }
     }
 
     .input-icon {
       position: absolute;
-      right: 0.75rem;
+      left: 0.75rem;
       top: 50%;
       transform: translateY(-50%);
       pointer-events: none;
