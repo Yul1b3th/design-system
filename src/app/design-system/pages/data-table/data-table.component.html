@@ -36,11 +36,11 @@
         </li>
         <li>
           <strong>columns</strong> (<code
-            >Array&lt;&#123; label: string, key: string &#125;&gt;</code
+            >Array&lt;&#123; header: string, field: string &#125;&gt;</code
           >): Lista de objetos que representan las columnas de la tabla. Cada
-          objeto debe tener una etiqueta (<code>label</code>) y una clave
-          (<code>key</code>) que corresponde a las propiedades de los objetos en
-          <code>data</code>.
+          objeto debe tener una etiqueta (<code>header</code>) y una clave
+          (<code>field</code>) que corresponde a las propiedades de los objetos
+          en <code>data</code>.
         </li>
       </ul>
     </div>
@@ -50,18 +50,18 @@
     <!-- Ejemplos de Tabla de Datos -->
     <div>
       <h2>Ejemplos de Tabla de Datos</h2>
-      <!-- <ds-data-table
+      <ds-data-table
         [data]="[
           { name: 'John Doe', age: 30, email: 'john.doe@example.com' },
           { name: 'Jane Smith', age: 25, email: 'jane.smith@example.com' },
-          { name: 'Sam Johnson', age: 35, email: 'sam.johnson@example.com' }
+          { name: 'Sam Johnson', age: 35, email: 'sam.johnson@example.com' },
         ]"
         [columns]="[
-          { label: 'Name', key: 'name' },
-          { label: 'Age', key: 'age' },
-          { label: 'Email', key: 'email' }
+          { header: 'Name', field: 'name' },
+          { header: 'Age', field: 'age' },
+          { header: 'Email', field: 'email' },
         ]"
-      ></ds-data-table> -->
+      ></ds-data-table>
     </div>
 
     <hr />
