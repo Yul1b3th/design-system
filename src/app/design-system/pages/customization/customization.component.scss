@@ -54,7 +54,7 @@
 
 .box-tertiary {
   @include apply-color(color, neutral, "dark-300");
-  @include apply-color(background-color, tertiary);
+  @include apply-color(background-color, tertiary, default);
 }
 
 .box-status-success {

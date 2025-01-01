@@ -4,7 +4,7 @@
       <h1>Spinner</h1>
       <p>
         El componente de spinner (<code>ds-spinner</code>) se utiliza para
-        indicar que una operación está en progreso. Este componente es altamente
+        indicar que una operación está en curso. Este componente es altamente
         personalizable y soporta múltiples configuraciones para adaptarse a
         diferentes contextos de uso.
       </p>
@@ -16,7 +16,7 @@
     <div>
       <h2>Uso</h2>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-spinner [size]="size" [color]="color"&gt;&lt;/ds-spinner&gt;</code></pre>
+      <pre><code>&lt;ds-spinner [size]="'medium'" [color]="'primary'"&gt;&lt;/ds-spinner&gt;</code></pre>
     </div>
 
     <hr />
@@ -30,12 +30,13 @@
       </p>
       <ul>
         <li>
-          <strong>size</strong> (<code>string</code>): El tamaño del spinner.
-          Puede ser <code>small</code>, <code>medium</code> o
-          <code>large</code>.
+          <strong>size</strong> (<code>'small' | 'medium' | 'large'</code>):
+          Tamaño del spinner. Valor por defecto: <code>'medium'</code>.
         </li>
         <li>
-          <strong>color</strong> (<code>string</code>): El color del spinner.
+          <strong>color</strong> (<code
+            >'primary' | 'secondary' | 'tertiary'</code
+          >): Color del spinner. Valor por defecto: <code>'primary'</code>.
         </li>
       </ul>
     </div>
@@ -45,9 +46,9 @@
     <!-- Ejemplos de Spinner -->
     <div>
       <h2>Ejemplos de Spinner</h2>
-      <!-- <ds-spinner size="small" color="primary"></ds-spinner>
-      <ds-spinner size="medium" color="secondary"></ds-spinner>
-      <ds-spinner size="large" color="success"></ds-spinner> -->
+      <ds-spinner [size]="'small'" [color]="'primary'"></ds-spinner>
+      <ds-spinner [size]="'medium'" [color]="'secondary'"></ds-spinner>
+      <ds-spinner [size]="'large'" [color]="'tertiary'"></ds-spinner>
     </div>
 
     <hr />
@@ -68,8 +69,8 @@
       <h2>Conclusión</h2>
       <p>
         El componente de spinner es una herramienta útil para indicar que una
-        operación está en progreso. Con sus múltiples opciones de configuración
-        y soporte para accesibilidad, es una adición valiosa para cualquier
+        operación está en curso. Con sus múltiples opciones de configuración y
+        soporte para accesibilidad, es una adición valiosa para cualquier
         aplicación.
       </p>
     </div>

@@ -54,7 +54,9 @@ $colors: (
     light: #b3e8e9,
     dark: #3a7d7e,
   ),
-  tertiary: #7dd3fc,
+  tertiary: (
+    default: #7dd3fc,
+  ),
   status: (
     success: #22c55e,
     danger: #ef4444,
