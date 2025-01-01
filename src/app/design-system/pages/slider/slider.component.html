@@ -16,7 +16,17 @@
     <div>
       <h2>Uso</h2>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-slider [(ngModel)]="sliderValue" [min]="0" [max]="100" [step]="1"&gt;&lt;/ds-slider&gt;</code></pre>
+      <pre><code>&lt;form [formGroup]="form"&gt;
+  &lt;ds-slider
+    formControlName="sliderValue"
+    id="slider"
+    label="Select Value"
+    [min]="0"
+    [max]="100"
+    [step]="1"
+    [ariaRequired]="true"
+  &gt;&lt;/ds-slider&gt;
+&lt;/form&gt;</code></pre>
     </div>
 
     <hr />
@@ -24,30 +34,73 @@
     <!-- Configuración -->
     <div>
       <h2>Configuración</h2>
-      <p>
-        El componente de control deslizante acepta las siguientes propiedades de
-        entrada (<code>&#64;Input</code>):
-      </p>
-      <ul>
-        <li>
-          <strong>ngModel</strong> (<code>number</code>): El valor seleccionado
-          del control deslizante.
-        </li>
-        <li>
-          <strong>min</strong> (<code>number</code>): El valor mínimo del rango.
-        </li>
-        <li>
-          <strong>max</strong> (<code>number</code>): El valor máximo del rango.
-        </li>
-        <li>
-          <strong>step</strong> (<code>number</code>): El incremento entre
-          valores del rango.
-        </li>
-        <li>
-          <strong>disabled</strong> (<code>boolean</code>): Indica si el control
-          deslizante está deshabilitado. Valor por defecto: <code>false</code>.
-        </li>
-      </ul>
+      <p>El componente acepta las siguientes propiedades:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>label</code></td>
+            <td><code>string</code></td>
+            <td>Texto mostrado como etiqueta del campo.</td>
+            <td><code>"Seleccionar Valor"</code></td>
+          </tr>
+          <tr>
+            <td><code>min</code></td>
+            <td><code>number</code></td>
+            <td>Valor mínimo permitido para el control deslizante.</td>
+            <td><code>0</code></td>
+          </tr>
+          <tr>
+            <td><code>max</code></td>
+            <td><code>number</code></td>
+            <td>Valor máximo permitido para el control deslizante.</td>
+            <td><code>100</code></td>
+          </tr>
+          <tr>
+            <td><code>step</code></td>
+            <td><code>number</code></td>
+            <td>Incremento de valor permitido para el control deslizante.</td>
+            <td><code>1</code></td>
+          </tr>
+          <tr>
+            <td><code>formControlName</code></td>
+            <td><code>string</code></td>
+            <td>
+              Vincula el componente a un control de un formulario reactivo.
+            </td>
+            <td><code>"sliderValue"</code></td>
+          </tr>
+          <tr>
+            <td><code>required</code></td>
+            <td><code>boolean</code></td>
+            <td>Define si el campo es obligatorio.</td>
+            <td><code>true</code></td>
+          </tr>
+          <tr>
+            <td><code>disabled</code></td>
+            <td><code>boolean</code></td>
+            <td>Desactiva el control deslizante.</td>
+            <td><code>false</code></td>
+          </tr>
+          <tr>
+            <td><code>errorMessage</code></td>
+            <td><code>string</code></td>
+            <td>
+              Mensaje de error personalizado mostrado para errores de
+              validación.
+            </td>
+            <td><code>"Este campo es obligatorio"</code></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <hr />
@@ -55,7 +108,18 @@
     <!-- Ejemplos de Control Deslizante -->
     <div>
       <h2>Ejemplos de Control Deslizante</h2>
-      <!-- <ds-slider [(ngModel)]="sliderValue" [min]="0" [max]="100" [step]="1"></ds-slider> -->
+      <form [formGroup]="form">
+        <ds-slider
+          formControlName="sliderValue"
+          id="slider"
+          label="Select Value"
+          [min]="0"
+          [max]="100"
+          [step]="1"
+          [ariaRequired]="true"
+        >
+        </ds-slider>
+      </form>
     </div>
 
     <hr />
