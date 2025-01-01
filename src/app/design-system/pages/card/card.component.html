@@ -1,38 +1,13 @@
-<section class="cards">
+<section class="card">
   <div class="container">
     <div>
-      <h1>Cards</h1>
+      <h1>Card</h1>
       <p>
-        El componente de tarjeta (<code>ds-card</code>) es un contenedor
-        flexible que permite mostrar contenido variado de manera organizada y
-        atractiva. Este componente es altamente personalizable y soporta
-        múltiples variantes para adaptarse a diferentes contextos de uso.
+        El componente de tarjeta (<code>ds-card</code>) se utiliza para mostrar
+        contenido en un formato de tarjeta. Este componente es altamente
+        personalizable y soporta múltiples configuraciones para adaptarse a
+        diferentes contextos de uso.
       </p>
-    </div>
-
-    <hr />
-
-    <!-- Variantes de Tarjeta -->
-    <div>
-      <h2>Variantes de Tarjeta</h2>
-      <p>
-        El componente de tarjeta soporta varias variantes que se pueden aplicar
-        mediante clases CSS. Las variantes disponibles son:
-      </p>
-      <ul>
-        <li>
-          <strong>Default</strong>: Tarjeta predeterminada utilizada para
-          mostrar contenido general.
-        </li>
-        <li>
-          <strong>Dark Mode</strong>: Tarjeta con esquema de colores oscuros
-          para entornos de baja luminosidad.
-        </li>
-        <li>
-          <strong>Light Mode</strong>: Tarjeta con esquema de colores claros
-          para entornos de alta luminosidad.
-        </li>
-      </ul>
     </div>
 
     <hr />
@@ -41,81 +16,113 @@
     <div>
       <h2>Uso</h2>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-card&gt;
-  &lt;img card-image src="https://ezhub.vercel.app/assets/img/bedrooms/1.jpg" alt="Sample Room" class="img-responsive" /&gt;
-  &lt;h5 card-title&gt;Sample Room&lt;/h5&gt;
-  &lt;p card-text&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p&gt;
-  &lt;p card-price&gt;100 &lt;span class="currency"&gt;€&lt;/span&gt;&lt;/p&gt;
-  &lt;ds-button card-button btnClass="btn-secondary"&gt;See more&lt;/ds-button&gt;
-&lt;/ds-card&gt;</code></pre>
+      <pre><code>&lt;ds-card
+  imageUrl="https://ezhub.vercel.app/assets/img/bedrooms/1.jpg"
+  title="Card Title"
+  body="This is a card body text."
+  buttonText="Learn More"
+  buttonUrl="#"
+&gt;&lt;/ds-card&gt;</code></pre>
     </div>
 
     <hr />
 
-    <!-- Ejemplos de Tarjetas -->
+    <!-- Configuración -->
     <div>
-      <h2>Ejemplos de Tarjetas</h2>
-      <div class="row">
-        <div class="col-12 col-md-6 col-lg-4">
-          <ds-card>
-            <img
-              card-image
-              src="https://ezhub.vercel.app/assets/img/bedrooms/1.jpg"
-              alt="Sample Room"
-              class="img-responsive"
-            />
-            <h5 card-title #cardTitle>Sample Room</h5>
-            <p card-text #cardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tenetur,
-              dolorum. Tempora distinctio sapiente voluptatem sunt nisi qui sit
-              nesciunt vitae modi optio, autem possimus velit atque illo dolore
-              perspiciatis, sequi, blanditiis repudiandae quis sed accusamus
-              mollitia eveniet debitis ratione.
-            </p>
-            <p card-price #cardPrice>100 <span class="currency">€</span></p>
-            <ds-button card-button btnClass="btn-secondary">See more</ds-button>
-          </ds-card>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <ds-card>
-            <img
-              card-image
-              src="https://ezhub.vercel.app/assets/img/bedrooms/2.jpg"
-              alt="Sample Room 2"
-              class="img-responsive"
-            />
-            <h5 card-title>Sample Room 2</h5>
-            <p card-text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est ipsam
-              quam temporibus totam ex. Assumenda sapiente vitae facilis,
-              consectetur dolores eius labore amet veniam ipsum incidunt
-              voluptate porro ea dolorem?
-            </p>
-            <p card-price>150 <span class="currency">€</span></p>
-            <ds-button card-button btnClass="btn-secondary">See more</ds-button>
-          </ds-card>
-        </div>
-        <div class="col-12 col-md-6 col-lg-4">
-          <ds-card>
-            <img
-              card-image
-              src="https://ezhub.vercel.app/assets/img/bedrooms/3.jpg"
-              alt="Sample Room 3"
-              class="img-responsive"
-            />
-            <h5 card-title>Sample Room 3</h5>
-            <p card-text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dolorum
-              soluta a aperiam architecto et voluptas? Maxime omnis veritatis
-              vel velit natus, autem, facere ducimus voluptate est officiis
-              aliquid incidunt doloremque quo quaerat, repudiandae cumque
-              necessitatibus sapiente dolores.
-            </p>
-            <p card-price>200 <span class="currency">€</span></p>
-            <ds-button card-button btnClass="btn-secondary">See more</ds-button>
-          </ds-card>
-        </div>
-      </div>
+      <h2>Configuración</h2>
+      <p>El componente acepta las siguientes propiedades:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>imageUrl</code></td>
+            <td><code>string</code></td>
+            <td>
+              URL de la imagen a mostrar en la parte superior de la tarjeta.
+            </td>
+            <td>
+              <code>"https://ezhub.vercel.app/assets/img/bedrooms/1.jpg"</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>title</code></td>
+            <td><code>string</code></td>
+            <td>Título de la tarjeta.</td>
+            <td><code>"Card Title"</code></td>
+          </tr>
+          <tr>
+            <td><code>body</code></td>
+            <td><code>string</code></td>
+            <td>Texto del cuerpo de la tarjeta.</td>
+            <td><code>"This is a card body text."</code></td>
+          </tr>
+          <tr>
+            <td><code>buttonText</code></td>
+            <td><code>string</code></td>
+            <td>Texto del botón en la tarjeta.</td>
+            <td><code>"Learn More"</code></td>
+          </tr>
+          <tr>
+            <td><code>buttonUrl</code></td>
+            <td><code>string</code></td>
+            <td>URL al que redirige el botón de la tarjeta.</td>
+            <td><code>"#"</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <hr />
+
+    <!-- Ejemplos de Tarjeta -->
+    <div>
+      <h2>Ejemplos de Tarjeta</h2>
+      <ds-card
+        imageUrl="https://ezhub.vercel.app/assets/img/bedrooms/1.jpg"
+        title="Card Title"
+        body="This is a card body text."
+        buttonText="Learn More"
+        buttonUrl="#"
+      ></ds-card>
+      <ds-card
+        imageUrl="https://ezhub.vercel.app/assets/img/bedrooms/1.jpg"
+        title="Another Card Title"
+        body="This is another card body text."
+        buttonText="Read More"
+        buttonUrl="#"
+      ></ds-card>
+    </div>
+
+    <hr />
+
+    <!-- Accesibilidad -->
+    <div>
+      <h2>Accesibilidad</h2>
+      <p>
+        El componente de tarjeta incluye soporte para accesibilidad mediante el
+        uso de atributos <code>aria</code> y roles adecuados.
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- Conclusión -->
+    <div>
+      <h2>Conclusión</h2>
+      <p>
+        El componente de tarjeta es una herramienta útil para mostrar contenido
+        en un formato de tarjeta. Con sus múltiples opciones de configuración y
+        soporte para accesibilidad, es una adición valiosa para cualquier
+        aplicación.
+      </p>
     </div>
   </div>
 </section>

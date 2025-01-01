@@ -1,11 +1,22 @@
-<div class="card" [ngClass]="themeClass">
-  <div class="card-img-container">
-    <ng-content select="[card-image]"></ng-content>
-  </div>
+<div class="card" [ngClass]="themeService.theme()">
+  <img
+    *ngIf="imageUrl"
+    [src]="imageUrl"
+    class="card-img-top"
+    alt="Card image"
+  />
   <div class="card-body">
-    <ng-content select="[card-title]" #cardTitle></ng-content>
-    <ng-content select="[card-text]" #cardText></ng-content>
-    <ng-content select="[card-price]" #cardPrice></ng-content>
-    <ng-content select="[card-button]" #cardButton></ng-content>
+    <h5 class="card-title">{{ title }}</h5>
+    <p class="card-text">{{ body }}</p>
+    <ds-button
+      *ngIf="buttonText && buttonUrl"
+      [type]="'button'"
+      [btnClass]="'btn-primary'"
+      [size]="'btn-md'"
+      [ariaLabel]="buttonText"
+      [attr.href]="buttonUrl"
+    >
+      {{ buttonText }}
+    </ds-button>
   </div>
 </div>
