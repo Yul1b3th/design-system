@@ -16,7 +16,14 @@
     <div>
       <h2>Uso</h2>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-dropdown [options]="options"&gt;&lt;/ds-dropdown&gt;</code></pre>
+      <pre><code>&lt;ds-dropdown
+  [label]="'Select an option'"
+  [options]="[
+    &#123; label: 'Option 1', value: 1 &#125;,
+    &#123; label: 'Option 2', value: 2 &#125;,
+    &#123; label: 'Option 3', value: 3 &#125;
+  ]"
+&gt;&lt;/ds-dropdown&gt;</code></pre>
     </div>
 
     <hr />
@@ -30,6 +37,10 @@
       </p>
       <ul>
         <li>
+          <strong>label</strong> (<code>string</code>): Texto que se mostrará en
+          el botón del menú desplegable.
+        </li>
+        <li>
           <strong>options</strong> (<code
             >Array&lt;&#123; label: string, value: any &#125;&gt;</code
           >): Lista de opciones que se mostrarán en el menú desplegable. Cada
@@ -37,8 +48,8 @@
           (<code>value</code>).
         </li>
         <li>
-          <strong>placeholder</strong> (<code>string</code>): Texto que se
-          mostrará cuando no se haya seleccionado ninguna opción.
+          <strong>selectedValue</strong> (<code>any</code>): Valor de la opción
+          seleccionada.
         </li>
         <li>
           <strong>disabled</strong> (<code>boolean</code>): Indica si el menú
@@ -52,14 +63,22 @@
     <!-- Ejemplos de Menú Desplegable -->
     <div>
       <h2>Ejemplos de Menú Desplegable</h2>
-      <!-- <ds-dropdown
+      <ds-dropdown
+        [label]="'Select an option'"
         [options]="[
           { label: 'Option 1', value: 1 },
           { label: 'Option 2', value: 2 },
-          { label: 'Option 3', value: 3 }
+          { label: 'Option 3', value: 3 },
         ]"
-        placeholder="Select an option"
-      ></ds-dropdown> -->
+      ></ds-dropdown>
+      <ds-dropdown
+        [label]="'Choose an item'"
+        [options]="[
+          { label: 'Item 1', value: 'item1' },
+          { label: 'Item 2', value: 'item2' },
+          { label: 'Item 3', value: 'item3' },
+        ]"
+      ></ds-dropdown>
     </div>
 
     <hr />

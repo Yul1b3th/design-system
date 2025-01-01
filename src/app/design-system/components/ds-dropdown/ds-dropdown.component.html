@@ -1,1 +1,51 @@
-<p>ds-dropdown works!</p>
+<div class="dropdown" [ngClass]="themeService.theme()">
+  <button
+    class="dropdown-toggle"
+    type="button"
+    [attr.aria-expanded]="isOpen"
+    [attr.aria-haspopup]="true"
+    (click)="toggleDropdown()"
+    [disabled]="disabled"
+  >
+    {{ label }}
+    <svg
+      *ngIf="!isOpen"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m19.5 8.25-7.5 7.5-7.5-7.5"
+      />
+    </svg>
+    <svg
+      *ngIf="isOpen"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="size-6"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m4.5 15.75 7.5-7.5 7.5 7.5"
+      />
+    </svg>
+  </button>
+  <ul *ngIf="isOpen" class="dropdown-menu">
+    <li
+      *ngFor="let option of options"
+      (click)="selectOption(option.value)"
+      [class.selected]="option.value === selectedValue"
+    >
+      {{ option.label }}
+    </li>
+  </ul>
+</div>
