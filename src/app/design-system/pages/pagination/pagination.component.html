@@ -16,7 +16,7 @@
     <div>
       <h2>Uso</h2>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-pagination [totalItems]="100" [itemsPerPage]="10" [(currentPage)]="currentPage"&gt;&lt;/ds-pagination&gt;</code></pre>
+      <pre><code>&lt;ds-pagination [totalItems]="100" [itemsPerPage]="10" [currentPage]="currentPage" (currentPageChange)="onPageChange($event)"&gt;&lt;/ds-pagination&gt;</code></pre>
     </div>
 
     <hr />
@@ -48,7 +48,12 @@
     <!-- Ejemplos de Paginación -->
     <div>
       <h2>Ejemplos de Paginación</h2>
-      <!-- <ds-pagination [totalItems]="100" [itemsPerPage]="10" [(currentPage)]="currentPage"></ds-pagination> -->
+      <ds-pagination
+        [totalItems]="100"
+        [itemsPerPage]="10"
+        [currentPage]="currentPage"
+        (currentPageChange)="onPageChange($event)"
+      ></ds-pagination>
     </div>
 
     <hr />
