@@ -16,11 +16,13 @@
     <div>
       <h2>Uso</h2>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-breadcrumb&gt;
-  &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href="#"&gt;Library&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Data&lt;/li&gt;
-&lt;/ds-breadcrumb&gt;</code></pre>
+      <pre><code>&lt;ds-breadcrumb
+  [items]="[
+    &#123; label: 'Home', url: '#' &#125;,
+    &#123; label: 'Library', url: '#' &#125;,
+    &#123; label: 'Data' &#125;
+  ]"
+&gt;&lt;/ds-breadcrumb&gt;</code></pre>
     </div>
 
     <hr />
@@ -47,11 +49,21 @@
     <!-- Ejemplos de Breadcrumb -->
     <div>
       <h2>Ejemplos de Breadcrumb</h2>
-      <!-- <ds-breadcrumb>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Library</a></li>
-        <li>Data</li>
-      </ds-breadcrumb> -->
+      <ds-breadcrumb
+        [items]="[
+          { label: 'Home', url: '#' },
+          { label: 'Library', url: '#' },
+          { label: 'Data' },
+        ]"
+      ></ds-breadcrumb>
+      <ds-breadcrumb
+        [items]="[
+          { label: 'Home', url: '#' },
+          { label: 'Section', url: '#' },
+          { label: 'Subsection', url: '#' },
+          { label: 'Current Page' },
+        ]"
+      ></ds-breadcrumb>
     </div>
 
     <hr />
