@@ -18,6 +18,7 @@
     width: 100%;
     margin: header.$header-height auto 0;
     aside {
+      display: none;
       // background-color: red;
     }
     main {
@@ -32,22 +33,21 @@
       max-width: 1600px;
       // gap: 0.5%;
       // max-width: 1400px;
-    }
-
-    /* Sidebar */
-    aside {
-      position: -webkit-sticky;
-      position: sticky;
-      top: header.$header-height;
-      height: calc(100vh - header.$header-height);
-      overflow-y: auto;
-      // background-color: yellow;
-    }
-
-    /* Main Content */
-    main {
-      // background-color: red;
-      padding: 20px;
+      /* Sidebar */
+      aside {
+        display: flex;
+        position: -webkit-sticky;
+        position: sticky;
+        top: header.$header-height;
+        height: calc(100vh - header.$header-height);
+        overflow-y: auto;
+        // background-color: yellow;
+      }
+      /* Main Content */
+      main {
+        // background-color: red;
+        padding: 20px;
+      }
     }
   }
 }

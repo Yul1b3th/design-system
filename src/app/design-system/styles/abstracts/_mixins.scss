@@ -1,5 +1,3 @@
-// abstracts/_mixins.scss
-
 @use "sass:map";
 @use "sass:color";
 @use "./variables" as *;
@@ -67,6 +65,12 @@
   background-color: get-background-color($background-name...);
 }
 
+// Aplica colores con transparencia (textos, fondos, bordes)
+@mixin apply-color-opacity($property, $alpha, $color-name...) {
+  $color: get-color($color-name...);
+  #{$property}: color-to-hsla($color, $alpha);
+}
+
 // === Mixins relacionados con diseño responsivo ===
 
 // Aplica estilos en un breakpoint específico
@@ -103,16 +107,6 @@
 // Aplica un gradiente lineal
 @mixin apply-gradient($start-color, $end-color, $direction: to right) {
   background: linear-gradient($direction, $start-color, $end-color);
-}
-
-// Controla la opacidad de un color
-@mixin apply-color-opacity($color, $opacity) {
-  background-color: rgba(
-    color.channel($color, "red"),
-    color.channel($color, "green"),
-    color.channel($color, "blue"),
-    $opacity
-  );
 }
 
 // === Mixins relacionados con Flexbox ===
