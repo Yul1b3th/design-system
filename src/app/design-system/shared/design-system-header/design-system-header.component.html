@@ -21,8 +21,40 @@
   </button>
 </header>
 
-<div class="overlay" *ngIf="isMenuOpen()" (click)="closeMenu()"></div>
-<design-system-sidebar
+<div
+  class="mobile-sidebar-overlay"
   *ngIf="isMenuOpen()"
+  (click)="closeMenu()"
+></div>
+<design-system-sidebar
+  [ngClass]="{ open: isMenuOpen() }"
   class="mobile-sidebar"
-></design-system-sidebar>
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="sidebarTitle"
+>
+  <div class="sidebar-header">
+    <p id="sidebarTitle" class="sidebar-title">Design System</p>
+    <button
+      #closeButton
+      class="close-btn"
+      aria-label="Close sidebar"
+      (click)="closeMenu()"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+  </div>
+</design-system-sidebar>

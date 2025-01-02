@@ -1,3 +1,4 @@
+@use "sass:list";
 @use "sass:map";
 @use "sass:color";
 @use "./variables" as *;
@@ -94,14 +95,12 @@
 }
 
 // Aplica una sombra
-@mixin apply-box-shadow(
-  $x,
-  $y,
-  $blur,
-  $spread: 0,
-  $color: rgba(0, 0, 0, 0.25)
-) {
-  box-shadow: $x $y $blur $spread $color;
+@mixin apply-box-shadow($shadows...) {
+  $box-shadows: ();
+  @each $shadow in $shadows {
+    $box-shadows: list.append($box-shadows, $shadow, comma);
+  }
+  box-shadow: $box-shadows;
 }
 
 // Aplica un gradiente lineal

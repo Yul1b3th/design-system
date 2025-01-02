@@ -26,11 +26,11 @@
     }
   }
 
-  @include apply-media-breakpoint(md) {
+  @include apply-media-breakpoint(lg) {
     .main-layout {
       display: grid;
       grid-template-columns: 20% 80%;
-      max-width: 1600px;
+      max-width: 1500px;
       // gap: 0.5%;
       // max-width: 1400px;
       /* Sidebar */
@@ -41,6 +41,7 @@
         top: header.$header-height;
         height: calc(100vh - header.$header-height);
         overflow-y: auto;
+        padding: 20px;
         // background-color: yellow;
       }
       /* Main Content */

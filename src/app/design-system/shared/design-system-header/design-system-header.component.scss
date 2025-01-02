@@ -13,9 +13,6 @@ header {
   @include apply-color(background-color, neutral, light);
 
   .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
     cursor: pointer;
     padding: 10px;
 
@@ -26,34 +23,58 @@ header {
   }
 }
 
-.overlay {
+.mobile-sidebar-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  @include apply-color-opacity(background-color, 0.3, neutral, light);
   z-index: 2;
 }
 
 .mobile-sidebar {
   position: fixed;
-  top: $header-height;
+  top: 0;
   left: 0;
   width: 250px;
-  height: calc(100vh - $header-height);
+  height: 100%;
   background-color: white;
   z-index: 3;
   transform: translateX(-100%);
   transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+
+  border-radius: 0.75rem;
+  width: 80%;
+  min-width: 200px;
+  @include apply-box-shadow(
+    0 2px 4px 0 rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.1)
+  );
 
   &.open {
     transform: translateX(0);
   }
+
+  .close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }
 
-@include apply-media-breakpoint(md) {
-  header .menu-toggle {
+body.menu-open {
+  overflow: hidden;
+}
+
+@include apply-media-breakpoint(lg) {
+  .mobile-sidebar-overlay {
     display: none;
   }
 
@@ -61,13 +82,25 @@ header {
     display: none;
   }
 
-  .overlay {
+  header .menu-toggle {
     display: none;
   }
 }
 
-@include apply-media-breakpoint(sm) {
-  header .menu-toggle {
-    display: block;
-  }
+.sidebar-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  @include apply-box-shadow(0 2px 4px 0 rgba(0, 0, 0, 0.1));
+  @include apply-color(color, neutral, "dark-300");
+  @include apply-color(background-color, neutral, light);
+}
+
+p.sidebar-title {
+  @include apply-color(color, neutral, "dark-300");
+  font-weight: 600;
+  margin-bottom: 0;
 }
