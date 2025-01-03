@@ -46,4 +46,8 @@ export class DesignSystemHeaderComponent {
   closeMenu() {
     this.isMenuOpen.set(false);
   }
+
+  handleLinkClick() {
+    this.closeMenu();
+  }
 }

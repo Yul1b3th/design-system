@@ -1,6 +1,4 @@
 @use "./app/design-system/styles/abstracts/mixins" as *;
-@use "./app/design-system/styles/main" as *;
-@import "../public/fonts/fonts.css";
 
 body.menu-open {
   overflow-y: hidden;

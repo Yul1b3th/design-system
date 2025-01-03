@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -8,4 +13,10 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   styleUrl: './design-system-sidebar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DesignSystemSidebarComponent {}
+export class DesignSystemSidebarComponent {
+  @Output() linkClick = new EventEmitter<void>();
+
+  onLinkClick() {
+    this.linkClick.emit();
+  }
+}
