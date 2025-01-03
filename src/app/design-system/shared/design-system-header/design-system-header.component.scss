@@ -32,8 +32,8 @@ $header-height: 70px;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vh;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     @include apply-color-opacity(background-color, 0.5, neutral, "gray-light");
     z-index: 999;
 
@@ -43,25 +43,24 @@ $header-height: 70px;
   }
 
   design-system-sidebar.mobile-sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    min-width: 200px;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
-    height: 100%;
-    @include apply-color(background-color, neutral, "gray-light");
     z-index: 1000;
     transform: translateX(-100%);
-    @include apply-transition(transform, 0.3s, ease-in-out);
-
     border-radius: 0 0.75rem 0.75rem 0;
-    width: 80%;
-    min-width: 200px;
+    overflow: hidden;
+    @include apply-color(background-color, neutral, "gray-light");
+    @include apply-transition(transform, 0.3s, ease-in-out);
     @include apply-box-shadow(
       0 2px 4px 0 rgba(0, 0, 0, 0.1),
       0 0 0 1px rgba(0, 0, 0, 0.1)
     );
-    overflow: hidden;
-    height: 100vh;
 
     .sidebar-header {
       height: 60px;
@@ -88,14 +87,48 @@ $header-height: 70px;
         }
       }
     }
+
+    .sidebar-content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+
+      ul {
+        list-style: none;
+
+        li {
+          padding: 8px 0;
+
+          a {
+            text-decoration: none;
+            padding: 8px 10px;
+            border-radius: 4px;
+            @include apply-color(color, neutral, "dark-300");
+            font-weight: 500;
+            display: inline-block;
+            @include apply-transition(transform, 0.3s, ease-in-out);
+
+            &:hover {
+              @include apply-color(background-color, neutral, light);
+            }
+
+            &.active {
+              @include apply-color(background-color, primary, light);
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+
     .sidebar-footer {
       height: 40px;
       @include apply-flex-container(row, center, center);
       @include apply-color(background-color, neutral, "dark-300");
 
       small {
-        @include apply-color(color, utility, white);
         margin: 0;
+        @include apply-color(color, utility, white);
       }
     }
 
