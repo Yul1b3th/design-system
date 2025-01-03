@@ -32,6 +32,7 @@
           @include apply-color(color, neutral, "dark-300");
           font-weight: 500;
           display: inline-block;
+          @include apply-transition(transform, 0.3s, ease-in-out);
 
           &:hover {
             @include apply-color(background-color, neutral, light);
