@@ -1,13 +1,15 @@
-// themes/_light.scss
-
 @use "sass:map";
 @use "../abstracts/variables" as *;
 @use "../abstracts/functions" as *;
 @use "../abstracts/mixins" as *;
 
 body.light-mode {
-  background-color: get-background-color(default);
-  @include apply-color(color, neutral, "gray-dark");
+  @include apply-theme-colors(
+    (neutral, "gray-light"),
+    (neutral, "gray-dark"),
+    (neutral, "dark-200"),
+    (utility, white)
+  );
 
   h1,
   h2,
@@ -39,11 +41,4 @@ body.light-mode {
       @include apply-color(color, secondary, dark);
     }
   }
-}
-
-// Ejemplo de estilos adicionales para el modo claro
-.card {
-  background-color: get-background-color(default);
-  border-color: get-color(primary, "light");
-  @include apply-color(color, neutral, dark);
 }

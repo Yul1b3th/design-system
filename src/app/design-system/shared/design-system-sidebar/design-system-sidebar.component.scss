@@ -3,6 +3,12 @@
 
 :host {
   width: 100%;
+  @include apply-theme-colors(
+    (neutral, "gray-light"),
+    (neutral, "dark-300"),
+    (neutral, "dark-200"),
+    (utility, white)
+  );
   .sidebar {
     height: 100%;
     overflow: hidden;
@@ -23,8 +29,6 @@
             text-decoration: none;
             padding: 8px 10px;
             border-radius: 4px;
-            color: inherit;
-
             font-weight: 500;
             display: block;
             @include apply-transition(all, 0.3s, ease-in-out);
@@ -53,11 +57,6 @@
     }
 
     @include apply-media-breakpoint(lg) {
-      padding: 0;
-      .sidebar-title {
-        display: none;
-      }
-
       .sidebar-content {
         height: 100%;
       }

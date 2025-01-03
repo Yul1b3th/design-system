@@ -55,23 +55,10 @@
   #{$property}: get-color($color-name...);
 }
 
-// Aplica un color de fondo
-@mixin apply-background-color($background-name...) {
-  background-color: get-background-color($background-name...);
-}
-
 // Aplica colores con transparencia (textos, fondos, bordes)
 @mixin apply-color-opacity($property, $alpha, $color-name...) {
   $color: get-color($color-name...);
   #{$property}: color-to-hsla($color, $alpha);
-}
-
-// Aplica colores específicos en modo claro y oscuro
-@mixin apply-color-mode($light-color, $dark-color) {
-  color: get-color($light-color);
-  @media (prefers-color-scheme: dark) {
-    color: get-color($dark-color);
-  }
 }
 
 // Aplica colores específicos en modo claro y oscuro
@@ -88,6 +75,41 @@
     color: get-color($dark-color...);
   }
 }
+
+// Aplica colores específicos en modo claro, oscuro y automático (Si se utiliza)
+@mixin apply-theme-colors($light-bg, $light-color, $dark-bg, $dark-color) {
+  &.light-mode {
+    background-color: get-color($light-bg...);
+    color: get-color($light-color...);
+  }
+
+  &.dark-mode {
+    background-color: get-color($dark-bg...);
+    color: get-color($dark-color...);
+  }
+
+  &.auto-mode {
+    @include apply-background-and-color-mode(
+      $light-bg,
+      $light-color,
+      $dark-bg,
+      $dark-color
+    );
+  }
+}
+
+// Aplica un color de fondo (No se utiliza)
+// @mixin apply-background-color($background-name...) {
+//   background-color: get-background-color($background-name...);
+// }
+
+// Aplica colores específicos en modo claro y oscuro (No se utiliza)
+// @mixin apply-color-mode($light-color, $dark-color) {
+//   color: get-color($light-color);
+//   @media (prefers-color-scheme: dark) {
+//     color: get-color($dark-color);
+//   }
+// }
 
 // === Mixins relacionados con diseño responsivo ===
 

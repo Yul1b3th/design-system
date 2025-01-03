@@ -62,7 +62,7 @@ pre {
   padding: get-spacing(xs);
   border-radius: 4px;
   @include apply-color(color, utility, white);
-  @include apply-background-color("dark-100");
+  @include apply-color(background-color, neutral, "dark-100");
 }
 
 pre {
