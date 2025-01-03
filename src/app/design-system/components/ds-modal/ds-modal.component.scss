@@ -27,12 +27,12 @@
   z-index: 1050;
   @include apply-transition(all, 0.3s, ease-in-out);
 
-  &.dark {
+  &.dark-mode {
     background-color: get-background-color(inverted);
     @include apply-color(color, utility, white);
   }
 
-  &.light {
+  &.light-mode {
     background-color: get-background-color(default);
     @include apply-color(color, neutral, dark);
   }

@@ -43,12 +43,12 @@
       get-color(tertiary, default) transparent;
   }
 
-  &.dark {
+  &.dark-mode {
     border-color: get-color(utility, white) get-color(utility, white)
       get-color(utility, white) transparent;
   }
 
-  &.light {
+  &.light-mode {
     border-color: get-color(neutral, dark) get-color(neutral, dark)
       get-color(neutral, dark) transparent;
   }

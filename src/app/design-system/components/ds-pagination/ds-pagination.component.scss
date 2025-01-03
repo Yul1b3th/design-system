@@ -46,7 +46,7 @@
     }
   }
 
-  &.dark {
+  &.dark-mode {
     .page-link {
       @include apply-color(background-color, neutral, dark-200);
       @include apply-color(color, utility, white);
@@ -63,7 +63,7 @@
     }
   }
 
-  &.light {
+  &.light-mode {
     .page-link {
       @include apply-color(background-color, neutral, light);
       @include apply-color(color, neutral, dark);

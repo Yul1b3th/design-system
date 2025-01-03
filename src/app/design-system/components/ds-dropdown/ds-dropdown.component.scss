@@ -73,7 +73,7 @@
     }
   }
 
-  &.dark {
+  &.dark-mode {
     .dropdown-toggle {
       @include apply-color(background-color, neutral, dark-200);
       @include apply-color(color, utility, white);
@@ -91,7 +91,7 @@
     }
   }
 
-  &.light {
+  &.light-mode {
     .dropdown-toggle {
       @include apply-color(background-color, primary, default);
       @include apply-color(color, utility, white);

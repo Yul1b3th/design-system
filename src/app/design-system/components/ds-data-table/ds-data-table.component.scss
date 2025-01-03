@@ -30,7 +30,7 @@
       @include apply-typography(base, base, 400);
     }
 
-    &.dark {
+    &.dark-mode {
       th {
         background-color: get-background-color(inverted);
         @include apply-color(color, utility, white);
@@ -41,7 +41,7 @@
       }
     }
 
-    &.light {
+    &.light-mode {
       th {
         background-color: get-background-color(default);
         @include apply-color(color, neutral, "gray-dark");

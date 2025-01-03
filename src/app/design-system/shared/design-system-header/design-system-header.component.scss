@@ -56,12 +56,40 @@ $header-height: 70px;
     transform: translateX(-100%);
     border-radius: 0 0.75rem 0.75rem 0;
     overflow: hidden;
-    @include apply-color(background-color, neutral, "gray-light");
     @include apply-transition(transform, 0.3s, ease-in-out);
     @include apply-box-shadow(
       0 2px 4px 0 rgba(0, 0, 0, 0.1),
       0 0 0 1px rgba(0, 0, 0, 0.1)
     );
+
+    // Aplicar estilos para el modo oscuro usando la preferencia del usuario
+    @media (prefers-color-scheme: dark) {
+      @include apply-background-and-color-mode(
+        (neutral, "gray-light"),
+        (neutral, "dark-300"),
+        (neutral, "dark-200"),
+        (utility, white)
+      );
+    }
+
+    // Aplicar estilos para el modo oscuro y claro usando clases
+    &.dark-mode {
+      @include apply-background-and-color-mode(
+        (neutral, "gray-light"),
+        (neutral, "dark-300"),
+        (neutral, "dark-200"),
+        (utility, white)
+      );
+    }
+
+    &.light-mode {
+      @include apply-background-and-color-mode(
+        (neutral, "gray-light"),
+        (neutral, "dark-300"),
+        (neutral, "dark-200"),
+        (utility, white)
+      );
+    }
 
     .sidebar-header {
       height: 60px;

@@ -15,12 +15,12 @@
     @include apply-box-shadow(0 4px 8px 0 rgba(0, 0, 0, 0.2));
   }
 
-  &.dark {
+  &.dark-mode {
     @include apply-color(background-color, neutral, dark-200);
     @include apply-color(color, utility, white);
   }
 
-  &.light {
+  &.light-mode {
     @include apply-color(background-color, neutral, light);
     @include apply-color(color, neutral, dark);
   }

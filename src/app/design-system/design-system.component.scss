@@ -1,12 +1,5 @@
-@use "sass:color";
-@use "sass:map";
-@use "./styles/abstracts/functions" as *;
 @use "./styles/abstracts/mixins" as *;
-@use "./styles/abstracts/variables" as *;
 @use "./shared/design-system-header/design-system-header.component" as header;
-
-// $header-height: 70px;
-// $footer-height: 70px;
 
 :host {
   width: 100%;
@@ -19,10 +12,6 @@
     margin: header.$header-height auto 0;
     aside {
       display: none;
-      // background-color: red;
-    }
-    main {
-      // background-color: blue;
     }
   }
 
@@ -31,9 +20,6 @@
       display: grid;
       grid-template-columns: 20% 80%;
       max-width: 1500px;
-      // gap: 0.5%;
-      // max-width: 1400px;
-      /* Sidebar */
       aside {
         display: flex;
         position: -webkit-sticky;
@@ -41,12 +27,8 @@
         top: header.$header-height;
         height: calc(100vh - header.$header-height);
         overflow-y: auto;
-        padding: 20px;
-        // background-color: yellow;
       }
-      /* Main Content */
       main {
-        // background-color: red;
         padding: 20px;
       }
     }

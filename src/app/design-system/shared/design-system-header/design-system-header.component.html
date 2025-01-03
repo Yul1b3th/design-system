@@ -3,6 +3,7 @@
     class="menu-toggle"
     aria-label="Toggle sidebar"
     (click)="toggleMenu()"
+    [ngClass]="themeService.theme()"
   >
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -25,11 +26,15 @@
   class="mobile-sidebar-overlay"
   *ngIf="isMenuOpen()"
   (click)="closeMenu()"
+  [ngClass]="themeService.theme()"
 ></div>
 
 <design-system-sidebar
-  [ngClass]="{ open: isMenuOpen() }"
-  class="mobile-sidebar"
+  [ngClass]="[
+    'mobile-sidebar',
+    themeService.theme(),
+    isMenuOpen() ? 'open' : '',
+  ]"
   role="dialog"
   aria-modal="true"
   aria-labelledby="sidebarTitle"
