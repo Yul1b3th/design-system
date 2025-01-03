@@ -8,7 +8,7 @@ $header-height: 70px;
     width: 100%;
     height: $header-height;
     top: 0;
-    z-index: 1;
+    z-index: 998;
     text-align: center;
     @include apply-color(color, neutral, "dark-300");
     @include apply-color(background-color, neutral, light);
@@ -32,8 +32,8 @@ $header-height: 70px;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vh;
+    height: 100vh;
     @include apply-color-opacity(background-color, 0.5, neutral, "gray-light");
     z-index: 999;
 
@@ -53,7 +53,7 @@ $header-height: 70px;
     transform: translateX(-100%);
     @include apply-transition(transform, 0.3s, ease-in-out);
 
-    border-radius: 0.75rem;
+    border-radius: 0 0.75rem 0.75rem 0;
     width: 80%;
     min-width: 200px;
     @include apply-box-shadow(
@@ -86,6 +86,16 @@ $header-height: 70px;
           width: 24px;
           height: 24px;
         }
+      }
+    }
+    .sidebar-footer {
+      height: 40px;
+      @include apply-flex-container(row, center, center);
+      @include apply-color(background-color, neutral, "dark-300");
+
+      small {
+        @include apply-color(color, utility, white);
+        margin: 0;
       }
     }
 

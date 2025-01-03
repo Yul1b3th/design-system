@@ -1,5 +1,5 @@
 <nav class="sidebar" role="navigation" aria-labelledby="sidebarTitle">
-  <ng-content></ng-content>
+  <ng-content select="[sidebar-header]"></ng-content>
   <div class="sidebar-content">
     <ul>
       <li>
@@ -180,4 +180,5 @@
       </li>
     </ul>
   </div>
+  <ng-content select="[sidebar-footer]"></ng-content>
 </nav>

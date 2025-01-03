@@ -35,7 +35,7 @@
   aria-labelledby="sidebarTitle"
   (linkClick)="handleLinkClick()"
 >
-  <div class="sidebar-header">
+  <div sidebar-header class="sidebar-header">
     <p id="sidebarTitle" class="sidebar-title">Design System</p>
     <button
       #closeButton
@@ -58,5 +58,9 @@
         />
       </svg>
     </button>
+  </div>
+
+  <div sidebar-footer class="sidebar-footer">
+    <small>© {{ year }} Yulibeth Rivero</small>
   </div>
 </design-system-sidebar>

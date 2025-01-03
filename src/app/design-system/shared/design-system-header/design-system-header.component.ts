@@ -22,6 +22,7 @@ import { DesignSystemSidebarComponent } from '../design-system-sidebar/design-sy
 export class DesignSystemHeaderComponent {
   public readonly themeService = inject(ThemeService);
   public isMenuOpen = signal<boolean>(false);
+  public year = new Date().getFullYear();
 
   @ViewChild('closeButton', { static: false })
   closeButton!: ElementRef<HTMLButtonElement>;
