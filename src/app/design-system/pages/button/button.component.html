@@ -1,141 +1,26 @@
 <section class="buttons">
   <div class="container">
-    <div>
+    <header>
       <h1>Buttons</h1>
       <p>
         El componente <code>ds-button</code> se utiliza para crear botones
         interactivos con diversas opciones de personalización. Es completamente
         accesible y adecuado para formularios o acciones independientes.
       </p>
-      <ul>
-        <li>
-          <a [routerLink]="[]" fragment="primary-buttons">Primary Buttons</a>
-        </li>
-        <li>
-          <a [routerLink]="[]" fragment="secondary-buttons"
-            >Secondary Buttons</a
-          >
-        </li>
-        <li>
-          <a [routerLink]="[]" fragment="success-buttons">Success Buttons</a>
-        </li>
-        <li>
-          <a [routerLink]="[]" fragment="danger-buttons">Danger Buttons</a>
-        </li>
-        <li>
-          <a [routerLink]="[]" fragment="warning-buttons">Warning Buttons</a>
-        </li>
-        <li><a [routerLink]="[]" fragment="info-buttons">Info Buttons</a></li>
-        <li><a [routerLink]="[]" fragment="light-buttons">Light Buttons</a></li>
-        <li><a [routerLink]="[]" fragment="dark-buttons">Dark Buttons</a></li>
-        <li><a [routerLink]="[]" fragment="with-icon">With Icon</a></li>
-        <li>
-          <a [routerLink]="[]" fragment="custom-buttons">Custom Buttons</a>
-        </li>
-      </ul>
+    </header>
 
-      <h2 id="primary-buttons">Primary Buttons</h2>
-      <p>Ejemplos de botones primarios con diferentes tamaños y estilos.</p>
-      <div class="button-group">
-        <ds-button btnClass="btn-primary">Primary</ds-button>
-        <ds-button btnClass="btn-primary" size="btn-sm"
-          >Primary Small</ds-button
-        >
-        <ds-button btnClass="btn-primary" size="btn-lg"
-          >Primary Large</ds-button
-        >
-        <ds-button btnClass="btn-primary" [block]="true"
-          >Primary Block</ds-button
-        >
-        <ds-button btnClass="btn-primary" [outline]="true"
-          >Primary Outline</ds-button
-        >
-        <ds-button btnClass="btn-primary" [disabled]="true"
-          >Primary Disabled</ds-button
-        >
-      </div>
-
-      <h2 id="secondary-buttons">Secondary Buttons</h2>
-      <p>Ejemplos de botones secundarios con diferentes tamaños y estilos.</p>
-      <div class="button-group">
-        <ds-button btnClass="btn-secondary">Secondary</ds-button>
-      </div>
-
-      <h2 id="success-buttons">Success Buttons</h2>
-      <p>Ejemplos de botones de éxito con diferentes tamaños y estilos.</p>
-      <div class="button-group">
-        <ds-button btnClass="btn-success">Success</ds-button>
-      </div>
-
-      <h2 id="danger-buttons">Danger Buttons</h2>
-      <p>Ejemplos de botones de peligro con diferentes tamaños y estilos.</p>
-      <div class="button-group">
-        <ds-button btnClass="btn-danger">Danger</ds-button>
-      </div>
-
-      <h2 id="warning-buttons">Warning Buttons</h2>
-      <p>
-        Ejemplos de botones de advertencia con diferentes tamaños y estilos.
-      </p>
-      <div class="button-group">
-        <ds-button btnClass="btn-warning">Warning</ds-button>
-      </div>
-
-      <h2 id="info-buttons">Info Buttons</h2>
-      <p>
-        Ejemplos de botones de información con diferentes tamaños y estilos.
-      </p>
-      <div class="button-group">
-        <ds-button btnClass="btn-info">Info</ds-button>
-      </div>
-
-      <h2 id="light-buttons">Light Buttons</h2>
-      <p>Ejemplos de botones claros con diferentes tamaños y estilos.</p>
-      <div class="button-group">
-        <ds-button btnClass="btn-light">Light</ds-button>
-      </div>
-
-      <h2 id="dark-buttons">Dark Buttons</h2>
-      <p>Ejemplos de botones oscuros con diferentes tamaños y estilos.</p>
-      <div class="button-group">
-        <ds-button btnClass="btn-dark">Dark</ds-button>
-      </div>
-
-      <h2 id="with-icon">With Icon</h2>
-      <p>Ejemplo de un botón con un icono SVG.</p>
-      <div class="button-group">
-        <ds-button [iconSvg]="iconSvg" btnClass="btn-primary"
-          >Primary</ds-button
-        >
-      </div>
-
-      <h2 id="custom-buttons">Custom Buttons</h2>
-      <p>
-        Ejemplos de botones personalizados con diferentes colores de fondo,
-        colores de texto y radios de borde.
-      </p>
-      <div class="button-group">
-        <ds-button
-          [bgColor]="'#ff5733'"
-          [textColor]="'#ffffff'"
-          [borderRadius]="'8px'"
-          btnClass="btn-custom"
-          >Custom Button</ds-button
-        >
-        <ds-button
-          [bgColor]="'#28a745'"
-          [textColor]="'#ffffff'"
-          [borderRadius]="'50px'"
-          btnClass="btn-custom"
-          >Custom Rounded Button</ds-button
-        >
-      </div>
-
-      <h3>Uso</h3>
+    <!-- Uso -->
+    <div>
+      <h2>Uso</h2>
       <p>Ejemplo de uso en HTML:</p>
       <pre><code>&lt;ds-button btnClass="btn-primary"&gt;Primary&lt;/ds-button&gt;</code></pre>
+    </div>
 
-      <h3>Configuración</h3>
+    <hr />
+
+    <!-- Configuración -->
+    <div>
+      <h2>Configuración</h2>
       <p>El componente acepta las siguientes propiedades:</p>
       <table>
         <thead>
@@ -222,6 +107,236 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- Ejemplo -->
+    <div>
+      <h2>Ejemplo</h2>
+      <ds-button btnClass="btn-primary">Primary</ds-button>
+    </div>
+
+    <!-- Accesibilidad -->
+    <div>
+      <h2>Accesibilidad</h2>
+      <p>
+        Se debe asegurar de proporcionar una etiqueta <code>aria-label</code>
+        para describir la acción del botón cuando el texto del botón no es
+        suficiente para describir su propósito.
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- Variaciones -->
+    <div>
+      <h2>Variaciones</h2>
+      <p>
+        El componente de botón soporta varias variantes que se pueden aplicar
+        mediante clases CSS. Las variantes disponibles son:
+      </p>
+      <nav>
+        <ul>
+          <li>
+            <a [routerLink]="[]" fragment="primary-buttons">Primary Buttons</a>
+          </li>
+          <li>
+            <a [routerLink]="[]" fragment="secondary-buttons"
+              >Secondary Buttons</a
+            >
+          </li>
+          <li>
+            <a [routerLink]="[]" fragment="success-buttons">Success Buttons</a>
+          </li>
+          <li>
+            <a [routerLink]="[]" fragment="danger-buttons">Danger Buttons</a>
+          </li>
+          <li>
+            <a [routerLink]="[]" fragment="warning-buttons">Warning Buttons</a>
+          </li>
+          <li><a [routerLink]="[]" fragment="info-buttons">Info Buttons</a></li>
+          <li>
+            <a [routerLink]="[]" fragment="light-buttons">Light Buttons</a>
+          </li>
+          <li><a [routerLink]="[]" fragment="dark-buttons">Dark Buttons</a></li>
+          <li><a [routerLink]="[]" fragment="with-icon">With Icon</a></li>
+          <li>
+            <a [routerLink]="[]" fragment="custom-buttons">Custom Buttons</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Primary Buttons< -->
+    <div>
+      <h2 id="primary-buttons">Primary Buttons</h2>
+      <p>Ejemplos de botones primarios con diferentes tamaños y estilos.</p>
+      <div class="button-group">
+        <ds-button btnClass="btn-primary">Primary</ds-button>
+        <ds-button btnClass="btn-primary" size="btn-sm"
+          >Primary Small</ds-button
+        >
+        <ds-button btnClass="btn-primary" size="btn-lg"
+          >Primary Large</ds-button
+        >
+        <ds-button btnClass="btn-primary" [block]="true"
+          >Primary Block</ds-button
+        >
+        <ds-button btnClass="btn-primary" [outline]="true"
+          >Primary Outline</ds-button
+        >
+        <ds-button btnClass="btn-primary" [disabled]="true"
+          >Primary Disabled</ds-button
+        >
+      </div>
+    </div>
+
+    <!-- Secondary Buttons -->
+    <div class="button-group">
+      <h3>Secondary Buttons</h3>
+      <p>Ejemplos de botones secundarios con diferentes tamaños y estilos.</p>
+      <ds-button btnClass="btn-secondary">Secondary</ds-button>
+      <ds-button btnClass="btn-secondary" size="btn-sm"
+        >Secondary Small</ds-button
+      >
+      <ds-button btnClass="btn-secondary" size="btn-lg"
+        >Secondary Large</ds-button
+      >
+      <ds-button btnClass="btn-secondary" [block]="true"
+        >Secondary Block</ds-button
+      >
+      <ds-button btnClass="btn-secondary" [outline]="true"
+        >Secondary Outline</ds-button
+      >
+      <ds-button btnClass="btn-secondary" [disabled]="true"
+        >Secondary Disabled</ds-button
+      >
+    </div>
+
+    <!-- Success Buttons -->
+    <div class="button-group">
+      <h3>Success Buttons</h3>
+      <ds-button btnClass="btn-success">Success</ds-button>
+      <ds-button btnClass="btn-success" size="btn-sm">Success Small</ds-button>
+      <ds-button btnClass="btn-success" size="btn-lg">Success Large</ds-button>
+      <ds-button btnClass="btn-success" [block]="true">Success Block</ds-button>
+      <ds-button btnClass="btn-success" [outline]="true"
+        >Success Outline</ds-button
+      >
+      <ds-button btnClass="btn-success" [disabled]="true"
+        >Success Disabled</ds-button
+      >
+    </div>
+
+    <!-- Danger Buttons -->
+    <div class="button-group">
+      <h3>Danger Buttons</h3>
+      <ds-button btnClass="btn-danger">Danger</ds-button>
+      <ds-button btnClass="btn-danger" size="btn-sm">Danger Small</ds-button>
+      <ds-button btnClass="btn-danger" size="btn-lg">Danger Large</ds-button>
+      <ds-button btnClass="btn-danger" [block]="true">Danger Block</ds-button>
+      <ds-button btnClass="btn-danger" [outline]="true"
+        >Danger Outline</ds-button
+      >
+      <ds-button btnClass="btn-danger" [disabled]="true"
+        >Danger Disabled</ds-button
+      >
+    </div>
+
+    <!-- Warning Buttons -->
+    <div class="button-group">
+      <h3>Warning Buttons</h3>
+      <ds-button btnClass="btn-warning">Warning</ds-button>
+      <ds-button btnClass="btn-warning" size="btn-sm">Warning Small</ds-button>
+      <ds-button btnClass="btn-warning" size="btn-lg">Warning Large</ds-button>
+      <ds-button btnClass="btn-warning" [block]="true">Warning Block</ds-button>
+      <ds-button btnClass="btn-warning" [outline]="true"
+        >Warning Outline</ds-button
+      >
+      <ds-button btnClass="btn-warning" [disabled]="true"
+        >Warning Disabled</ds-button
+      >
+    </div>
+
+    <!-- Info Buttons -->
+    <div class="button-group">
+      <h3>Info Buttons</h3>
+      <ds-button btnClass="btn-info">Info</ds-button>
+      <ds-button btnClass="btn-info" size="btn-sm">Info Small</ds-button>
+      <ds-button btnClass="btn-info" size="btn-lg">Info Large</ds-button>
+      <ds-button btnClass="btn-info" [block]="true">Info Block</ds-button>
+      <ds-button btnClass="btn-info" [outline]="true">Info Outline</ds-button>
+      <ds-button btnClass="btn-info" [disabled]="true">Info Disabled</ds-button>
+    </div>
+
+    <!-- Light Buttons -->
+    <div class="button-group">
+      <h3>Light Buttons</h3>
+      <ds-button btnClass="btn-light">Light</ds-button>
+      <ds-button btnClass="btn-light" size="btn-sm">Light Small</ds-button>
+      <ds-button btnClass="btn-light" size="btn-lg">Light Large</ds-button>
+      <ds-button btnClass="btn-light" [block]="true">Light Block</ds-button>
+      <ds-button btnClass="btn-light" [outline]="true">Light Outline</ds-button>
+      <ds-button btnClass="btn-light" [disabled]="true"
+        >Light Disabled</ds-button
+      >
+    </div>
+
+    <!-- Dark Buttons -->
+    <div class="button-group">
+      <h3>Dark Buttons</h3>
+      <ds-button btnClass="btn-dark">Dark</ds-button>
+      <ds-button btnClass="btn-dark" size="btn-sm">Dark Small</ds-button>
+      <ds-button btnClass="btn-dark" size="btn-lg">Dark Large</ds-button>
+      <ds-button btnClass="btn-dark" [block]="true">Dark Block</ds-button>
+      <ds-button btnClass="btn-dark" [outline]="true">Dark Outline</ds-button>
+      <ds-button btnClass="btn-dark" [disabled]="true">Dark Disabled</ds-button>
+    </div>
+
+    <!-- With Icon -->
+    <div>
+      <h2 id="with-icon">With Icon</h2>
+      <p>Ejemplo de un botón con un icono SVG.</p>
+      <div class="button-group">
+        <ds-button [iconSvg]="iconSvg" btnClass="btn-primary"
+          >Primary</ds-button
+        >
+      </div>
+    </div>
+
+    <!-- Custom Buttons -->
+    <h2 id="custom-buttons">Custom Buttons</h2>
+    <p>
+      Ejemplos de botones personalizados con diferentes colores de fondo,
+      colores de texto y radios de borde.
+    </p>
+    <div class="button-group">
+      <ds-button
+        [bgColor]="'#ff5733'"
+        [textColor]="'#ffffff'"
+        [borderRadius]="'8px'"
+        btnClass="btn-custom"
+        >Custom Button</ds-button
+      >
+      <ds-button
+        [bgColor]="'#28a745'"
+        [textColor]="'#ffffff'"
+        [borderRadius]="'50px'"
+        btnClass="btn-custom"
+        >Custom Rounded Button</ds-button
+      >
+    </div>
+
+    <hr />
+
+    <!-- Conclusión -->
+    <div>
+      <h2>Conclusión</h2>
+      <p>
+        El componente de botón es una parte esencial de cualquier sistema de
+        diseño. Con las variantes y tamaños disponibles, se pueden crear botones
+        que se adapten a cualquier contexto de uso en la aplicación, asegurando
+        una experiencia de usuario consistente y accesible.
+      </p>
     </div>
   </div>
 </section>

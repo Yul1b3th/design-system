@@ -133,7 +133,7 @@ $button-states: (
         color: get-color(neutral, "dark-300");
 
         &:hover {
-          background-color: to-hsla($color, 0.3);
+          background-color: color-to-hsla($color, 0.3);
           color: get-color(neutral, "dark-300");
         }
       }

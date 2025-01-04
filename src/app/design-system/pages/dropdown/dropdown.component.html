@@ -8,6 +8,149 @@
         Este componente es altamente personalizable y soporta múltiples
         configuraciones para adaptarse a diferentes contextos de uso.
       </p>
+
+      <div>
+        <h2>Primary</h2>
+        <ds-dropdown
+          dropdownClass="dropdown-primary"
+          label="Selecciona una opción"
+          [options]="[
+            { label: 'Opción 1' },
+            { label: 'Opción 2' },
+            { label: 'Opción 3' },
+          ]"
+          >Primary</ds-dropdown
+        >
+      </div>
+
+      <h2>Ejemplos de Dropdown</h2>
+
+      <h3>Dropdown Básico</h3>
+      <ds-dropdown
+        label="Selecciona una opción"
+        [options]="[
+          { label: 'Opción 1' },
+          { label: 'Opción 2' },
+          { label: 'Opción 3' },
+        ]"
+      ></ds-dropdown>
+
+      <h3>Dropdown con Icono</h3>
+      <ds-dropdown
+        label="Selecciona una opción"
+        [options]="optionsWithIcons"
+      ></ds-dropdown>
+
+      <h3>Dropdown Personalizado</h3>
+      <ds-dropdown
+        label="Selecciona una opción"
+        [options]="[
+          { label: 'Opción 1' },
+          { label: 'Opción 2' },
+          { label: 'Opción 3' },
+        ]"
+        [bgColor]="'#ff5733'"
+        [textColor]="'#ffffff'"
+        [borderRadius]="'8px'"
+      ></ds-dropdown>
+
+      <h3>Dropdown con Estados de Botón</h3>
+      <div>
+        <h2>Primary</h2>
+        <ds-dropdown
+          dropdownClass="dropdown-primary"
+          label="Selecciona una opción"
+          [options]="[
+            { label: 'Opción 1', dropdownClass: 'dropdown-primary' },
+            { label: 'Opción 2', dropdownClass: 'dropdown-primary' },
+            { label: 'Opción 3', dropdownClass: 'dropdown-primary' },
+          ]"
+        ></ds-dropdown>
+      </div>
+      <div>
+        <h2>Secondary</h2>
+        <ds-dropdown
+          dropdownClass="dropdown-secondary"
+          label="Selecciona una opción"
+          [options]="[
+            { label: 'Opción 1', dropdownClass: 'dropdown-secondary' },
+            { label: 'Opción 2', dropdownClass: 'dropdown-secondary' },
+            { label: 'Opción 3', dropdownClass: 'dropdown-secondary' },
+          ]"
+        ></ds-dropdown>
+      </div>
+      <div>
+        <h2>Success</h2>
+        <ds-dropdown
+          dropdownClass="dropdown-success"
+          label="Selecciona una opción"
+          [options]="[
+            { label: 'Opción 1', dropdownClass: 'dropdown-success' },
+            { label: 'Opción 2', dropdownClass: 'dropdown-success' },
+            { label: 'Opción 3', dropdownClass: 'dropdown-success' },
+          ]"
+        ></ds-dropdown>
+      </div>
+      <div>
+        <h2>Danger</h2>
+        <ds-dropdown
+          dropdownClass="dropdown-danger"
+          label="Selecciona una opción"
+          [options]="[
+            { label: 'Opción 1', dropdownClass: 'dropdown-danger' },
+            { label: 'Opción 2', dropdownClass: 'dropdown-danger' },
+            { label: 'Opción 3', dropdownClass: 'dropdown-danger' },
+          ]"
+        ></ds-dropdown>
+      </div>
+      <div>
+        <h2>Warning</h2>
+        <ds-dropdown
+          dropdownClass="dropdown-warning"
+          label="Selecciona una opción"
+          [options]="[
+            { label: 'Opción 1', dropdownClass: 'dropdown-warning' },
+            { label: 'Opción 2', dropdownClass: 'dropdown-warning' },
+            { label: 'Opción 3', dropdownClass: 'dropdown-warning' },
+          ]"
+        ></ds-dropdown>
+      </div>
+      <div>
+        <h2>Info</h2>
+        <ds-dropdown
+          dropdownClass="dropdown-info"
+          label="Selecciona una opción"
+          [options]="[
+            { label: 'Opción 1', dropdownClass: 'dropdown-info' },
+            { label: 'Opción 2', dropdownClass: 'dropdown-info' },
+            { label: 'Opción 3', dropdownClass: 'dropdown-info' },
+          ]"
+        ></ds-dropdown>
+      </div>
+      <div>
+        <h2>Light</h2>
+        <ds-dropdown
+          dropdownClass="dropdown-light"
+          label="Selecciona una opción"
+          [options]="[
+            { label: 'Opción 1', dropdownClass: 'dropdown-light' },
+            { label: 'Opción 2', dropdownClass: 'dropdown-light' },
+            { label: 'Opción 3', dropdownClass: 'dropdown-light' },
+          ]"
+        ></ds-dropdown>
+      </div>
+      <div>
+        <h2>Dark</h2>
+        <ds-dropdown
+          dropdownClass="dropdown-dark"
+          label="Selecciona una opción"
+          [options]="[
+            { label: 'Opción 1', dropdownClass: 'dropdown-dark' },
+            { label: 'Opción 2', dropdownClass: 'dropdown-dark' },
+            { label: 'Opción 3', dropdownClass: 'dropdown-dark' },
+          ]"
+        ></ds-dropdown>
+      </div>
     </div>
   </div>
 </section>
