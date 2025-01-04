@@ -1,16 +1,9 @@
+/* filepath: /C:/Users/root/Desktop/design-system/src/app/design-system/components/ds-dropdown/ds-dropdown.component.scss */
 @use "sass:map";
 @use "sass:color";
 @use "../../styles/abstracts/variables" as *;
 @use "../../styles/abstracts/functions" as *;
 @use "../../styles/abstracts/mixins" as *;
-
-@mixin dropdown-toggle($padding, $border-radius, $background, $color, $border) {
-  padding: $padding;
-  border-radius: $border-radius;
-  background: $background;
-  color: $color;
-  border: $border;
-}
 
 .dropdown {
   position: relative;
@@ -30,13 +23,6 @@
     @include apply-color(background-color, primary, default);
     @include apply-color(color, utility, white);
     @include apply-transition(all, 0.3s, ease-in-out);
-    // @include dropdown-toggle(
-    //   var(--dropdown-padding),
-    //   var(--dropdown-border-radius),
-    //   var(--dropdown-background),
-    //   var(--dropdown-color),
-    //   var(--dropdown-border)
-    // );
 
     svg {
       margin-left: get-spacing(sm);
@@ -87,4 +73,40 @@
       }
     }
   }
+
+  // &.dark-mode {
+  //   .dropdown-toggle {
+  //     @include apply-color(background-color, neutral, dark-200);
+  //     @include apply-color(color, utility, white);
+  //   }
+
+  //   .dropdown-menu {
+  //     background-color: get-background-color(inverted);
+  //     @include apply-color(color, utility, white);
+
+  //     li {
+  //       &:hover {
+  //         background-color: get-color(neutral, dark-100);
+  //       }
+  //     }
+  //   }
+  // }
+
+  // &.light-mode {
+  //   .dropdown-toggle {
+  //     @include apply-color(background-color, primary, default);
+  //     @include apply-color(color, utility, white);
+  //   }
+
+  //   .dropdown-menu {
+  //     background-color: get-background-color(default);
+  //     @include apply-color(color, neutral, dark);
+
+  //     li {
+  //       &:hover {
+  //         background-color: get-color(neutral, light);
+  //       }
+  //     }
+  //   }
+  // }
 }

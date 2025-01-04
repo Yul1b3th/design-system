@@ -4,5 +4,6 @@
   [disabled]="disabled"
   [attr.aria-label]="ariaLabel"
 >
-  <ng-content />
+  <span *ngIf="iconSvg" class="btn-icon" #iconContainer></span>
+  <ng-content></ng-content>
 </button>

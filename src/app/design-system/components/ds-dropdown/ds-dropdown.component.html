@@ -1,4 +1,4 @@
-<div class="dropdown" [ngClass]="themeService.theme()">
+<div class="dropdown" [ngClass]="[themeService.theme(), additionalClass]">
   <button
     class="dropdown-toggle"
     type="button"
@@ -7,7 +7,7 @@
     (click)="toggleDropdown()"
     [disabled]="disabled"
   >
-    {{ label }}
+    <span [innerHTML]="sanitizeHtml(label)" class="dropdown-label"></span>
     <svg
       *ngIf="!isOpen"
       xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +15,7 @@
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="size-6"
+      class="size-6 dropdown-icon"
     >
       <path
         stroke-linecap="round"
@@ -30,7 +30,7 @@
       viewBox="0 0 24 24"
       stroke-width="1.5"
       stroke="currentColor"
-      class="size-6"
+      class="size-6 dropdown-icon"
     >
       <path
         stroke-linecap="round"
@@ -42,10 +42,14 @@
   <ul *ngIf="isOpen" class="dropdown-menu">
     <li
       *ngFor="let option of options"
-      (click)="selectOption(option.value)"
+      (click)="selectOption(option)"
       [class.selected]="option.value === selectedValue"
     >
-      {{ option.label }}
+      <span
+        [innerHTML]="sanitizeHtml(option.icon || '')"
+        class="icon dropdown-option-icon"
+      ></span>
+      <span class="label">{{ option.label }}</span>
     </li>
   </ul>
 </div>

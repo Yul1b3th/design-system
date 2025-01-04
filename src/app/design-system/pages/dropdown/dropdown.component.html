@@ -79,6 +79,22 @@
           { label: 'Item 3', value: 'item3' },
         ]"
       ></ds-dropdown>
+
+      <h2>Ejemplo theme</h2>
+      <ds-dropdown
+        class="theme-dropdown"
+        [label]="getLabelWithIcon(true)"
+        [options]="themeOptions"
+        [selectedValue]="selectedTheme()"
+        (selectedValueChange)="onThemeChange($event)"
+        [showIconsOnly]="true"
+        [additionalClass]="'theme-dropdown'"
+        [dropdownPadding]="'0.5rem 1rem'"
+        [dropdownBorderRadius]="'8px'"
+        [dropdownBackground]="'transparent'"
+        [dropdownColor]="'#333'"
+        [dropdownBorder]="'1px solid #ddd'"
+      ></ds-dropdown>
     </div>
 
     <hr />

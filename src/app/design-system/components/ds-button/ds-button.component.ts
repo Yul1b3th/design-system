@@ -2,10 +2,14 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  effect,
+  ElementRef,
   inject,
   Input,
+  Renderer2,
+  ViewChild,
+  AfterViewInit,
 } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 import { ThemeService } from '@design-system/services/theme.service';
 
@@ -16,8 +20,10 @@ import { ThemeService } from '@design-system/services/theme.service';
   styleUrl: './ds-button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DsButtonComponent {
+export class DsButtonComponent implements AfterViewInit {
   private themeService = inject(ThemeService);
+  private sanitizer = inject(DomSanitizer);
+  private renderer = inject(Renderer2);
 
   @Input() type: 'button' | 'submit' | 'reset' = 'button';
   @Input() btnClass: string = 'btn-primary';
@@ -26,11 +32,14 @@ export class DsButtonComponent {
   @Input() outline: boolean = false;
   @Input() disabled: boolean = false;
   @Input() ariaLabel: string = '';
+  @Input() iconSvg: string | null = null; // Nueva entrada para el icono SVG
 
-  constructor() {
-    effect(() => {
-      console.log('Button theme:', this.themeService.theme());
-    });
+  @ViewChild('iconContainer', { static: false }) iconContainer!: ElementRef;
+
+  ngAfterViewInit(): void {
+    if (this.iconSvg && this.iconContainer) {
+      this.iconContainer.nativeElement.innerHTML = this.iconSvg;
+    }
   }
 
   get buttonClasses(): string[] {

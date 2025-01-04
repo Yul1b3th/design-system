@@ -10,7 +10,7 @@
   background-color: get-background-color(default);
   border-radius: 0.25rem;
 
-  &.dark {
+  &.dark-mode {
     background-color: get-background-color(inverted);
     @include apply-color(color, utility, white);
 
