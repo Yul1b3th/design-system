@@ -3,12 +3,14 @@
 
 :host {
   width: 100%;
+
   @include apply-theme-colors(
     (neutral, "gray-light"),
     (neutral, "dark-300"),
     (neutral, "dark-200"),
     (utility, white)
   );
+
   .sidebar {
     height: 100%;
     overflow: hidden;
@@ -31,6 +33,7 @@
             border-radius: 4px;
             font-weight: 500;
             display: block;
+            color: inherit;
             @include apply-transition(all, 0.3s, ease-in-out);
 
             &:hover {

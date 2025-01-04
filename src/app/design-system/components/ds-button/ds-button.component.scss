@@ -4,6 +4,24 @@
 @use "../../styles/abstracts/variables" as *;
 @use "../../styles/abstracts/mixins" as *;
 
+@mixin custom-button($bg-color, $text-color, $border-radius) {
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: $border-radius;
+  border: 2px solid $bg-color;
+
+  &:hover {
+    background-color: color.adjust($bg-color, $lightness: -10%);
+    border-color: color.adjust($bg-color, $lightness: -10%);
+  }
+
+  &:disabled {
+    background-color: color.scale($bg-color, $lightness: 20%);
+    border-color: color.scale($bg-color, $lightness: 20%);
+    color: color.scale($text-color, $lightness: 20%);
+  }
+}
+
 $button-states: (
   primary: get-color(primary, default),
   secondary: get-color(secondary, default),

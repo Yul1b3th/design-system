@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { DsButtonComponent } from '@design-system/components/ds-button/ds-button.component';
 
 @Component({
   selector: 'page-button',
-  imports: [DsButtonComponent],
+  imports: [RouterLink, DsButtonComponent],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

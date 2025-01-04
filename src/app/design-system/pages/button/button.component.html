@@ -1,12 +1,42 @@
 <section class="buttons">
   <div class="container">
-    <!-- Ejemplos de Botones -->
     <div>
-      <h2 id="buttons-examples-heading">Ejemplos de Botones</h2>
+      <h1>Buttons</h1>
+      <p>
+        El componente <code>ds-button</code> se utiliza para crear botones
+        interactivos con diversas opciones de personalización. Es completamente
+        accesible y adecuado para formularios o acciones independientes.
+      </p>
+      <ul>
+        <li>
+          <a [routerLink]="[]" fragment="primary-buttons">Primary Buttons</a>
+        </li>
+        <li>
+          <a [routerLink]="[]" fragment="secondary-buttons"
+            >Secondary Buttons</a
+          >
+        </li>
+        <li>
+          <a [routerLink]="[]" fragment="success-buttons">Success Buttons</a>
+        </li>
+        <li>
+          <a [routerLink]="[]" fragment="danger-buttons">Danger Buttons</a>
+        </li>
+        <li>
+          <a [routerLink]="[]" fragment="warning-buttons">Warning Buttons</a>
+        </li>
+        <li><a [routerLink]="[]" fragment="info-buttons">Info Buttons</a></li>
+        <li><a [routerLink]="[]" fragment="light-buttons">Light Buttons</a></li>
+        <li><a [routerLink]="[]" fragment="dark-buttons">Dark Buttons</a></li>
+        <li><a [routerLink]="[]" fragment="with-icon">With Icon</a></li>
+        <li>
+          <a [routerLink]="[]" fragment="custom-buttons">Custom Buttons</a>
+        </li>
+      </ul>
 
-      <!-- Primary Buttons -->
+      <h2 id="primary-buttons">Primary Buttons</h2>
+      <p>Ejemplos de botones primarios con diferentes tamaños y estilos.</p>
       <div class="button-group">
-        <h3>Primary Buttons</h3>
         <ds-button btnClass="btn-primary">Primary</ds-button>
         <ds-button btnClass="btn-primary" size="btn-sm"
           >Primary Small</ds-button
@@ -23,12 +53,175 @@
         <ds-button btnClass="btn-primary" [disabled]="true"
           >Primary Disabled</ds-button
         >
+      </div>
 
-        <h4>With Icon</h4>
+      <h2 id="secondary-buttons">Secondary Buttons</h2>
+      <p>Ejemplos de botones secundarios con diferentes tamaños y estilos.</p>
+      <div class="button-group">
+        <ds-button btnClass="btn-secondary">Secondary</ds-button>
+      </div>
+
+      <h2 id="success-buttons">Success Buttons</h2>
+      <p>Ejemplos de botones de éxito con diferentes tamaños y estilos.</p>
+      <div class="button-group">
+        <ds-button btnClass="btn-success">Success</ds-button>
+      </div>
+
+      <h2 id="danger-buttons">Danger Buttons</h2>
+      <p>Ejemplos de botones de peligro con diferentes tamaños y estilos.</p>
+      <div class="button-group">
+        <ds-button btnClass="btn-danger">Danger</ds-button>
+      </div>
+
+      <h2 id="warning-buttons">Warning Buttons</h2>
+      <p>
+        Ejemplos de botones de advertencia con diferentes tamaños y estilos.
+      </p>
+      <div class="button-group">
+        <ds-button btnClass="btn-warning">Warning</ds-button>
+      </div>
+
+      <h2 id="info-buttons">Info Buttons</h2>
+      <p>
+        Ejemplos de botones de información con diferentes tamaños y estilos.
+      </p>
+      <div class="button-group">
+        <ds-button btnClass="btn-info">Info</ds-button>
+      </div>
+
+      <h2 id="light-buttons">Light Buttons</h2>
+      <p>Ejemplos de botones claros con diferentes tamaños y estilos.</p>
+      <div class="button-group">
+        <ds-button btnClass="btn-light">Light</ds-button>
+      </div>
+
+      <h2 id="dark-buttons">Dark Buttons</h2>
+      <p>Ejemplos de botones oscuros con diferentes tamaños y estilos.</p>
+      <div class="button-group">
+        <ds-button btnClass="btn-dark">Dark</ds-button>
+      </div>
+
+      <h2 id="with-icon">With Icon</h2>
+      <p>Ejemplo de un botón con un icono SVG.</p>
+      <div class="button-group">
         <ds-button [iconSvg]="iconSvg" btnClass="btn-primary"
           >Primary</ds-button
         >
       </div>
+
+      <h2 id="custom-buttons">Custom Buttons</h2>
+      <p>
+        Ejemplos de botones personalizados con diferentes colores de fondo,
+        colores de texto y radios de borde.
+      </p>
+      <div class="button-group">
+        <ds-button
+          [bgColor]="'#ff5733'"
+          [textColor]="'#ffffff'"
+          [borderRadius]="'8px'"
+          btnClass="btn-custom"
+          >Custom Button</ds-button
+        >
+        <ds-button
+          [bgColor]="'#28a745'"
+          [textColor]="'#ffffff'"
+          [borderRadius]="'50px'"
+          btnClass="btn-custom"
+          >Custom Rounded Button</ds-button
+        >
+      </div>
+
+      <h3>Uso</h3>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>&lt;ds-button btnClass="btn-primary"&gt;Primary&lt;/ds-button&gt;</code></pre>
+
+      <h3>Configuración</h3>
+      <p>El componente acepta las siguientes propiedades:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Propiedad</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+            <th>Ejemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>type</code></td>
+            <td><code>string</code></td>
+            <td>
+              Define el tipo de botón. Puede ser 'button', 'submit' o 'reset'.
+            </td>
+            <td><code>"button"</code></td>
+          </tr>
+          <tr>
+            <td><code>btnClass</code></td>
+            <td><code>string</code></td>
+            <td>Clase CSS para el botón.</td>
+            <td><code>"btn-primary"</code></td>
+          </tr>
+          <tr>
+            <td><code>size</code></td>
+            <td><code>string</code></td>
+            <td>
+              Define el tamaño del botón. Puede ser 'btn-sm', 'btn-md' o
+              'btn-lg'.
+            </td>
+            <td><code>"btn-md"</code></td>
+          </tr>
+          <tr>
+            <td><code>block</code></td>
+            <td><code>boolean</code></td>
+            <td>
+              Si es verdadero, el botón ocupará todo el ancho del contenedor.
+            </td>
+            <td><code>false</code></td>
+          </tr>
+          <tr>
+            <td><code>outline</code></td>
+            <td><code>boolean</code></td>
+            <td>Si es verdadero, el botón tendrá un estilo de contorno.</td>
+            <td><code>false</code></td>
+          </tr>
+          <tr>
+            <td><code>disabled</code></td>
+            <td><code>boolean</code></td>
+            <td>Desactiva el botón.</td>
+            <td><code>false</code></td>
+          </tr>
+          <tr>
+            <td><code>ariaLabel</code></td>
+            <td><code>string</code></td>
+            <td>Etiqueta aria para accesibilidad.</td>
+            <td><code>""</code></td>
+          </tr>
+          <tr>
+            <td><code>iconSvg</code></td>
+            <td><code>string</code></td>
+            <td>SVG del icono a mostrar dentro del botón.</td>
+            <td><code>&lt;svg ...&gt;&lt;/svg&gt;</code></td>
+          </tr>
+          <tr>
+            <td><code>bgColor</code></td>
+            <td><code>string</code></td>
+            <td>Color de fondo personalizado para el botón.</td>
+            <td><code>"#ff5733"</code></td>
+          </tr>
+          <tr>
+            <td><code>textColor</code></td>
+            <td><code>string</code></td>
+            <td>Color de texto personalizado para el botón.</td>
+            <td><code>"#ffffff"</code></td>
+          </tr>
+          <tr>
+            <td><code>borderRadius</code></td>
+            <td><code>string</code></td>
+            <td>Radio de borde personalizado para el botón.</td>
+            <td><code>"8px"</code></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>

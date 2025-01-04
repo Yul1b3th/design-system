@@ -2,7 +2,9 @@
 
 <div class="main-layout">
   <aside>
-    <design-system-sidebar></design-system-sidebar>
+    <design-system-sidebar
+      [ngClass]="themeService.theme()"
+    ></design-system-sidebar>
   </aside>
 
   <main>
