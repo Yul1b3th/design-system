@@ -7,6 +7,8 @@ import {
   Input,
   Renderer2,
   ViewChild,
+  ViewChildren,
+  QueryList,
   AfterViewInit,
   OnChanges,
   SimpleChanges,
@@ -58,11 +60,15 @@ export class DsDropdownComponent implements AfterViewInit, OnChanges {
 
   @ViewChild('dropdownElement', { static: false }) dropdownElement!: ElementRef;
   @ViewChild('iconContainer', { static: false }) iconContainer!: ElementRef;
+  @ViewChild('selectedIconContainer', { static: false })
+  selectedIconContainer!: ElementRef;
+  @ViewChildren('iconContainer') iconContainers!: QueryList<ElementRef>;
 
   isOpen: boolean = false;
 
   ngAfterViewInit(): void {
     this.setIconSvg();
+    this.setSelectedIconSvg();
     this.applyCustomStyles();
   }
 
@@ -79,6 +85,7 @@ export class DsDropdownComponent implements AfterViewInit, OnChanges {
   selectOption(option: DropdownOption): void {
     this.selectedOption = option;
     this.isOpen = false;
+    this.setSelectedIconSvg();
   }
 
   get dropdownClasses(): string[] {
@@ -100,23 +107,36 @@ export class DsDropdownComponent implements AfterViewInit, OnChanges {
     if (this.iconSvg && this.iconContainer) {
       this.iconContainer.nativeElement.innerHTML = this.iconSvg;
     }
+    this.iconContainers.forEach((container, index) => {
+      const option = this.options[index];
+      if (option.icon) {
+        container.nativeElement.innerHTML = option.icon;
+      }
+    });
+  }
+
+  private setSelectedIconSvg(): void {
+    if (this.selectedOption?.icon && this.selectedIconContainer) {
+      this.selectedIconContainer.nativeElement.innerHTML =
+        this.selectedOption.icon;
+    }
   }
 
   private applyCustomStyles(): void {
     const dropdownElement = this.dropdownElement.nativeElement;
-    if (this.bgColor) {
-      this.renderer.setStyle(dropdownElement, 'background-color', this.bgColor);
-      this.renderer.setStyle(dropdownElement, 'border-color', this.bgColor);
-    }
-    if (this.textColor) {
-      this.renderer.setStyle(dropdownElement, 'color', this.textColor);
-    }
-    if (this.borderRadius) {
-      this.renderer.setStyle(
-        dropdownElement,
-        'border-radius',
-        this.borderRadius,
-      );
+    this.setStyle(dropdownElement, 'background-color', this.bgColor);
+    this.setStyle(dropdownElement, 'border-color', this.bgColor);
+    this.setStyle(dropdownElement, 'color', this.textColor);
+    this.setStyle(dropdownElement, 'border-radius', this.borderRadius);
+  }
+
+  private setStyle(
+    element: any,
+    styleName: string,
+    value: string | null,
+  ): void {
+    if (value) {
+      this.renderer.setStyle(element, styleName, value);
     }
   }
 

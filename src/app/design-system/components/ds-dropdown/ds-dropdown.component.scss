@@ -56,7 +56,6 @@ $dropdown-states: (
     text-align: center;
     text-decoration: none;
     border-radius: 9999px;
-
     cursor: pointer;
     border: 2px solid;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); // Sombra ligera en reposo
@@ -80,84 +79,6 @@ $dropdown-states: (
       }
     }
 
-    &.dark-mode {
-      @each $state, $color in $dropdown-states {
-        &.dropdown-#{$state} {
-          background-color: if(
-            $state == "dark",
-            get-color(utility, white),
-            $color
-          );
-          color: get-color(neutral, "dark-300");
-          border-color: if($state == "dark", get-color(utility, white), $color);
-          &:hover {
-            color: if(
-              $state == "dark",
-              get-color(utility, white),
-              get-color(neutral, "dark-300")
-            );
-            $hover-bg: if(
-              $state == "dark",
-              get-color(neutral, dark),
-              color.adjust($color, $lightness: -15%)
-            );
-            background-color: $hover-bg;
-            border-color: $hover-bg;
-          }
-        }
-
-        &.dropdown-outline-#{$state} {
-          background-color: transparent;
-          border-color: if($state == "dark", get-color(utility, white), $color);
-          color: get-color(utility, white);
-
-          &:hover {
-            background-color: $color;
-            color: if(
-              $state == "dark",
-              get-color(utility, white),
-              get-color(neutral, dark)
-            );
-          }
-        }
-      }
-    }
-
-    &.light-mode {
-      @each $state, $color in $dropdown-states {
-        &.dropdown-#{$state} {
-          background-color: $color;
-          color: if(
-            $state == "dark",
-            get-color(utility, white),
-            get-color(neutral, "dark-300")
-          );
-          border-color: $color;
-
-          &:hover {
-            $hover-bg: if(
-              $state == "dark",
-              get-color(neutral, "dark-300"),
-              color.adjust($color, $lightness: -15%)
-            );
-            background-color: $hover-bg;
-            border-color: $hover-bg;
-          }
-        }
-
-        &.dropdown-outline-#{$state} {
-          background-color: transparent;
-          border-color: $color;
-          color: get-color(neutral, "dark-300");
-
-          &:hover {
-            background-color: color-to-hsla($color, 0.3);
-            color: get-color(neutral, "dark-300");
-          }
-        }
-      }
-    }
-
     // Dropdown Sizes
     @include dropdown-size(sm, xs, sm, sm);
     @include dropdown-size(md, sm, md, base);
@@ -172,18 +93,6 @@ $dropdown-states: (
     &:disabled {
       cursor: not-allowed;
       opacity: 0.5;
-    }
-
-    .dropdown-icon {
-      margin-right: get-spacing(xs);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      svg {
-        width: 1rem;
-        height: 1rem;
-      }
     }
   }
 
@@ -204,5 +113,20 @@ $dropdown-states: (
     border: 1px solid get-color(neutral, gray);
     border-radius: 4px;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    li {
+      cursor: pointer;
+    }
+  }
+
+  .dropdown-icon {
+    margin-right: get-spacing(xs);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    svg {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 }

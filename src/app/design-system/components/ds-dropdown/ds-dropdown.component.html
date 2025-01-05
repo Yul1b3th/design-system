@@ -7,7 +7,7 @@
     [disabled]="disabled"
     (click)="toggleDropdown()"
   >
-    <span *ngIf="iconSvg" class="dropdown-icon" #iconContainer></span>
+    <span *ngIf="iconSvg" class="dropdown-icon" [innerHTML]="iconSvg"></span>
     <span
       *ngIf="selectedOption?.icon"
       class="dropdown-icon"
@@ -49,7 +49,7 @@
   </button>
   <ul *ngIf="isOpen" class="dropdown-menu">
     <li
-      *ngFor="let option of options"
+      *ngFor="let option of options; let i = index"
       (click)="selectOption(option)"
       [ngClass]="{ selected: option === selectedOption }"
       [ngStyle]="{
