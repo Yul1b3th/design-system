@@ -7,15 +7,21 @@
 .form-group {
   margin-bottom: get-spacing(md);
 
+  label {
+    display: block;
+    margin-bottom: get-spacing(xs);
+    font-size: get-font-size(base);
+    @include apply-color(color, neutral, dark);
+  }
+
   .input-wrapper {
     position: relative;
     display: flex;
-    align-items: center;
+    width: fit-content;
 
     .input-switch {
-      margin-right: get-spacing(sm);
-      width: 2rem;
-      height: 1rem;
+      width: 44px;
+      height: 24px;
       border: 1px solid;
       @include apply-color(border-color, neutral, gray);
       border-radius: 1rem;
@@ -32,17 +38,19 @@
       &:before {
         content: "";
         position: absolute;
-        top: 0.1rem;
-        left: 0.1rem;
-        width: 0.8rem;
-        height: 0.8rem;
+        top: 50%;
+        left: 2px; // Ajuste para mantener el borde visible
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
         background-color: get-color(utility, white);
         @include apply-transition(all, 0.3s, ease-in-out);
+        z-index: 1;
       }
 
       &:checked:before {
-        left: 1.1rem;
+        left: calc(100% - 22px); // Ajuste para mantener el borde visible
       }
 
       // Default state
@@ -88,35 +96,25 @@
             color.scale(get-color(status, danger), $alpha: -50%);
         }
       }
-
-      &.dark-mode {
-        @include apply-color(background-color, neutral, "dark-200");
-        @include apply-color(color, utility, white);
-        @include apply-color(border-color, neutral, "gray-dark");
-
-        &:focus {
-          @include apply-color(border-color, primary, light);
-          box-shadow: 0 0 0 3px
-            color.scale(get-color(primary, light), $alpha: -50%);
-        }
-      }
-
-      &.light-mode {
-        @include apply-color(background-color, neutral, light);
-        @include apply-color(color, neutral, dark);
-        @include apply-color(border-color, neutral, gray);
-
-        &:focus {
-          @include apply-color(border-color, primary, default);
-          box-shadow: 0 0 0 3px
-            color.scale(get-color(primary, default), $alpha: -50%);
-        }
-      }
     }
 
-    label {
-      font-size: get-font-size(base);
-      @include apply-color(color, neutral, dark);
+    .switch-icons {
+      width: 100%;
+      position: absolute;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      padding: 0 3px;
+
+      @include apply-color(color, neutral, "gray-dark");
+      .switch-icon {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 
