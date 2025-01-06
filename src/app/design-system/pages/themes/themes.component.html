@@ -1,24 +1,24 @@
 <section class="themes">
-  <div class="container">
-    <div>
-      <h1>Temas</h1>
-      <p>
-        En esta sección, se exploran los temas disponibles en el sistema de
-        diseño. Los temas permiten cambiar la apariencia de la aplicación de
-        manera consistente y fácil.
-      </p>
-    </div>
+  <!-- Encabezado de la sección -->
+  <header [ngClass]="[themeService.theme(), 'documentation-header']">
+    <h1>Temas</h1>
+    <p>
+      En esta sección, se exploran los temas disponibles en el sistema de
+      diseño. Los temas permiten cambiar la apariencia de la aplicación de
+      manera consistente y fácil.
+    </p>
+  </header>
 
-    <hr />
-
+  <!-- Contenido principal -->
+  <div class="documentation-content">
     <!-- Tema Oscuro -->
-    <div>
+    <div class="documentation-section">
       <h2>Tema Oscuro</h2>
       <p>
         El tema oscuro aplica un esquema de colores oscuros a la interfaz,
         proporcionando una apariencia elegante y moderna.
       </p>
-      <pre><code class="language-scss">
+      <pre class="mb-md"><code class="language-scss">
       body.dark-mode &#123;
         background-color: get-background-color(inverted);
         &#64;include apply-color(color, utility, white);
@@ -48,16 +48,13 @@
       </p>
     </div>
 
-    <hr />
-
-    <!-- Tema Claro -->
-    <div>
+    <div class="documentation-section">
       <h2>Tema Claro</h2>
       <p>
         El tema claro aplica un esquema de colores claros a la interfaz,
         proporcionando una apariencia limpia y brillante.
       </p>
-      <pre><code class="language-scss">
+      <pre class="mb-md"><code class="language-scss">
       body.light-mode &#123;
         background-color: get-background-color(default);
         &#64;include apply-color(color, neutral, "gray-dark");

@@ -1,24 +1,24 @@
 <section class="utilities">
-  <div class="container">
-    <div>
-      <h1>Utilidades</h1>
-      <p>
-        En esta sección, se exploran las utilidades disponibles en el sistema de
-        diseño. Estas utilidades permiten aplicar estilos comunes de manera
-        rápida y sencilla.
-      </p>
-    </div>
+  <!-- Encabezado de la sección -->
+  <header [ngClass]="[themeService.theme(), 'documentation-header']">
+    <h1>Utilidades</h1>
+    <p>
+      En esta sección, se exploran las utilidades disponibles en el sistema de
+      diseño. Estas utilidades permiten aplicar estilos comunes de manera rápida
+      y sencilla.
+    </p>
+  </header>
 
-    <hr />
-
+  <!-- Contenido principal -->
+  <div class="documentation-content">
     <!-- Colores -->
-    <div>
+    <div class="documentation-section">
       <h2>Colores</h2>
       <p>
         Las utilidades de colores permiten aplicar rápidamente colores de texto,
         fondo y borde utilizando las variables de colores definidas.
       </p>
-      <pre><code class="language-scss">
+      <pre class="mb-md"><code class="language-scss">
       &#64;each $color-name, $color-value in $colors &#123;
         .text-#&#123;$color-name&#125; &#123;
           color: get-color($color-name);
@@ -35,16 +35,14 @@
       </code></pre>
     </div>
 
-    <hr />
-
     <!-- Espaciado -->
-    <div>
+    <div class="documentation-section">
       <h2>Espaciado</h2>
       <p>
         Las utilidades de espaciado permiten aplicar rápidamente márgenes y
         rellenos utilizando las variables de espaciado definidas.
       </p>
-      <pre><code class="language-scss">
+      <pre class="mb-md"><code class="language-scss">
       &#64;each $size-name, $size-value in $spacing &#123;
         .m-#&#123;$size-name&#125; &#123;
           margin: get-spacing($size-name);
@@ -109,16 +107,13 @@
       </code></pre>
     </div>
 
-    <hr />
-
-    <!-- Texto -->
-    <div>
+    <div class="documentation-section">
       <h2>Texto</h2>
       <p>
         Las utilidades de texto permiten aplicar rápidamente estilos de
         alineación, truncamiento de texto y peso de fuente.
       </p>
-      <pre><code class="language-scss">
+      <pre class="mb-md"><code class="language-scss">
       // Mixin para truncar texto
       &#64;mixin apply-line-clamp($lines) &#123;
         &#64;if $lines > 0 &#123;
@@ -188,16 +183,13 @@
       </code></pre>
     </div>
 
-    <hr />
-
-    <!-- Utilidades Generales -->
-    <div>
+    <div class="documentation-section">
       <h2>Utilidades Generales</h2>
       <p>
         Las utilidades generales incluyen clases para aplicar estilos comunes
         como imágenes responsivas.
       </p>
-      <pre><code class="language-scss">
+      <pre class="mb-md"><code class="language-scss">
       // Clase para imágenes responsivas
       .img-responsive &#123;
         width: 100%;
@@ -208,16 +200,14 @@
       </code></pre>
     </div>
 
-    <hr />
-
     <!-- Visibilidad -->
-    <div>
+    <div class="documentation-section">
       <h2>Visibilidad</h2>
       <p>
         Las utilidades de visibilidad permiten controlar rápidamente la
         visibilidad de los elementos.
       </p>
-      <pre><code class="language-scss">
+      <pre class="mb-md"><code class="language-scss">
       .hidden &#123;
         display: none !important;
       &#125;

@@ -19,119 +19,119 @@
         utilizadas:
       </p>
 
-      <div class="variable-section">
+      <div class="mt-lg">
         <h3>Tipografías</h3>
-        <pre><code class="language-scss">
-// Tipografías
-$fonts: (
-  primary: (
-    "BeVietnamPro",
-    "Arial, sans-serif",
-  ),
-  secondary: "Arial, sans-serif",
-);
-    </code></pre>
+        <pre class="mb-md"><code class="language-scss">
+        // Tipografías
+        $fonts: (
+          primary: (
+            "BeVietnamPro",
+            "Arial, sans-serif",
+          ),
+          secondary: "Arial, sans-serif",
+        );
+        </code></pre>
       </div>
 
-      <div class="variable-section">
+      <div class="mt-lg">
         <h3>Tamaños de fuente</h3>
-        <pre><code class="language-scss">
-// Tamaños de fuente
-$font-sizes: (
-  xs: 0.75rem,
-  sm: 0.875rem,
-  base: 1rem,
-  lg: 1.125rem,
-  xl: 1.25rem,
-  "2xl": 1.5rem,
-  "3xl": 1.75rem,
-  "4xl": 2rem,
-  "5xl": 2.5rem,
-);
-    </code></pre>
+        <pre class="mb-md"><code class="language-scss">
+        // Tamaños de fuente
+        $font-sizes: (
+          xs: 0.75rem,
+          sm: 0.875rem,
+          base: 1rem,
+          lg: 1.125rem,
+          xl: 1.25rem,
+          "2xl": 1.5rem,
+          "3xl": 1.75rem,
+          "4xl": 2rem,
+          "5xl": 2.5rem,
+        );
+        </code></pre>
       </div>
 
-      <div class="variable-section">
+      <div class="mt-lg">
         <h3>Alturas de línea</h3>
-        <pre><code class="language-scss">
-// Alturas de línea
-$line-heights: (
-  xs: 1rem,
-  sm: 1.25rem,
-  base: 1.5rem,
-  lg: 1.75rem,
-  xl: 2rem,
-);
-    </code></pre>
+        <pre class="mb-md"><code class="language-scss">
+        // Alturas de línea
+        $line-heights: (
+          xs: 1rem,
+          sm: 1.25rem,
+          base: 1.5rem,
+          lg: 1.75rem,
+          xl: 2rem,
+        );
+        </code></pre>
       </div>
 
-      <div class="variable-section">
+      <div class="mt-lg">
         <h3>Espaciados</h3>
-        <pre><code class="language-scss">
-// Espaciados
-$spacing: (
-  xs: 0.25rem,
-  sm: 0.5rem,
-  md: 1rem,
-  lg: 2rem,
-  xl: 4rem,
-);
-    </code></pre>
+        <pre class="mb-md"><code class="language-scss">
+        // Espaciados
+        $spacing: (
+          xs: 0.25rem,
+          sm: 0.5rem,
+          md: 1rem,
+          lg: 2rem,
+          xl: 4rem,
+        );
+      </code></pre>
       </div>
 
-      <div class="variable-section">
+      <div class="mt-lg">
         <h3>Colores</h3>
-        <pre><code class="language-scss">
-// Colores
-$colors: (
-  primary: (
-    default: #7fe6c0,
-    light: #a3e8d4,
-    dark: #0d4d3b,
-  ),
-  secondary: (
-    default: #81dfdf,
-    light: #b3e8e9,
-    dark: #3a7d7e,
-  ),
-  tertiary: #7dd3fc,
-  status: (
-    success: #22c55e,
-    danger: #ef4444,
-    warning: #f59e0b,
-    info: #26549e,
-  ),
-  neutral: (
-    "dark-300": #0f0f0f,
-    "dark-200": #1c1c1c,
-    dark: #212121,
-    "dark-100": #333333,
-    "gray-dark": #3f3f3f,
-    gray: #d1d1d1,
-    light: #e5e5e5,
-    "light-200": #e9ecef,
-    "gray-light": #f1f1f1,
-  ),
-  utility: (
-    white: #ffffff,
-    black: #000000,
-  ),
-);
-    </code></pre>
+        <pre class="mb-md"><code class="language-scss">
+        // Colores
+        $colors: (
+          primary: (
+            default: #7fe6c0,
+            light: #a3e8d4,
+            dark: #0d4d3b,
+          ),
+          secondary: (
+            default: #81dfdf,
+            light: #b3e8e9,
+            dark: #3a7d7e,
+          ),
+          tertiary: #7dd3fc,
+          status: (
+            success: #22c55e,
+            danger: #ef4444,
+            warning: #f59e0b,
+            info: #26549e,
+          ),
+          neutral: (
+            "dark-300": #0f0f0f,
+            "dark-200": #1c1c1c,
+            dark: #212121,
+            "dark-100": #333333,
+            "gray-dark": #3f3f3f,
+            gray: #d1d1d1,
+            light: #e5e5e5,
+            "light-200": #e9ecef,
+            "gray-light": #f1f1f1,
+          ),
+          utility: (
+            white: #ffffff,
+            black: #000000,
+          ),
+        );
+        </code></pre>
       </div>
 
-      <div class="variable-section">
+      <div class="mt-lg">
         <h3>Mapas de colores expandidos</h3>
-        <pre><code class="language-scss">
-// Mapas de colores expandidos
-$backgrounds: map.merge(
-  map.get($colors, neutral),
-  (
-    default: map.get(map.get($colors, neutral), "gray-light"),
-    inverted: map.get(map.get($colors, neutral), "dark-200"),
-  )
-);
-    </code></pre>
+        <pre class="mb-md"><code class="language-scss">
+        // Mapas de colores expandidos
+        $backgrounds: map.merge(
+          map.get($colors, neutral),
+          (
+            default: map.get(map.get($colors, neutral), "gray-light"),
+            inverted: map.get(map.get($colors, neutral), "dark-200"),
+          )
+        );
+        </code></pre>
         <p>
           Los mapas de colores expandidos permiten definir colores de fondo
           predeterminados e invertidos, lo que facilita la implementación de
@@ -139,19 +139,19 @@ $backgrounds: map.merge(
         </p>
       </div>
 
-      <div class="variable-section">
+      <div class="mt-lg">
         <h3>Breakpoints</h3>
-        <pre><code class="language-scss">
-// Breakpoints
-$breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px,
-);
-    </code></pre>
+        <pre class="mb-md"><code class="language-scss">
+        // Breakpoints
+        $breakpoints: (
+          xs: 0,
+          sm: 576px,
+          md: 768px,
+          lg: 992px,
+          xl: 1200px,
+          xxl: 1400px,
+        );
+        </code></pre>
       </div>
     </div>
 
@@ -324,9 +324,9 @@ $breakpoints: (
         utilizadas:
       </p>
 
-      <div class="function-section">
+      <div class="mt-lg">
         <h3>Función genérica para obtener valores de un mapa</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Función genérica para obtener valores de un mapa
         &#64;function get-map-value($map, $key) &#123;
@@ -336,8 +336,7 @@ $breakpoints: (
             &#64;error "La clave &#123;&#123;$key&#125;&#125; no existe en el mapa proporcionado.";
           &#125;
         &#125;
-      </code>
-    </pre>
+      </code></pre>
         <p>
           Esta función permite obtener valores de un mapa dado una clave
           específica. Es útil para acceder a valores definidos en mapas como
@@ -345,73 +344,69 @@ $breakpoints: (
         </p>
       </div>
 
-      <div class="function-section">
+      <div class="mt-lg">
         <h3>Función para obtener una fuente por nombre</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Función para obtener una fuente por nombre
         &#64;function get-font($font-name) &#123;
           &#64;return get-map-value($fonts, $font-name);
         &#125;
-      </code>
-    </pre>
+      </code></pre>
         <p>
           Esta función devuelve la fuente correspondiente a un nombre de fuente
           específico.
         </p>
       </div>
 
-      <div class="function-section">
+      <div class="mt-lg">
         <h3>Función para obtener un tamaño de fuente</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Función para obtener un tamaño de fuente
         &#64;function get-font-size($size-name) &#123;
           &#64;return get-map-value($font-sizes, $size-name);
         &#125;
-      </code>
-    </pre>
+      </code></pre>
         <p>
           Esta función devuelve el tamaño de fuente correspondiente a un nombre
           de tamaño específico.
         </p>
       </div>
 
-      <div class="function-section">
+      <div class="mt-lg">
         <h3>Función para obtener una altura de línea</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Función para obtener una altura de línea
         &#64;function get-line-height($size-name) &#123;
           &#64;return get-map-value($line-heights, $size-name);
         &#125;
-      </code>
-    </pre>
+      </code></pre>
         <p>
           Esta función devuelve la altura de línea correspondiente a un nombre
           de tamaño específico.
         </p>
       </div>
 
-      <div class="function-section">
+      <div class="mt-lg">
         <h3>Función para obtener un espaciado</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Función para obtener un espaciado
         &#64;function get-spacing($size-name) &#123;
           &#64;return get-map-value($spacing, $size-name);
         &#125;
-      </code>
-    </pre>
+      </code></pre>
         <p>
           Esta función devuelve el valor de espaciado correspondiente a un
           nombre de tamaño específico.
         </p>
       </div>
 
-      <div class="function-section">
+      <div class="mt-lg">
         <h3>Función para obtener un color</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Función para obtener un color
         &#64;function get-color($color-name...) &#123;
@@ -431,17 +426,16 @@ $breakpoints: (
 
           &#64;return $color-map;
         &#125;
-      </code>
-    </pre>
+      </code></pre>
         <p>
           Esta función devuelve el valor del color correspondiente a un nombre
           de color específico.
         </p>
       </div>
 
-      <div class="function-section">
+      <div class="mt-lg">
         <h3>Función para obtener un color de fondo</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Función para obtener un color de fondo
         &#64;function get-background-color($background-name...) &#123;
@@ -461,17 +455,16 @@ $breakpoints: (
 
           &#64;return $color-map;
         &#125;
-      </code>
-    </pre>
+      </code></pre>
         <p>
           Esta función devuelve el valor del color de fondo correspondiente a un
           nombre de fondo específico.
         </p>
       </div>
 
-      <div class="function-section">
+      <div class="mt-lg">
         <h3>Función para convertir colores a HSL</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Función para convertir colores a HSL
         &#64;function color-to-hsl($color) &#123;
@@ -481,17 +474,16 @@ $breakpoints: (
             color.channel($color, "lightness", $space: hsl)
           );
         &#125;
-      </code>
-    </pre>
+      </code></pre>
         <p>
           Esta función convierte un color a su representación en HSL (Hue,
           Saturation, Lightness).
         </p>
       </div>
 
-      <div class="function-section">
+      <div class="mt-lg">
         <h3>Función para convertir colores a HSLA con transparencia</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Función para convertir colores a HSLA con transparencia
         &#64;function color-to-hsla($color, $alpha) &#123;
@@ -502,24 +494,22 @@ $breakpoints: (
             $alpha
           );
         &#125;
-      </code>
-    </pre>
+      </code></pre>
         <p>
           Esta función convierte un color a su representación en HSLA (Hue,
           Saturation, Lightness, Alpha) con un valor de transparencia.
         </p>
       </div>
 
-      <div class="function-section">
+      <div class="mt-lg">
         <h3>Función para obtener un breakpoint</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Función para obtener un breakpoint
         &#64;function get-breakpoint($size-name) &#123;
           &#64;return get-map-value($breakpoints, $size-name);
         &#125;
-      </code>
-    </pre>
+      </code></pre>
         <p>
           Esta función devuelve el valor del breakpoint correspondiente a un
           nombre de tamaño específico.
@@ -536,9 +526,9 @@ $breakpoints: (
         utilizados:
       </p>
 
-      <div class="mixin-section">
+      <div class="mt-lg">
         <h3>Mixins relacionados con tipografía</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Establece la familia tipográfica
         &#64;mixin apply-font-family($font: primary) &#123;
@@ -564,13 +554,12 @@ $breakpoints: (
             color: get-color($text-color);
           &#125;
         &#125;
-      </code>
-    </pre>
+      </code></pre>
       </div>
 
-      <div class="mixin-section">
+      <div class="mt-lg">
         <h3>Mixins relacionados con espaciado</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Aplica márgenes o rellenos
         &#64;mixin apply-spacing($property, $size) &#123;
@@ -584,13 +573,12 @@ $breakpoints: (
           &#123;&#123;$type&#125;&#125;-bottom: get-spacing($size);
           &#123;&#123;$type&#125;&#125;-left: get-spacing($size);
         &#125;
-      </code>
-    </pre>
+      </code></pre>
       </div>
 
-      <div class="mixin-section">
+      <div class="mt-lg">
         <h3>Mixins relacionados con colores</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Aplica colores (textos, fondos, bordes)
         &#64;mixin apply-color($property, $color-name...) &#123;
@@ -609,13 +597,12 @@ $breakpoints: (
         &#64;mixin apply-background-color($background-name...) &#123;
           background-color: get-background-color($background-name...);
         &#125;
-      </code>
-    </pre>
+      </code></pre>
       </div>
 
-      <div class="mixin-section">
+      <div class="mt-lg">
         <h3>Mixins relacionados con diseño responsivo</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Aplica estilos en un breakpoint específico
         &#64;mixin apply-media-breakpoint($size) &#123;
@@ -623,13 +610,12 @@ $breakpoints: (
             &#64;content;
           &#125;
         &#125;
-      </code>
-    </pre>
+      </code></pre>
       </div>
 
-      <div class="mixin-section">
+      <div class="mt-lg">
         <h3>Mixins relacionados con diseño visual</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Aplica bordes redondeados
         &#64;mixin apply-border($width: 1px, $style: solid, $color-name...) &#123;
@@ -667,13 +653,12 @@ $breakpoints: (
             $opacity
           );
         &#125;
-      </code>
-    </pre>
+      </code></pre>
       </div>
 
-      <div class="mixin-section">
+      <div class="mt-lg">
         <h3>Mixins relacionados con Flexbox</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Configura un contenedor flex
         &#64;mixin apply-flex-container($direction: row, $justify: center, $align: center) &#123;
@@ -687,13 +672,12 @@ $breakpoints: (
         &#64;mixin apply-flex-item($grow: 0, $shrink: 1, $basis: auto) &#123;
           flex: $grow $shrink $basis;
         &#125;
-      </code>
-    </pre>
+      </code></pre>
       </div>
 
-      <div class="mixin-section">
+      <div class="mt-lg">
         <h3>Mixins relacionados con animación</h3>
-        <pre ngNonBindable>
+        <pre class="mb-md" ngNonBindable>
       <code class="language-scss">
         // Aplica transiciones suaves
         &#64;mixin apply-transition(
@@ -703,8 +687,7 @@ $breakpoints: (
         ) &#123;
           transition: $properties $duration $timing-function;
         &#125;
-      </code>
-    </pre>
+      </code></pre>
       </div>
     </div>
   </div>

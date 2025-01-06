@@ -1,16 +1,18 @@
 <section class="base-styles">
-  <div class="container">
-    <div>
-      <h1>Estilos Base</h1>
-      <p>
-        En esta sección, se exploran los estilos base que se aplican a todo el
-        sistema de diseño. Estos estilos aseguran una apariencia y
-        comportamiento consistentes en toda la aplicación.
-      </p>
-    </div>
+  <!-- Encabezado de la sección -->
+  <header [ngClass]="[themeService.theme(), 'documentation-header']">
+    <h1>Estilos Base</h1>
+    <p>
+      En esta sección, se exploran los estilos base que se aplican a todo el
+      sistema de diseño. Estos estilos aseguran una apariencia y comportamiento
+      consistentes en toda la aplicación.
+    </p>
+  </header>
 
+  <!-- Contenido principal -->
+  <div class="documentation-content">
     <!-- Reboot -->
-    <div>
+    <div class="documentation-section">
       <h2>Reboot</h2>
       <p>
         El archivo <code>_reboot.scss</code> contiene un conjunto de reglas CSS
@@ -34,7 +36,7 @@
     </div>
 
     <!-- Tipografía -->
-    <div>
+    <div class="documentation-section">
       <h2>Tipografía</h2>
       <p>
         El archivo <code>_typography.scss</code> define los estilos tipográficos
@@ -42,21 +44,24 @@
         apariencia tipográfica consistente y legible en toda la aplicación.
       </p>
 
-      <h3>Estilos Generales</h3>
-      <pre><code class="language-scss">
+      <div class="mt-lg">
+        <h3>Estilos Generales</h3>
+        <pre class="mb-md"><code class="language-scss">
       body &#123;
         font-family: $font-family;
         font-size: get-font-size("base");
         line-height: get-line-height("base");
       &#125;
       </code></pre>
-      <p>
-        Estos estilos se aplican al cuerpo del documento, estableciendo la
-        fuente, el tamaño de fuente y la altura de línea predeterminados.
-      </p>
+        <p>
+          Estos estilos se aplican al cuerpo del documento, estableciendo la
+          fuente, el tamaño de fuente y la altura de línea predeterminados.
+        </p>
+      </div>
 
-      <h3>Encabezados</h3>
-      <pre><code class="language-scss">
+      <div class="mt-lg">
+        <h3>Encabezados</h3>
+        <pre class="mb-md"><code class="language-scss">
       h1 &#123;
         &#64;include typography("5xl", "xl", 700, "md");
       &#125;
@@ -81,14 +86,16 @@
         &#64;include typography("lg", "lg", 500, "md");
       &#125;
       </code></pre>
-      <p>
-        Estos estilos se aplican a los encabezados <code>h1</code> a
-        <code>h6</code>, estableciendo el tamaño de fuente, la altura de línea,
-        el peso de la fuente y el margen inferior.
-      </p>
+        <p>
+          Estos estilos se aplican a los encabezados <code>h1</code> a
+          <code>h6</code>, estableciendo el tamaño de fuente, la altura de
+          línea, el peso de la fuente y el margen inferior.
+        </p>
+      </div>
 
-      <h3>Párrafos y Textos</h3>
-      <pre><code class="language-scss">
+      <div class="mt-lg">
+        <h3>Párrafos y Textos</h3>
+        <pre class="mb-md"><code class="language-scss">
       p:not(:last-child) &#123;
         &#64;include typography("base", "base", 400, "md");
       &#125;
@@ -105,13 +112,15 @@
         font-style: italic;
       &#125;
       </code></pre>
-      <p>
-        Estos estilos se aplican a los párrafos y otros elementos de texto,
-        asegurando una apariencia consistente y legible.
-      </p>
+        <p>
+          Estos estilos se aplican a los párrafos y otros elementos de texto,
+          asegurando una apariencia consistente y legible.
+        </p>
+      </div>
 
-      <h3>Bloques de Cita</h3>
-      <pre><code class="language-scss">
+      <div class="mt-lg">
+        <h3>Bloques de Cita</h3>
+        <pre class="mb-md"><code class="language-scss">
       blockquote &#123;
         font-size: get-font-size("lg");
         line-height: get-line-height("lg");
@@ -121,13 +130,15 @@
         background-color: get-background("default");
       &#125;
       </code></pre>
-      <p>
-        Estos estilos se aplican a los bloques de cita, asegurando una
-        apariencia destacada y legible.
-      </p>
+        <p>
+          Estos estilos se aplican a los bloques de cita, asegurando una
+          apariencia destacada y legible.
+        </p>
+      </div>
 
-      <h3>Código y Preformateado</h3>
-      <pre><code class="language-scss">
+      <div class="mt-lg">
+        <h3>Código y Preformateado</h3>
+        <pre class="mb-md"><code class="language-scss">
       code,
       pre &#123;
         font-family: "Courier New", Courier, monospace;
@@ -141,13 +152,15 @@
         overflow-x: auto;
       &#125;
       </code></pre>
-      <p>
-        Estos estilos se aplican a los elementos de código y preformateado,
-        asegurando una apariencia consistente y legible.
-      </p>
+        <p>
+          Estos estilos se aplican a los elementos de código y preformateado,
+          asegurando una apariencia consistente y legible.
+        </p>
+      </div>
 
-      <h3>Enlaces</h3>
-      <pre><code class="language-scss">
+      <div class="mt-lg">
+        <h3>Enlaces</h3>
+        <pre class="mb-md"><code class="language-scss">
       a &#123;
         color: get-color("primary");
         text-decoration: none;
@@ -157,13 +170,15 @@
         &#125;
       &#125;
       </code></pre>
-      <p>
-        Estos estilos se aplican a los enlaces, asegurando una apariencia
-        consistente y legible.
-      </p>
+        <p>
+          Estos estilos se aplican a los enlaces, asegurando una apariencia
+          consistente y legible.
+        </p>
+      </div>
     </div>
 
-    <div>
+    <!-- Ejemplos de tamaños de texto -->
+    <div class="documentation-section">
       <h2>Ejemplos de tamaños de texto</h2>
 
       <p>H1 - BeVietnamPro - 40px (2.5rem)</p>
