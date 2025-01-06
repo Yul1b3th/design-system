@@ -1,17 +1,17 @@
 <section class="customization">
-  <div class="container">
-    <div>
-      <h1>Personalización</h1>
-      <p>
-        En esta sección, aprenderás cómo personalizar el Design System
-        utilizando variables, funciones y mixins.
-      </p>
-    </div>
+  <!-- Encabezado de la sección -->
+  <header [ngClass]="[themeService.theme(), 'documentation-header']">
+    <h1>Personalización</h1>
+    <p>
+      En esta sección, aprenderás cómo personalizar el Design System utilizando
+      variables, funciones y mixins.
+    </p>
+  </header>
 
-    <hr />
-
+  <!-- Contenido principal -->
+  <div class="documentation-content">
     <!-- Variables -->
-    <div class="variables">
+    <div class="documentation-section">
       <h2>Variables</h2>
       <p>
         Las variables permiten definir valores reutilizables en todo el sistema
@@ -155,13 +155,9 @@ $breakpoints: (
       </div>
     </div>
 
-    <hr />
-
     <!-- Paleta de Colores -->
-    <div>
-      <div>
-        <h2>Paleta de Colores</h2>
-      </div>
+    <div class="documentation-section">
+      <h2>Paleta de Colores</h2>
       <div class="color-palette">
         <div class="color-item">
           <p>Primary</p>
@@ -319,10 +315,8 @@ $breakpoints: (
       </div>
     </div>
 
-    <hr />
-
     <!-- Funciones -->
-    <div>
+    <div class="documentation-section">
       <h2>Funciones</h2>
       <p>
         Las funciones en Sass permiten reutilizar lógica y cálculos en todo el
@@ -533,10 +527,8 @@ $breakpoints: (
       </div>
     </div>
 
-    <hr />
-
     <!-- Mixins -->
-    <div>
+    <div class="documentation-section">
       <h2>Mixins</h2>
       <p>
         Los mixins en Sass permiten reutilizar bloques de código CSS en todo el

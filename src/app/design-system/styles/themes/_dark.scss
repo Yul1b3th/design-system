@@ -7,7 +7,7 @@ body.dark-mode {
   @include apply-theme-colors(
     (neutral, "gray-light"),
     (neutral, "gray-dark"),
-    (neutral, "dark-200"),
+    (neutral, dark),
     (utility, white)
   );
 
@@ -25,5 +25,10 @@ body.dark-mode {
   a {
     @include apply-color(color, neutral, "dark-300");
     @include apply-color(color, utility, white);
+  }
+
+  code,
+  pre {
+    @include apply-color(background-color, neutral, "dark-100");
   }
 }

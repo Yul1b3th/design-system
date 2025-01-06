@@ -6,6 +6,7 @@ import {
   effect,
   ElementRef,
   ViewChild,
+  HostListener,
 } from '@angular/core';
 import { ThemeService } from '@design-system/services/theme.service';
 import { CommonModule } from '@angular/common';
@@ -23,6 +24,7 @@ export class DesignSystemHeaderComponent {
   public readonly themeService = inject(ThemeService);
   public isMenuOpen = signal<boolean>(false);
   public year = new Date().getFullYear();
+  public isScrolled = signal<boolean>(false);
 
   @ViewChild('closeButton', { static: false })
   closeButton!: ElementRef<HTMLButtonElement>;
@@ -38,6 +40,12 @@ export class DesignSystemHeaderComponent {
         document.body.classList.remove('menu-open');
       }
     });
+  }
+
+  @HostListener('window:scroll')
+  onScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    this.isScrolled.set(scrollTop > 50);
   }
 
   toggleMenu() {

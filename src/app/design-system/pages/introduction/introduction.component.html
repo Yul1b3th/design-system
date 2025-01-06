@@ -1,44 +1,54 @@
 <section class="introduction">
-  <div class="container">
+  <!-- Encabezado de la sección -->
+  <header [ngClass]="[themeService.theme(), 'documentation-header']">
     <h1>Bienvenido al Design System</h1>
     <p>
       Este es un sistema de diseño creado para facilitar el desarrollo de
       interfaces consistentes y accesibles.
     </p>
+  </header>
 
-    <h2>Cómo Empezar</h2>
-    <p>
-      Para comenzar a utilizar este Design System, sigue los siguientes pasos:
-    </p>
-    <ol>
-      <li>Descarga el proyecto desde el repositorio.</li>
-      <li>
-        Instala las dependencias necesarias utilizando <code>npm install</code>.
-      </li>
-      <li>
-        Explora los componentes y estilos disponibles en la documentación.
-      </li>
-    </ol>
+  <!-- Contenido principal -->
+  <div class="documentation-content">
+    <div class="documentation-section">
+      <h2>Cómo Empezar</h2>
+      <p>
+        Para comenzar a utilizar este Design System, sigue los siguientes pasos:
+      </p>
+      <ol>
+        <li>Descarga el proyecto desde el repositorio.</li>
+        <li>
+          Instala las dependencias necesarias utilizando
+          <code>npm install</code>.
+        </li>
+        <li>
+          Explora los componentes y estilos disponibles en la documentación.
+        </li>
+      </ol>
+    </div>
 
-    <h2>Personalización</h2>
-    <p>
-      Este Design System es altamente personalizable. Puedes ajustar las
-      variables, funciones y mixins para adaptarlo a tus necesidades
-      específicas.
-    </p>
-    <p>
-      Consulta la sección de
-      <a routerLink="/design-system/customization">Personalización</a> para más
-      detalles.
-    </p>
+    <div class="documentation-section">
+      <h2>Personalización</h2>
+      <p>
+        Este Design System es altamente personalizable. Puedes ajustar las
+        variables, funciones y mixins para adaptarlo a tus necesidades
+        específicas.
+      </p>
+      <p>
+        Consulta la sección de
+        <a routerLink="/design-system/customization">Personalización</a> para
+        más detalles.
+      </p>
+    </div>
 
-    <h2>Importación de Estilos</h2>
-    <p>
-      El archivo <code>main.scss</code> centraliza la importación de todos los
-      estilos y utilidades del sistema de diseño. A continuación se muestra el
-      contenido del archivo:
-    </p>
-    <pre><code class="language-scss">
+    <div class="documentation-section">
+      <h2>Importación de Estilos</h2>
+      <p>
+        El archivo <code>main.scss</code> centraliza la importación de todos los
+        estilos y utilidades del sistema de diseño. A continuación se muestra el
+        contenido del archivo:
+      </p>
+      <pre class="mb-md"><code class="language-scss">
     &#64;use "abstracts/variables" as *;
     &#64;use "abstracts/functions" as *;
     &#64;use "abstracts/mixins" as *;
@@ -55,9 +65,10 @@
     &#64;use "utilities/text" as *;
     &#64;use "utilities/utilities" as *;
     </code></pre>
-    <p>
-      Este archivo asegura que todos los estilos y utilidades estén disponibles
-      en toda la aplicación.
-    </p>
+      <p>
+        Este archivo asegura que todos los estilos y utilidades estén
+        disponibles en toda la aplicación.
+      </p>
+    </div>
   </div>
 </section>

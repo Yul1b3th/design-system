@@ -7,7 +7,7 @@ body.light-mode {
   @include apply-theme-colors(
     (neutral, "gray-light"),
     (neutral, "gray-dark"),
-    (neutral, "dark-200"),
+    (neutral, dark),
     (utility, white)
   );
 
@@ -40,5 +40,18 @@ body.light-mode {
     &:hover {
       @include apply-color(color, secondary, dark);
     }
+  }
+
+  code,
+  pre {
+    @include apply-color(color, neutral, "gray-dark");
+    @include apply-color(background-color, neutral, "light-200");
+    // background-color: red;
+    @include apply-theme-colors(
+      (neutral, "light-200"),
+      (neutral, "gray-dark"),
+      (neutral, "dark-100"),
+      (utility, white)
+    );
   }
 }

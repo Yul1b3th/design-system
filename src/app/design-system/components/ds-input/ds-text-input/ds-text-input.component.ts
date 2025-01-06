@@ -46,7 +46,7 @@ export class DsTextInputComponent
   @Input() disabled: boolean = false;
   @Input() value: string = '';
   @Input() errorMessage: string | null = null;
-  @Input() iconSvg: string | null = null; // Asegúrate de que esta línea esté presente
+  @Input() iconSvg: string | null = null;
 
   @ViewChild('iconContainer', { static: false }) iconContainer!: ElementRef;
 

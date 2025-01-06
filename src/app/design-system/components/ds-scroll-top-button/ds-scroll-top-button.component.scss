@@ -1,31 +1,23 @@
-@use "sass:color";
-@use "sass:map";
 @use "../../styles/abstracts/functions" as *;
-@use "../../styles/abstracts/variables" as *;
 @use "../../styles/abstracts/mixins" as *;
 
 .scroll-top-btn {
-  @include apply-flex-container(row, center, center);
   position: fixed;
-  bottom: get-spacing(sm); // Usa tu sistema de espaciado.
+  bottom: get-spacing(sm);
   right: get-spacing(sm);
   width: 3rem;
   height: 3rem;
-  @include apply-color(color, neutral, "dark-300");
-  @include apply-color(background-color, primary, default);
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  @include apply-box-shadow(0px, 4px, 6px, rgba(0, 0, 0, 0.2));
-  @include apply-transition(all, 0.3s);
+  @include apply-flex-container(row, center, center);
+  @include apply-color(color, neutral, "dark-300");
+  @include apply-color(background-color, primary, default);
+  @include apply-box-shadow(0px 2px 4px rgba(0, 0, 0, 0.1));
+  @include apply-transition(all, 0.3s, ease-in-out);
 
   &:hover {
     @include apply-color-opacity(background-color, 0.6, primary, default);
-    @include apply-box-shadow(0px 6px 8px rgba(0, 0, 0, 0.4));
-  }
-
-  @include apply-media-breakpoint(md) {
-    width: 3.375rem;
-    height: 3.375rem;
+    @include apply-box-shadow(0px 4px 8px rgba(0, 0, 0, 0.2));
   }
 }

@@ -20,8 +20,8 @@ import { ThemeService } from '@design-system/services/theme.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DsButtonComponent implements AfterViewInit {
-  private themeService = inject(ThemeService);
-  private renderer = inject(Renderer2);
+  public readonly themeService = inject(ThemeService);
+  private readonly renderer = inject(Renderer2);
 
   @Input() type: 'button' | 'submit' | 'reset' = 'button';
   @Input() btnClass: string = 'btn-primary';

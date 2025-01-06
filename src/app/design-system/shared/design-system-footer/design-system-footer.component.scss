@@ -8,6 +8,7 @@
 
   p {
     @include apply-color(color, utility, white);
-    padding: 1rem;
+    font-size: 0.9rem;
+    padding: 0.7rem;
   }
 }

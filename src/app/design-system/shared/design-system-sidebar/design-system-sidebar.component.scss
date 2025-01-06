@@ -7,7 +7,7 @@
   @include apply-theme-colors(
     (neutral, "gray-light"),
     (neutral, "dark-300"),
-    (neutral, "dark-200"),
+    (neutral, dark),
     (utility, white)
   );
 
@@ -42,7 +42,7 @@
                 inset 6px 0 0px -2px get-color(primary, default)
               );
               @include apply-color(color, neutral, "dark-300");
-              @include apply-color(background-color, neutral, light);
+              @include apply-color(background-color, neutral, "light-200");
             }
 
             &.active {

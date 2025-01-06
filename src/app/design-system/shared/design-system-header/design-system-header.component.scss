@@ -11,7 +11,19 @@ $header-height: 70px;
     z-index: 998;
     text-align: center;
     @include apply-color(color, neutral, "dark-300");
-    @include apply-color(background-color, neutral, light);
+    @include apply-color(background-color, neutral, "gray-light");
+    @include apply-transition(box-shadow, 0.3s, ease-in-out);
+    @include apply-box-shadow(
+      0 2px 4px 0 rgba(0, 0, 0, 0.15),
+      0 0 0 1px rgba(0, 0, 0, 0.15)
+    );
+
+    &.scrolled {
+      @include apply-box-shadow(
+        0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 0 0 2px rgba(0, 0, 0, 0.2)
+      );
+    }
 
     .menu-toggle {
       cursor: pointer;

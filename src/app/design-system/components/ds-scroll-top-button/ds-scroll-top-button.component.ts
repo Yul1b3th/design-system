@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -7,7 +6,7 @@ import {
 
 @Component({
   selector: 'ds-scroll-top-button',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './ds-scroll-top-button.component.html',
   styleUrl: './ds-scroll-top-button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -17,7 +16,7 @@ export class DsScrollTopButtonComponent {
 
   @HostListener('window:scroll')
   onScroll() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
     this.isVisible = scrollTop > 200;
   }
 

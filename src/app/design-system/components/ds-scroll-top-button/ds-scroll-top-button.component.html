@@ -1,3 +1,5 @@
-<button class="scroll-top-btn" *ngIf="isVisible" (click)="scrollToTop()">
-  <ng-content></ng-content>
-</button>
+@if (isVisible) {
+  <button class="scroll-top-btn" (click)="scrollToTop()">
+    <ng-content></ng-content>
+  </button>
+}

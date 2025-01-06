@@ -61,8 +61,6 @@ pre {
   font-size: get-font-size(sm);
   padding: get-spacing(xs);
   border-radius: 4px;
-  @include apply-color(color, utility, white);
-  @include apply-color(background-color, neutral, "dark-100");
 }
 
 pre {

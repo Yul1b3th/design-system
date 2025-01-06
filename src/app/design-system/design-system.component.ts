@@ -1,4 +1,9 @@
-import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  inject,
+  ViewEncapsulation,
+} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { DesignSystemSidebarComponent } from './shared/design-system-sidebar/design-system-sidebar.component';
@@ -13,6 +18,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './design-system.component.html',
   styleUrls: ['./design-system.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
   imports: [
     CommonModule,
     RouterOutlet,

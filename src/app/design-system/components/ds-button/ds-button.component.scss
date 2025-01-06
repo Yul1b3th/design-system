@@ -55,10 +55,10 @@ $button-states: (
 
   cursor: pointer;
   border: 2px solid;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); // Sombra ligera en reposo
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.075); // Sombra ligera en reposo
 
   &:hover {
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); // Sombra más fuerte en hover
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); // Sombra más fuerte en hover
     @include apply-transition(all, 0.3s, ease-in-out);
   }
 
