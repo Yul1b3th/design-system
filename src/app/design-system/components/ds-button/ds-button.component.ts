@@ -25,13 +25,14 @@ export class DsButtonComponent implements AfterViewInit {
 
   @Input() type: 'button' | 'submit' | 'reset' = 'button';
   @Input() btnClass: string = 'btn-primary';
-  @Input() size: 'btn-sm' | 'btn-md' | 'btn-lg' = 'btn-md';
   @Input() block: boolean = false;
-  @Input() outline: boolean = false;
+  @Input() tertiary: boolean = false;
+  @Input() ghost: boolean = false;
+  @Input() iconOnly: boolean = false;
   @Input() disabled: boolean = false;
   @Input() ariaLabel: string = '';
   @Input() iconSvg: string | null = null;
-  @Input() btnIcon: string | null = null; // Clase para el icono
+  @Input() btnIcon: string | null = null;
 
   // Nuevas entradas para personalización
   @Input() textColor: string | null = null;
@@ -46,35 +47,43 @@ export class DsButtonComponent implements AfterViewInit {
   @ViewChild('buttonElement', { static: false }) buttonElement!: ElementRef;
   @ViewChild('iconContainer', { static: false }) iconContainer!: ElementRef;
 
+  private get customStyles(): { [key: string]: string | null } {
+    return {
+      'background-color': this.bgColor,
+      'border-color': this.bgColor,
+      color: this.textColor,
+      padding: this.padding,
+      'font-size': this.fontSize,
+      'font-weight': this.fontWeight,
+      'line-height': this.lineHeight,
+      border: this.border,
+      'border-radius': this.borderRadius,
+    };
+  }
+
   ngAfterViewInit(): void {
     if (this.iconSvg && this.iconContainer) {
       this.iconContainer.nativeElement.innerHTML = this.iconSvg;
     }
-    if (this.bgColor || this.textColor || this.borderRadius) {
+    if (Object.values(this.customStyles).some((style) => style)) {
       this.applyCustomStyles();
     }
   }
 
   get buttonClasses(): string[] {
     const themeClass = this.themeService.theme();
-    const baseClass = this.outline
-      ? `btn-outline-${this.btnClass.replace('btn-', '')}`
+    const baseClass = this.tertiary
+      ? `btn-tertiary-${this.btnClass.replace('btn-', '')}`
       : this.btnClass;
     return [
       'btn',
       baseClass,
-      this.size,
       themeClass,
       this.block ? 'btn-block' : '',
-      this.btnIcon ? this.btnIcon : '', // Solo incluir btnIcon si se ha proporcionado
-      this.textColor ||
-      this.bgColor ||
-      this.padding ||
-      this.fontSize ||
-      this.fontWeight ||
-      this.lineHeight ||
-      this.border ||
-      this.borderRadius
+      this.ghost ? 'btn-ghost' : '',
+      this.iconOnly ? 'btn-icon' : '',
+      this.btnIcon ? this.btnIcon : '',
+      Object.values(this.customStyles).some((style) => style)
         ? 'btn-custom'
         : '',
     ].filter(Boolean);
@@ -82,30 +91,10 @@ export class DsButtonComponent implements AfterViewInit {
 
   private applyCustomStyles(): void {
     const buttonElement = this.buttonElement.nativeElement;
-    if (this.bgColor) {
-      this.renderer.setStyle(buttonElement, 'background-color', this.bgColor);
-      this.renderer.setStyle(buttonElement, 'border-color', this.bgColor);
-    }
-    if (this.textColor) {
-      this.renderer.setStyle(buttonElement, 'color', this.textColor);
-    }
-    if (this.padding) {
-      this.renderer.setStyle(buttonElement, 'padding', this.padding);
-    }
-    if (this.fontSize) {
-      this.renderer.setStyle(buttonElement, 'font-size', this.fontSize);
-    }
-    if (this.fontWeight) {
-      this.renderer.setStyle(buttonElement, 'font-weight', this.fontWeight);
-    }
-    if (this.lineHeight) {
-      this.renderer.setStyle(buttonElement, 'line-height', this.lineHeight);
-    }
-    if (this.border) {
-      this.renderer.setStyle(buttonElement, 'border', this.border);
-    }
-    if (this.borderRadius) {
-      this.renderer.setStyle(buttonElement, 'border-radius', this.borderRadius);
-    }
+    Object.entries(this.customStyles).forEach(([style, value]) => {
+      if (value) {
+        this.renderer.setStyle(buttonElement, style, value);
+      }
+    });
   }
 }

@@ -2,14 +2,6 @@
 @use "../../styles/abstracts/functions" as *;
 @use "../../styles/abstracts/mixins" as *;
 
-// Mixin para tamaños de botones
-@mixin button-size($size, $padding-x, $padding-y, $font-size) {
-  &.btn-#{$size} {
-    padding: get-spacing($padding-x) get-spacing($padding-y);
-    font-size: get-font-size($font-size);
-  }
-}
-
 @mixin apply-hover-darken($color, $amount: 15%) {
   &:hover {
     background-color: color.adjust(get-color($color...), $lightness: -$amount);
@@ -26,19 +18,25 @@
 
   color: #333;
   background-color: transparent;
-  padding: get-spacing(xs) get-spacing(sm);
-  font-size: get-font-size(sm);
+  padding: 15px;
+  font-size: get-font-size(base);
   font-weight: 600;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   border-radius: 9999px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.075);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+
   transition:
     background-color 0.2s,
     color 0.2s,
-    border-color 0.2s;
+    border-color 0.2s,
+    box-shadow 0.2s;
 
   &:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow:
+      0 4px 6px rgba(0, 0, 0, 0.1),
+      0 2px 4px rgba(0, 0, 0, 0.06);
   }
 
   // Primary Button
@@ -53,74 +51,8 @@
   }
 
   // Tertiary Button
-  &.btn-tertiary {
-    border-color: get-color(primary, default);
-    @include apply-theme-colors(
-      (utility, transparent),
-      (neutral, "dark-300"),
-      (utility, transparent),
-      (utility, white)
-    );
-  }
-
-  // Secondary Button
-  &.btn-secondary {
-    @include apply-theme-colors(
-      (neutral, gray),
-      (neutral, "dark-300"),
-      (neutral, gray),
-      (neutral, "dark-300")
-    );
-    @include apply-hover-darken((neutral, gray));
-  }
-
-  // Outline Secondary Button
-  &.btn-outline-secondary {
-    border-color: get-color(neutral, gray);
-    @include apply-theme-colors(
-      (utility, transparent),
-      (neutral, "dark-300"),
-      (utility, transparent),
-      (utility, white)
-    );
-  }
-
-  // Accent Button
-  &.btn-accent {
-    @include apply-theme-colors(
-      (secondary, default),
-      (neutral, "dark-300"),
-      (secondary, default),
-      (neutral, "dark-300")
-    );
-    @include apply-hover-darken((secondary, default));
-  }
-
-  // Outline Accent Button
-  &.btn-outline-accent {
-    border-color: get-color(secondary, default);
-    @include apply-theme-colors(
-      (utility, transparent),
-      (neutral, "dark-300"),
-      (utility, transparent),
-      (utility, white)
-    );
-  }
-
-  // Danger Button
-  &.btn-danger {
-    @include apply-theme-colors(
-      (status, danger),
-      (neutral, "dark-300"),
-      (status, danger),
-      (neutral, "dark-300")
-    );
-    @include apply-hover-darken((status, danger));
-  }
-
-  // Outline Danger Button
-  &.btn-outline-danger {
-    border-color: get-color(status, danger);
+  &.btn-tertiary-primary {
+    border-color: color.adjust(get-color(primary, default), $lightness: -15);
     @include apply-theme-colors(
       (utility, transparent),
       (neutral, "dark-300"),
@@ -150,29 +82,87 @@
     }
   }
 
-  // Block Button
+  // Icon Button
+  &.btn-icon {
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+  }
+
+  .icon-param {
+    margin-right: get-spacing(xs);
+    display: inline-flex;
+    width: 24px;
+  }
+
   &.btn-block {
     display: block;
     width: 100%;
   }
 
-  // Icon Button
-  &.btn-icon {
-    padding: 0 !important;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 0.5rem;
+  // Secondary Button
+  &.btn-secondary {
+    @include apply-theme-colors(
+      (neutral, gray),
+      (neutral, "dark-300"),
+      (neutral, gray),
+      (neutral, "dark-300")
+    );
+    @include apply-hover-darken((neutral, gray));
   }
 
-  // With Icons
-  .icon-param {
-    margin-right: get-spacing(xs);
-    display: inline-flex;
-    width: 1.5rem;
-    svg {
-      width: 1rem;
-      height: 1rem;
-    }
+  // Secondary Tertiary Button
+  &.btn-tertiary-secondary {
+    border-color: color.adjust(get-color(neutral, gray), $lightness: -15);
+    @include apply-theme-colors(
+      (utility, transparent),
+      (neutral, "dark-300"),
+      (utility, transparent),
+      (utility, white)
+    );
+  }
+
+  // Accent Button
+  &.btn-accent {
+    @include apply-theme-colors(
+      (secondary, default),
+      (neutral, "dark-300"),
+      (secondary, default),
+      (neutral, "dark-300")
+    );
+    @include apply-hover-darken((secondary, default));
+  }
+
+  // Tertiary Accent Button
+  &.btn-tertiary-accent {
+    border-color: color.adjust(get-color(secondary, default), $lightness: -15);
+    @include apply-theme-colors(
+      (utility, transparent),
+      (neutral, "dark-300"),
+      (utility, transparent),
+      (utility, white)
+    );
+  }
+
+  // Danger Button
+  &.btn-danger {
+    @include apply-theme-colors(
+      (status, danger),
+      (neutral, "dark-300"),
+      (status, danger),
+      (neutral, "dark-300")
+    );
+    @include apply-hover-darken((status, danger));
+  }
+
+  // Tertiary Danger Button
+  &.btn-tertiary-danger {
+    border-color: color.adjust(get-color(status, danger), $lightness: -15);
+    @include apply-theme-colors(
+      (utility, transparent),
+      (neutral, "dark-300"),
+      (utility, transparent),
+      (utility, white)
+    );
   }
 
   // Button State
@@ -182,7 +172,16 @@
   }
 
   // Button Sizes
-  @include button-size(sm, xs, sm, sm);
-  @include button-size(md, sm, md, base);
-  @include button-size(lg, md, lg, lg);
+  &.btn-sm {
+    padding: 14px;
+    font-size: get-font-size(sm);
+  }
+  &.btn-md {
+    padding: 15px;
+    font-size: get-font-size(base);
+  }
+  &.btn-lg {
+    padding: 16px;
+    font-size: get-font-size(lg);
+  }
 }
