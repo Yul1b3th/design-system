@@ -41,16 +41,20 @@
 
   // Primary Button
   &.btn-primary {
-    @include apply-theme-colors(
-      (primary, default),
-      (neutral, "dark-300"),
-      (primary, default),
-      (neutral, "dark-300")
-    );
+    @include apply-color(border-color, primary, default);
+    @include apply-color(background-color, primary, default);
+    @include apply-color(color, neutral, "dark-300");
     @include apply-hover-darken((primary, default));
   }
 
-  // Tertiary Button
+  // Primary with icon
+  .icon-param {
+    margin-right: get-spacing(xs);
+    display: inline-flex;
+    width: 24px;
+  }
+
+  // Primary Tertiary
   &.btn-tertiary-primary {
     border-color: color.adjust(get-color(primary, default), $lightness: -15);
     @include apply-theme-colors(
@@ -59,11 +63,18 @@
       (utility, transparent),
       (utility, white)
     );
+
+    &:hover {
+      @include apply-color(border-color, primary, default);
+      @include apply-color(background-color, primary, default);
+      @include apply-color(color, neutral, "dark-300");
+    }
   }
 
-  // Ghost Button
-  &.btn-ghost {
+  // Primary Ghost
+  &.btn-ghost-primary {
     box-shadow: none;
+    border-color: transparent;
     @include apply-theme-colors(
       (utility, transparent),
       (neutral, "dark-300"),
@@ -73,27 +84,19 @@
 
     &:hover {
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-      @include apply-theme-colors(
-        (neutral, light),
-        (neutral, "dark-300"),
-        (neutral, "gray-dark"),
-        (utility, white)
-      );
+      @include apply-color(border-color, primary, default);
+      @include apply-color(background-color, primary, default);
+      @include apply-color(color, neutral, "dark-300");
     }
   }
 
-  // Icon Button
+  // Primary Icon
   &.btn-icon {
     padding: 0.25rem;
     border-radius: 0.5rem;
   }
 
-  .icon-param {
-    margin-right: get-spacing(xs);
-    display: inline-flex;
-    width: 24px;
-  }
-
+  // Primary Block
   &.btn-block {
     display: block;
     width: 100%;

@@ -1,0 +1,21 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Clases personalizadas para anchos específicos */
+.card-width-18rem {
+  display: block;
+  width: 18rem;
+}
+
+.card-width-24rem {
+  display: block;
+  width: 24rem;
+}
+
+.card-width-30rem {
+  display: block;
+  width: 30rem;
+}

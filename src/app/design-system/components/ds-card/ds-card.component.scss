@@ -1,61 +1,68 @@
 @use "sass:map";
 @use "sass:color";
-@use "../../styles/abstracts/variables" as *;
 @use "../../styles/abstracts/functions" as *;
 @use "../../styles/abstracts/mixins" as *;
 
 .card {
-  border: 1px solid get-color(neutral, gray);
-  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
   overflow: hidden;
-  @include apply-box-shadow(0 2px 4px 0 rgba(0, 0, 0, 0.1));
+  @include apply-box-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
   @include apply-transition(all, 0.3s, ease-in-out);
 
   &:hover {
-    @include apply-box-shadow(0 4px 8px 0 rgba(0, 0, 0, 0.2));
+    @include apply-box-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
   }
 
-  &.dark-mode {
-    @include apply-color(background-color, neutral, dark-200);
-    @include apply-color(color, utility, white);
+  &-header {
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    font-weight: 500;
   }
 
-  &.light-mode {
-    @include apply-color(background-color, neutral, light);
-    @include apply-color(color, neutral, dark);
-  }
-
-  .card-img-top {
+  &-img-top {
     width: 100%;
-    height: auto;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
   }
 
-  .card-body {
+  &-body {
     padding: get-spacing(md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 
     .card-title {
-      @include apply-typography(lg, lg, 600, sm);
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+
+    .card-content {
+      flex: 1 1 auto;
     }
 
     .card-text {
       @include apply-typography(base, base, 400, md);
     }
 
-    .btn {
-      display: inline-block;
-      padding: get-spacing(sm) get-spacing(md);
-      font-size: get-font-size(base);
-      font-weight: 600;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 4px;
-      @include apply-color(background-color, primary, default);
-      @include apply-color(color, utility, white);
-      @include apply-transition(all, 0.3s, ease-in-out);
-
-      &:hover {
-        @include apply-color(background-color, primary, dark);
-      }
+    .price {
+      @include apply-typography(lg, lg, 600, sm);
     }
+    .currency-symbol {
+      font-size: 0.875rem;
+      vertical-align: super;
+    }
+  }
+
+  &-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
   }
 }

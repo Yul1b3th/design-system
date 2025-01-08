@@ -74,13 +74,14 @@ export class DsButtonComponent implements AfterViewInit {
     const themeClass = this.themeService.theme();
     const baseClass = this.tertiary
       ? `btn-tertiary-${this.btnClass.replace('btn-', '')}`
-      : this.btnClass;
+      : this.ghost
+        ? `btn-ghost-${this.btnClass.replace('btn-', '')}`
+        : this.btnClass;
     return [
       'btn',
       baseClass,
       themeClass,
       this.block ? 'btn-block' : '',
-      this.ghost ? 'btn-ghost' : '',
       this.iconOnly ? 'btn-icon' : '',
       this.btnIcon ? this.btnIcon : '',
       Object.values(this.customStyles).some((style) => style)

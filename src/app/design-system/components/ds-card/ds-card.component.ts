@@ -18,9 +18,17 @@ import { DsButtonComponent } from '@design-system/components/ds-button/ds-button
 export class DsCardComponent {
   public readonly themeService = inject(ThemeService);
 
-  @Input() imageUrl: string = '';
-  @Input() title: string = '';
-  @Input() body: string = '';
-  @Input() buttonText: string = '';
-  @Input() buttonUrl: string = '';
+  @Input() imageUrl?: string = '';
+  @Input() title?: string = '';
+  @Input() titleClass?: string = ''; // Nueva propiedad para clases de título
+  @Input() body?: string = '';
+  @Input() bodyClass?: string = ''; // Nueva propiedad para clases de cuerpo
+  @Input() description?: string = ''; // Nueva propiedad para la descripción
+  @Input() descriptionClass?: string = ''; // Nueva propiedad para clases de descripción
+  @Input() price?: string = ''; // Nueva propiedad para el precio
+  @Input() priceClass?: string = ''; // Nueva propiedad para clases de precio
+  @Input() buttonText?: string = '';
+  @Input() buttonUrl?: string = '';
+  @Input() header?: string = '';
+  @Input() footer?: string = '';
 }

@@ -1,21 +1,33 @@
 <div class="card" [ngClass]="themeService.theme()">
+  <div *ngIf="header" class="card-header">{{ header }}</div>
   <img
     *ngIf="imageUrl"
     [src]="imageUrl"
-    class="card-img-top"
+    class="card-img-top img-responsive"
     alt="Card image"
   />
   <div class="card-body">
-    <h5 class="card-title">{{ title }}</h5>
-    <p class="card-text">{{ body }}</p>
+    <h5 *ngIf="title" [ngClass]="titleClass" class="card-title">{{ title }}</h5>
+    <p *ngIf="body" [ngClass]="bodyClass" class="card-text">{{ body }}</p>
+    <div *ngIf="description || price" class="card-content">
+      <p *ngIf="description" [ngClass]="descriptionClass" class="card-text">
+        {{ description }}
+      </p>
+      <p *ngIf="price" [ngClass]="priceClass" class="price">
+        {{ price }} <span class="current">€</span>
+      </p>
+    </div>
+
+    <ng-content select="[card-body]"></ng-content>
     <ds-button
       *ngIf="buttonText && buttonUrl"
       [type]="'button'"
-      [btnClass]="'btn-primary'"
+      [btnClass]="'btn-accent'"
       [ariaLabel]="buttonText"
       [attr.href]="buttonUrl"
     >
       {{ buttonText }}
     </ds-button>
   </div>
+  <div *ngIf="footer" class="card-footer">{{ footer }}</div>
 </div>
