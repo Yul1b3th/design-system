@@ -16,7 +16,7 @@ import { ThemeService } from '@design-system/services/theme.service';
   selector: 'ds-button',
   imports: [CommonModule],
   templateUrl: './ds-button.component.html',
-  styleUrl: './ds-button.component.scss',
+  styleUrls: ['./ds-button.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DsButtonComponent implements AfterViewInit {
@@ -31,6 +31,8 @@ export class DsButtonComponent implements AfterViewInit {
   @Input() iconOnly: boolean = false;
   @Input() disabled: boolean = false;
   @Input() ariaLabel: string = '';
+  @Input() href?: string;
+  @Input() target?: '_self' | '_blank' | '_parent' | '_top' = '_self';
   @Input() iconSvg: string | null = null;
   @Input() btnIcon: string | null = null;
 

@@ -29,6 +29,7 @@ export class DsCardComponent {
   @Input() priceClass?: string = '';
   @Input() buttonText?: string = '';
   @Input() buttonUrl?: string = '';
+  @Input() buttonTarget?: '_self' | '_blank' | '_parent' | '_top' = '_self';
   @Input() header?: string = '';
   @Input() footer?: string = '';
   @Input() ariaLabelledby?: string = '';

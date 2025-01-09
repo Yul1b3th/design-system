@@ -33,6 +33,7 @@ export default class CardComponent {
       body: 'This is an example of a card with a title, text, and button.',
       buttonText: 'Read More',
       buttonUrl: '#',
+      buttonTarget: '_blank' as '_blank',
     },
     {
       header: 'Card with Image, Title, Text and Button',
@@ -41,6 +42,7 @@ export default class CardComponent {
       body: 'This is an example of a card with an image, title, text, and button.',
       buttonText: 'Read More',
       buttonUrl: '#',
+      buttonTarget: '_blank' as '_blank',
     },
     {
       header: 'Card with Header and Footer',

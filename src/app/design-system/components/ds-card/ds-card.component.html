@@ -40,15 +40,17 @@
     </div>
 
     <ng-content select="[card-body]"></ng-content>
+
     <ds-button
       *ngIf="buttonText && buttonUrl"
       [type]="'button'"
       [btnClass]="'btn-accent'"
       [ariaLabel]="buttonText"
-      [attr.href]="buttonUrl"
+      [href]="buttonUrl"
+      [target]="buttonTarget"
       role="button"
     >
-      {{ buttonText }}
+      <span content-anchor>{{ buttonText }}</span>
     </ds-button>
   </div>
   <div *ngIf="footer" class="card-footer">{{ footer }}</div>

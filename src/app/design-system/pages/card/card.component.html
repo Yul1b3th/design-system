@@ -36,11 +36,10 @@
         [body]="cardData[3].body"
         [buttonText]="cardData[3].buttonText"
         [buttonUrl]="cardData[3].buttonUrl"
+        [buttonTarget]="cardData[3].buttonTarget"
         class="card-width-18rem"
       ></ds-card>
     </div>
-    <!-- Sección: Uso -->
-    <div class="documentation-section"></div>
 
     <!-- Sección: Accesibilidad -->
     <div class="documentation-section" id="accessibility" #section>
@@ -126,13 +125,13 @@
     </div>
 
     <!-- Sección: Variaciones -->
+
     <div class="documentation-section">
       <h2>Variaciones</h2>
 
       <!-- Tarjeta Body -->
       <div class="documentation-item">
         <h3>Card Body</h3>
-        <ds-card [body]="cardData[0].body"></ds-card>
       </div>
 
       <!-- Tarjeta con Título y Texto -->
@@ -152,7 +151,8 @@
           [title]="cardData[1].title"
           [body]="cardData[1].body"
           class="card-width-18rem"
-        ></ds-card>
+        >
+        </ds-card>
       </div>
 
       <!-- Tarjeta con Título, Texto y Botón -->
@@ -163,6 +163,7 @@
           [body]="cardData[2].body"
           [buttonText]="cardData[2].buttonText"
           [buttonUrl]="cardData[2].buttonUrl"
+          [buttonTarget]="cardData[2].buttonTarget"
         ></ds-card>
       </div>
 
@@ -175,6 +176,7 @@
           [body]="cardData[3].body"
           [buttonText]="cardData[3].buttonText"
           [buttonUrl]="cardData[3].buttonUrl"
+          [buttonTarget]="cardData[3].buttonTarget"
           class="card-width-18rem"
         ></ds-card>
       </div>
@@ -222,6 +224,7 @@
           [priceClass]="'text-lg mt-2 font-bold'"
           [buttonText]="'See more'"
           [buttonUrl]="'https://ezhub.vercel.app/rooms/1'"
+          [buttonTarget]="'_blank'"
         >
         </ds-card>
         <ds-card
@@ -236,6 +239,7 @@
           [priceClass]="'text-lg mt-2 font-bold'"
           [buttonText]="'See more'"
           [buttonUrl]="'https://ezhub.vercel.app/rooms/2'"
+          [buttonTarget]="'_blank'"
         >
         </ds-card>
         <ds-card
@@ -250,6 +254,7 @@
           [priceClass]="'text-lg mt-2 font-bold'"
           [buttonText]="'See more'"
           [buttonUrl]="'https://ezhub.vercel.app/rooms/3'"
+          [buttonTarget]="'_blank'"
         >
         </ds-card>
         <ds-card
@@ -264,6 +269,7 @@
           [priceClass]="'text-lg mt-2 font-bold'"
           [buttonText]="'See more'"
           [buttonUrl]="'https://ezhub.vercel.app/rooms/4'"
+          [buttonTarget]="'_blank'"
         >
         </ds-card>
         <ds-card
@@ -278,6 +284,7 @@
           [priceClass]="'text-lg mt-2 font-bold'"
           [buttonText]="'See more'"
           [buttonUrl]="'https://ezhub.vercel.app/rooms/5'"
+          [buttonTarget]="'_blank'"
         >
         </ds-card>
       </div>

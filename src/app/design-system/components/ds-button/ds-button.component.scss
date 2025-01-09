@@ -104,12 +104,9 @@
 
   // Secondary Button
   &.btn-secondary {
-    @include apply-theme-colors(
-      (neutral, gray),
-      (neutral, "dark-300"),
-      (neutral, gray),
-      (neutral, "dark-300")
-    );
+    @include apply-color(border-color, neutral, gray);
+    @include apply-color(background-color, neutral, gray);
+    @include apply-color(color, neutral, "dark-300");
     @include apply-hover-darken((neutral, gray));
   }
 
@@ -126,12 +123,9 @@
 
   // Accent Button
   &.btn-accent {
-    @include apply-theme-colors(
-      (secondary, default),
-      (neutral, "dark-300"),
-      (secondary, default),
-      (neutral, "dark-300")
-    );
+    @include apply-color(border-color, secondary, default);
+    @include apply-color(background-color, secondary, default);
+    @include apply-color(color, neutral, "dark-300");
     @include apply-hover-darken((secondary, default));
   }
 
@@ -148,12 +142,9 @@
 
   // Danger Button
   &.btn-danger {
-    @include apply-theme-colors(
-      (status, danger),
-      (neutral, "dark-300"),
-      (status, danger),
-      (neutral, "dark-300")
-    );
+    @include apply-color(border-color, status, danger);
+    @include apply-color(background-color, status, danger);
+    @include apply-color(color, neutral, "dark-300");
     @include apply-hover-darken((status, danger));
   }
 
