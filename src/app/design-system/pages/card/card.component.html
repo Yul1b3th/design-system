@@ -49,6 +49,80 @@
         El componente de tarjeta incluye soporte para accesibilidad mediante el
         uso de atributos <code>aria</code> y roles adecuados.
       </p>
+
+      <div class="documentation-item">
+        <h3>Atributos ARIA</h3>
+        <p>
+          Los siguientes atributos ARIA se utilizan en el componente de tarjeta:
+        </p>
+        <ul>
+          <li>
+            <code>aria-label</code>: Proporciona una etiqueta accesible para
+            elementos interactivos como botones.
+          </li>
+          <li>
+            <code>aria-labelledby</code>: Asocia un elemento con su etiqueta.
+            Utilizado para asociar la tarjeta con su título.
+          </li>
+          <li>
+            <code>aria-describedby</code>: Proporciona una descripción adicional
+            para un elemento. Utilizado para asociar la tarjeta con su cuerpo.
+          </li>
+        </ul>
+      </div>
+
+      <div class="documentation-item">
+        <h3>Roles</h3>
+        <p>Los siguientes roles se utilizan en el componente de tarjeta:</p>
+        <ul>
+          <li>
+            <code>role="region"</code>: Indica que el contenedor principal de la
+            tarjeta es una región del contenido.
+          </li>
+          <li>
+            <code>role="img"</code>: Indica que un elemento es una imagen.
+          </li>
+        </ul>
+      </div>
+
+      <div class="documentation-item">
+        <h3>Ejemplo</h3>
+        <p>
+          Aquí hay un ejemplo de cómo se pueden utilizar estos atributos y roles
+          en el HTML:
+        </p>
+        <pre><code>
+  &lt;ds-card
+    [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/1.jpg'"
+    [title]="'Card Title'"
+    [body]="'This is a card body text.'"
+    [buttonText]="'Learn More'"
+    [buttonUrl]="'#'"
+    [ariaLabelledby]="'card-title-Card Title'"
+    [ariaDescribedby]="'card-body-This is a card body text.'"
+    role="region"
+  &gt;&lt;/ds-card&gt;
+  </code></pre>
+      </div>
+
+      <div class="documentation-item">
+        <h3>Buenas Prácticas</h3>
+        <p>Para asegurar la accesibilidad, siga estas buenas prácticas:</p>
+        <ul>
+          <li>
+            Proporcione etiquetas accesibles para todos los elementos
+            interactivos.
+          </li>
+          <li>
+            Use roles y atributos ARIA adecuados para describir la funcionalidad
+            de los elementos.
+          </li>
+          <li>
+            Verifique la accesibilidad utilizando herramientas como el inspector
+            de accesibilidad del navegador.
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- Sección: Variaciones -->
