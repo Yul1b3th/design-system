@@ -18,7 +18,7 @@ design-system {
       .container {
         padding: 0;
         .documentation-header {
-          padding: 30px 40px;
+          padding: 1.875rem 2.5rem;
           @include apply-theme-colors(
             (tertiary, default),
             (neutral, "dark-200"),
@@ -29,11 +29,11 @@ design-system {
 
         ul,
         ol {
-          margin-left: 20px;
+          margin-left: 1.25rem;
         }
 
         .documentation-nav {
-          padding: 60px 40px 0px 40px;
+          padding: 3.75rem 2.5rem 0rem 2.5rem;
           ul {
             a {
               font-weight: 500;
@@ -50,11 +50,11 @@ design-system {
         }
 
         .documentation-content {
-          padding: 0 40px 40px;
+          padding: 0 2.5rem 2.5rem;
           .documentation-section {
-            padding-top: 50px;
-            .documentation-item {
-              margin-top: 2rem;
+            padding-top: 3.125rem;
+            .documentation-item:not(:last-child) {
+              margin-bottom: 3rem;
             }
           }
         }

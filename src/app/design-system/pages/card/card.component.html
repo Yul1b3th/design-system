@@ -12,7 +12,7 @@
 
   <!-- Contenido principal -->
   <div class="documentation-content">
-    <div>
+    <div class="documentation-section">
       <h2>Variaciones</h2>
 
       <!-- Tarjeta Body -->
@@ -91,107 +91,82 @@
         </ds-card>
       </div>
     </div>
+
+    <!-- Nueva Sección de Grid de 5 Tarjetas Responsive -->
+    <div class="documentation-section">
+      <h2>Grid de Cards Responsivas</h2>
+      <div class="card-grid">
+        <ds-card
+          [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/1.jpg'"
+          [title]="'Habitación acogedora con vistas al jardín'"
+          [titleClass]="'font-bold line-clamp-1'"
+          [description]="
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.'
+          "
+          [descriptionClass]="'mt-2 line-clamp-3'"
+          [price]="'350'"
+          [priceClass]="'text-lg mt-2 font-bold'"
+          [buttonText]="'See more'"
+          [buttonUrl]="'https://ezhub.vercel.app/rooms/1'"
+        >
+        </ds-card>
+        <ds-card
+          [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/2.jpg'"
+          [title]="'Amplia habitación en el centro de la ciudad'"
+          [titleClass]="'font-bold line-clamp-1'"
+          [description]="
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+          "
+          [descriptionClass]="'mt-2 line-clamp-3'"
+          [price]="'450'"
+          [priceClass]="'text-lg mt-2 font-bold'"
+          [buttonText]="'See more'"
+          [buttonUrl]="'https://ezhub.vercel.app/rooms/2'"
+        >
+        </ds-card>
+        <ds-card
+          [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/3.jpg'"
+          [title]="'Habitación luminosa con balcón privado'"
+          [titleClass]="'font-bold line-clamp-1'"
+          [description]="
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.'
+          "
+          [descriptionClass]="'mt-2 line-clamp-3'"
+          [price]="'500'"
+          [priceClass]="'text-lg mt-2 font-bold'"
+          [buttonText]="'See more'"
+          [buttonUrl]="'https://ezhub.vercel.app/rooms/3'"
+        >
+        </ds-card>
+        <ds-card
+          [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/4.jpg'"
+          [title]="'Habitación económica cerca del transporte público'"
+          [titleClass]="'font-bold line-clamp-1'"
+          [description]="
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.'
+          "
+          [descriptionClass]="'mt-2 line-clamp-3'"
+          [price]="'300'"
+          [priceClass]="'text-lg mt-2 font-bold'"
+          [buttonText]="'See more'"
+          [buttonUrl]="'https://ezhub.vercel.app/rooms/4'"
+        >
+        </ds-card>
+        <ds-card
+          [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/5.jpg'"
+          [title]="'Habitación moderna con todas las comodidades'"
+          [titleClass]="'font-bold line-clamp-1'"
+          [description]="
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+          "
+          [descriptionClass]="'mt-2 line-clamp-3'"
+          [price]="'600'"
+          [priceClass]="'text-lg mt-2 font-bold'"
+          [buttonText]="'See more'"
+          [buttonUrl]="'https://ezhub.vercel.app/rooms/5'"
+        >
+        </ds-card>
+      </div>
+    </div>
   </div>
 </section>
-
-<!-- Nueva Sección de Grid de 7 Tarjetas Responsive -->
-<div class="card-grid">
-  <ds-card
-    [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/1.jpg'"
-    [title]="'Habitación acogedora con vistas al jardín'"
-    [titleClass]="'font-bold line-clamp-1'"
-    [description]="
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum. Cras venenatis euismod malesuada.'
-    "
-    [descriptionClass]="'mt-2 line-clamp-3'"
-    [price]="'350'"
-    [priceClass]="'text-lg mt-2 font-bold'"
-    [buttonText]="'See more'"
-    [buttonUrl]="'https://ezhub.vercel.app/rooms/1'"
-  >
-  </ds-card>
-  <ds-card
-    [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/1.jpg'"
-    [title]="'Amplia habitación en el centro de la ciudad'"
-    [titleClass]="'font-bold line-clamp-1'"
-    [description]="
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
-    "
-    [descriptionClass]="'mt-2 line-clamp-3'"
-    [price]="'450'"
-    [priceClass]="'text-lg mt-2 font-bold'"
-    [buttonText]="'See more'"
-    [buttonUrl]="'https://ezhub.vercel.app/rooms/2'"
-  >
-  </ds-card>
-  <ds-card
-    [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/1.jpg'"
-    [title]="'Habitación luminosa con balcón privado'"
-    [titleClass]="'font-bold line-clamp-1'"
-    [description]="
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nisl eros, pulvinar facilisis justo mollis, auctor consequat urna. Morbi a bibendum metus.'
-    "
-    [descriptionClass]="'mt-2 line-clamp-3'"
-    [price]="'500'"
-    [priceClass]="'text-lg mt-2 font-bold'"
-    [buttonText]="'See more'"
-    [buttonUrl]="'https://ezhub.vercel.app/rooms/3'"
-  >
-  </ds-card>
-  <ds-card
-    [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/1.jpg'"
-    [title]="'Habitación económica cerca del transporte público'"
-    [titleClass]="'font-bold line-clamp-1'"
-    [description]="
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.'
-    "
-    [descriptionClass]="'mt-2 line-clamp-3'"
-    [price]="'300'"
-    [priceClass]="'text-lg mt-2 font-bold'"
-    [buttonText]="'See more'"
-    [buttonUrl]="'https://ezhub.vercel.app/rooms/4'"
-  >
-  </ds-card>
-  <ds-card
-    [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/1.jpg'"
-    [title]="'Habitación moderna con todas las comodidades'"
-    [titleClass]="'font-bold line-clamp-1'"
-    [description]="
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-    "
-    [descriptionClass]="'mt-2 line-clamp-3'"
-    [price]="'600'"
-    [priceClass]="'text-lg mt-2 font-bold'"
-    [buttonText]="'See more'"
-    [buttonUrl]="'https://ezhub.vercel.app/rooms/5'"
-  >
-  </ds-card>
-  <ds-card
-    [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/1.jpg'"
-    [title]="'Habitación tranquila en zona residencial'"
-    [titleClass]="'font-bold line-clamp-1'"
-    [description]="
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris.'
-    "
-    [descriptionClass]="'mt-2 line-clamp-3'"
-    [price]="'400'"
-    [priceClass]="'text-lg mt-2 font-bold'"
-    [buttonText]="'See more'"
-    [buttonUrl]="'https://ezhub.vercel.app/rooms/6'"
-  >
-  </ds-card>
-  <ds-card
-    [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/1.jpg'"
-    [title]="'Habitación con vistas al mar'"
-    [titleClass]="'font-bold line-clamp-1'"
-    [description]="
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-    "
-    [descriptionClass]="'mt-2 line-clamp-3'"
-    [price]="'700'"
-    [priceClass]="'text-lg mt-2 font-bold'"
-    [buttonText]="'See more'"
-    [buttonUrl]="'https://ezhub.vercel.app/rooms/7'"
-  >
-  </ds-card>
-</div>
