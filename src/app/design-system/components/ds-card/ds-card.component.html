@@ -1,14 +1,35 @@
-<div class="card" [ngClass]="themeService.theme()">
+<div
+  class="card"
+  [ngClass]="themeService.theme()"
+  role="region"
+  [attr.aria-labelledby]="ariaLabelledby"
+  [attr.aria-describedby]="ariaDescribedby"
+>
   <div *ngIf="header" class="card-header">{{ header }}</div>
   <img
     *ngIf="imageUrl"
     [src]="imageUrl"
     class="card-img-top img-responsive"
     alt="Card image"
+    role="img"
   />
   <div class="card-body">
-    <h5 *ngIf="title" [ngClass]="titleClass" class="card-title">{{ title }}</h5>
-    <p *ngIf="body" [ngClass]="bodyClass" class="card-text">{{ body }}</p>
+    <h5
+      *ngIf="title"
+      [ngClass]="titleClass"
+      class="card-title"
+      [attr.id]="'card-title-' + title"
+    >
+      {{ title }}
+    </h5>
+    <p
+      *ngIf="body"
+      [ngClass]="bodyClass"
+      class="card-text"
+      [attr.id]="'card-body-' + body"
+    >
+      {{ body }}
+    </p>
     <div *ngIf="description || price" class="card-content">
       <p *ngIf="description" [ngClass]="descriptionClass" class="card-text">
         {{ description }}
@@ -25,6 +46,7 @@
       [btnClass]="'btn-accent'"
       [ariaLabel]="buttonText"
       [attr.href]="buttonUrl"
+      role="button"
     >
       {{ buttonText }}
     </ds-button>

@@ -20,15 +20,17 @@ export class DsCardComponent {
 
   @Input() imageUrl?: string = '';
   @Input() title?: string = '';
-  @Input() titleClass?: string = ''; // Nueva propiedad para clases de título
+  @Input() titleClass?: string = '';
   @Input() body?: string = '';
-  @Input() bodyClass?: string = ''; // Nueva propiedad para clases de cuerpo
-  @Input() description?: string = ''; // Nueva propiedad para la descripción
-  @Input() descriptionClass?: string = ''; // Nueva propiedad para clases de descripción
-  @Input() price?: string = ''; // Nueva propiedad para el precio
-  @Input() priceClass?: string = ''; // Nueva propiedad para clases de precio
+  @Input() bodyClass?: string = '';
+  @Input() description?: string = '';
+  @Input() descriptionClass?: string = '';
+  @Input() price?: string = '';
+  @Input() priceClass?: string = '';
   @Input() buttonText?: string = '';
   @Input() buttonUrl?: string = '';
   @Input() header?: string = '';
   @Input() footer?: string = '';
+  @Input() ariaLabelledby?: string = '';
+  @Input() ariaDescribedby?: string = '';
 }

@@ -12,6 +12,46 @@
 
   <!-- Contenido principal -->
   <div class="documentation-content">
+    <!-- Sección: Uso -->
+    <div class="documentation-section">
+      <h2>Uso</h2>
+      <p>Ejemplo de implementación en HTML:</p>
+      <pre><code>
+      &lt;ds-card
+        [imageUrl]="'https://ezhub.vercel.app/assets/img/bedrooms/1.jpg'"
+        [title]="'Card Title'"
+        [body]="'This is a card body text.'"
+        [buttonText]="'Learn More'"
+        [buttonUrl]="'#'"
+      &gt;&lt;/ds-card&gt;
+      </code></pre>
+    </div>
+
+    <!-- Sección: Ejemplo -->
+    <div class="documentation-section">
+      <h2>Ejemplo</h2>
+      <ds-card
+        [imageUrl]="cardData[3].imageUrl"
+        [title]="cardData[3].title"
+        [body]="cardData[3].body"
+        [buttonText]="cardData[3].buttonText"
+        [buttonUrl]="cardData[3].buttonUrl"
+        class="card-width-18rem"
+      ></ds-card>
+    </div>
+    <!-- Sección: Uso -->
+    <div class="documentation-section"></div>
+
+    <!-- Sección: Accesibilidad -->
+    <div class="documentation-section" id="accessibility" #section>
+      <h2>Accesibilidad</h2>
+      <p>
+        El componente de tarjeta incluye soporte para accesibilidad mediante el
+        uso de atributos <code>aria</code> y roles adecuados.
+      </p>
+    </div>
+
+    <!-- Sección: Variaciones -->
     <div class="documentation-section">
       <h2>Variaciones</h2>
 
@@ -92,7 +132,7 @@
       </div>
     </div>
 
-    <!-- Nueva Sección de Grid de 5 Tarjetas Responsive -->
+    <!-- Sección de Grid de 5 Tarjetas Responsive -->
     <div class="documentation-section">
       <h2>Grid de Cards Responsivas</h2>
       <div class="card-grid">
