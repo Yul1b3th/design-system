@@ -1,5 +1,3 @@
-@use "sass:map";
-@use "sass:color";
 @use "../../styles/abstracts/functions" as *;
 @use "../../styles/abstracts/mixins" as *;
 
@@ -24,11 +22,9 @@
   }
 
   &-body {
-    padding: get-spacing(md);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     height: 100%;
+    padding: get-spacing(md);
+    @include apply-flex-container(column, space-between, stretch, 0);
 
     .card-title {
       @include apply-typography(xl, base, 500, sm);

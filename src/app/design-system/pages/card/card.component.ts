@@ -14,7 +14,6 @@ import { ThemeService } from '@design-system/services/theme.service';
 export default class CardComponent {
   public readonly themeService = inject(ThemeService);
 
-  // Datos de ejemplo para las tarjetas
   public cardData = [
     {
       header: 'Card with Title and Text',
