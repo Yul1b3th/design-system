@@ -21,6 +21,13 @@
     @include apply-color(color, neutral, dark);
   }
 
+  &-footer {
+    padding: 0.75rem 1.25rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+    @include apply-color(color, neutral, dark);
+  }
+
   &-body {
     height: 100%;
     padding: get-spacing(md);
@@ -47,12 +54,5 @@
     .currency-symbol {
       @include apply-typography(sm, base, 600, sm);
     }
-  }
-
-  &-footer {
-    padding: 0.75rem 1.25rem;
-    background-color: rgba(0, 0, 0, 0.03);
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
-    @include apply-color(color, neutral, dark);
   }
 }
