@@ -7,20 +7,15 @@ export const routes: Routes = [
     title: 'EZHub | Design System',
     loadChildren: () => import('./design-system/design-system.routes'),
   },
-
   {
-    path: '**',
-    redirectTo: 'introduction',
+    path: '',
+    redirectTo: 'design-system',
+    pathMatch: 'full',
   },
   {
     path: '404',
     title: 'EZHub | 404',
     component: PageNotFoundComponent,
-  },
-  {
-    path: '',
-    redirectTo: 'design-system',
-    pathMatch: 'full',
   },
   {
     path: '**',
