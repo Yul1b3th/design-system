@@ -1,32 +1,40 @@
-<section class="alert">
-  <div class="container">
-    <div>
-      <h1>Alert</h1>
+<section>
+  <header [ngClass]="[themeService.theme(), 'documentation-header']">
+    <h1>Alert</h1>
+    <p>
+      El componente de alerta (<code>ds-alert</code>) se utiliza para mostrar
+      mensajes importantes a los usuarios. Este componente es altamente
+      personalizable y soporta múltiples configuraciones para adaptarse a
+      diferentes contextos de uso.
+    </p>
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="documentation-content">
+    <!-- Sección: Uso -->
+    <div class="documentation-section" id="overview" #section>
+      <h2>Uso</h2>
+      <p>Ejemplo de uso en HTML:</p>
+      <pre><code>
+      &lt;ds-alert
+        type="success"
+        message="This is a success alert!"
+        [dismissible]="true"
+      &gt;&lt;/ds-alert&gt;
+      </code></pre>
+    </div>
+
+    <!-- Sección: Accesibilidad -->
+    <div class="documentation-section" id="overview" #section>
+      <h2>Accesibilidad</h2>
       <p>
-        El componente de alerta (<code>ds-alert</code>) se utiliza para mostrar
-        mensajes importantes a los usuarios. Este componente es altamente
-        personalizable y soporta múltiples configuraciones para adaptarse a
-        diferentes contextos de uso.
+        El componente de alerta incluye soporte para accesibilidad mediante el
+        uso de atributos <code>aria</code> y roles adecuados.
       </p>
     </div>
 
-    <hr />
-
-    <!-- Uso -->
-    <div>
-      <h2>Uso</h2>
-      <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-alert
-  type="success"
-  message="This is a success alert!"
-  [dismissible]="true"
-&gt;&lt;/ds-alert&gt;</code></pre>
-    </div>
-
-    <hr />
-
-    <!-- Configuración -->
-    <div>
+    <!-- Sección: Uso -->
+    <div class="documentation-section" id="overview" #section>
       <h2>Configuración</h2>
       <p>El componente acepta las siguientes propiedades:</p>
 
@@ -62,55 +70,48 @@
       </table>
     </div>
 
-    <hr />
+    <!-- Sección: Variaciones -->
+    <div class="documentation-section" id="variations" #section>
+      <h2>Variaciones</h2>
+      <!-- Success -->
+      <div class="documentation-item">
+        <h3>Success</h3>
+        <ds-alert
+          type="success"
+          message="This is a success alert!"
+          [dismissible]="true"
+        ></ds-alert>
+      </div>
 
-    <!-- Ejemplos de Alerta -->
-    <div>
-      <h2>Ejemplos de Alerta</h2>
-      <ds-alert
-        type="success"
-        message="This is a success alert!"
-        [dismissible]="true"
-      ></ds-alert>
-      <ds-alert
-        type="error"
-        message="This is an error alert!"
-        [dismissible]="true"
-      ></ds-alert>
-      <ds-alert
-        type="warning"
-        message="This is a warning alert!"
-        [dismissible]="true"
-      ></ds-alert>
-      <ds-alert
-        type="info"
-        message="This is an info alert!"
-        [dismissible]="true"
-      ></ds-alert>
-    </div>
+      <!-- error -->
+      <div class="documentation-item">
+        <h3>Error</h3>
+        <ds-alert
+          type="error"
+          message="This is an error alert!"
+          [dismissible]="true"
+        ></ds-alert>
+      </div>
 
-    <hr />
+      <!-- warning -->
+      <div class="documentation-item">
+        <h3>Warning</h3>
+        <ds-alert
+          type="warning"
+          message="This is a warning alert!"
+          [dismissible]="true"
+        ></ds-alert>
+      </div>
 
-    <!-- Accesibilidad -->
-    <div>
-      <h2>Accesibilidad</h2>
-      <p>
-        El componente de alerta incluye soporte para accesibilidad mediante el
-        uso de atributos <code>aria</code> y roles adecuados.
-      </p>
-    </div>
-
-    <hr />
-
-    <!-- Conclusión -->
-    <div>
-      <h2>Conclusión</h2>
-      <p>
-        El componente de alerta es una herramienta útil para mostrar mensajes
-        importantes a los usuarios. Con sus múltiples opciones de configuración
-        y soporte para accesibilidad, es una adición valiosa para cualquier
-        aplicación.
-      </p>
+      <!-- info -->
+      <div class="documentation-item">
+        <h3>Info</h3>
+        <ds-alert
+          type="info"
+          message="This is an info alert!"
+          [dismissible]="true"
+        ></ds-alert>
+      </div>
     </div>
   </div>
 </section>
