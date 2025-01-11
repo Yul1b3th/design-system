@@ -60,6 +60,12 @@ const routes: Routes = [
         loadComponent: () => import('./pages/card/card.component'),
       },
       {
+        path: 'card-skeleton',
+        title: 'Design system | Card',
+        loadComponent: () =>
+          import('./pages/card/card-skeleton/card-skeleton.component'),
+      },
+      {
         path: 'carousel',
         title: 'Design system | Carousel',
         loadComponent: () => import('./pages/carousel/carousel.component'),
