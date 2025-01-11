@@ -92,6 +92,12 @@ const routes: Routes = [
         loadComponent: () => import('./pages/input/input.component'),
       },
       {
+        path: 'language-selector',
+        title: 'Design system | LanguageSelector',
+        loadComponent: () =>
+          import('./pages/language-selector/language-selector.component'),
+      },
+      {
         path: 'modal',
         title: 'Design system | Modal',
         loadComponent: () => import('./pages/modal/modal.component'),
@@ -122,12 +128,17 @@ const routes: Routes = [
         loadComponent: () => import('./pages/spinner/spinner.component'),
       },
       {
+        path: 'theme-selector',
+        title: 'Design system | ThemeSelector',
+        loadComponent: () =>
+          import('./pages/theme-selector/theme-selector.component'),
+      },
+      {
         path: 'theme-switch',
         title: 'Design system | Theme switch',
         loadComponent: () =>
           import('./pages/theme-switch/theme-switch.component'),
       },
-
       {
         path: '**',
         redirectTo: 'introduction',
