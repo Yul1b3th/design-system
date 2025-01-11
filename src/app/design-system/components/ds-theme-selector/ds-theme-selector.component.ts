@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-ds-theme-selector',
+  selector: 'ds-theme-selector',
   imports: [],
   templateUrl: './ds-theme-selector.component.html',
-  styleUrl: './ds-theme-selector.component.scss'
+  styleUrl: './ds-theme-selector.component.scss',
 })
-export class DsThemeSelectorComponent {
-
-}
+export class DsThemeSelectorComponent {}
