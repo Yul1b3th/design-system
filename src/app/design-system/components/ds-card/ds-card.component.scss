@@ -1,6 +1,12 @@
 @use "../../styles/abstracts/functions" as *;
 @use "../../styles/abstracts/mixins" as *;
 
+@mixin header-footer() {
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  @include apply-color(color, neutral, dark);
+}
+
 .card {
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.125);
@@ -15,17 +21,13 @@
   }
 
   &-header {
-    padding: 0.75rem 1.25rem;
-    background-color: rgba(0, 0, 0, 0.03);
+    @include header-footer;
     border-bottom: 1px solid rgba(0, 0, 0, 0.125);
-    @include apply-color(color, neutral, dark);
   }
 
   &-footer {
-    padding: 0.75rem 1.25rem;
-    background-color: rgba(0, 0, 0, 0.03);
+    @include header-footer;
     border-top: 1px solid rgba(0, 0, 0, 0.125);
-    @include apply-color(color, neutral, dark);
   }
 
   &-body {
