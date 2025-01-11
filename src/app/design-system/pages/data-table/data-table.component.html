@@ -1,28 +1,26 @@
-<section class="data-table">
-  <div class="container">
-    <div>
-      <h1>Data Table</h1>
-      <p>
-        El componente de tabla de datos (<code>ds-data-table</code>) se utiliza
-        para mostrar datos tabulares de manera organizada y accesible. Este
-        componente es altamente personalizable y soporta múltiples
-        configuraciones para adaptarse a diferentes contextos de uso.
-      </p>
-    </div>
+<section class="buttons">
+  <!-- Encabezado de la sección -->
+  <header [ngClass]="[themeService.theme(), 'documentation-header']">
+    <h1>Data Table</h1>
+    <p>
+      El componente de tabla de datos (<code>ds-data-table</code>) se utiliza
+      para mostrar datos tabulares de manera organizada y accesible. Este
+      componente es altamente personalizable y soporta múltiples configuraciones
+      para adaptarse a diferentes contextos de uso.
+    </p>
+  </header>
 
-    <hr />
-
-    <!-- Uso -->
-    <div>
+  <!-- Contenido principal -->
+  <div class="documentation-content">
+    <!-- Sección: Uso -->
+    <div class="documentation-section">
       <h2>Uso</h2>
       <p>Ejemplo de uso en HTML:</p>
       <pre><code>&lt;ds-data-table [data]="data" [columns]="columns"&gt;&lt;/ds-data-table&gt;</code></pre>
     </div>
 
-    <hr />
-
-    <!-- Configuración -->
-    <div>
+    <!-- Sección: Configuración -->
+    <div class="documentation-section">
       <h2>Configuración</h2>
       <p>
         El componente de tabla de datos acepta las siguientes propiedades de
@@ -45,10 +43,8 @@
       </ul>
     </div>
 
-    <hr />
-
-    <!-- Ejemplos de Tabla de Datos -->
-    <div>
+    <!-- Sección: Ejemplos de Tabla de Datos -->
+    <div class="documentation-section">
       <h2>Ejemplos de Tabla de Datos</h2>
       <ds-data-table
         [data]="[
@@ -64,27 +60,12 @@
       ></ds-data-table>
     </div>
 
-    <hr />
-
-    <!-- Accesibilidad -->
-    <div>
+    <!-- Sección: Accesibilidad -->
+    <div class="documentation-section">
       <h2>Accesibilidad</h2>
       <p>
         El componente de tabla de datos incluye soporte para accesibilidad
         mediante el uso de atributos <code>aria</code> y roles adecuados.
-      </p>
-    </div>
-
-    <hr />
-
-    <!-- Conclusión -->
-    <div>
-      <h2>Conclusión</h2>
-      <p>
-        El componente de tabla de datos es una herramienta esencial para mostrar
-        datos tabulares de manera organizada y accesible. Con sus múltiples
-        opciones de configuración y soporte para accesibilidad, se puede adaptar
-        a una amplia variedad de casos de uso en la aplicación.
       </p>
     </div>
   </div>
