@@ -1,11 +1,21 @@
+import { CommonModule } from '@angular/common';
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   inject,
   OnInit,
+  QueryList,
+  ViewChildren,
 } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router,
+  RouterLink,
+} from '@angular/router';
 
 import { DsTextInputComponent } from '@design-system/components/ds-input/ds-text-input/ds-text-input.component';
 import { DsNumberInputComponent } from '@design-system/components/ds-input/ds-number-input/ds-number-input.component';
@@ -17,10 +27,13 @@ import { DsCheckboxComponent } from '@design-system/components/ds-input/ds-check
 import { DsRadioComponent } from '@design-system/components/ds-input/ds-radio/ds-radio.component';
 import { DsTextareaComponent } from '@design-system/components/ds-input/ds-textarea/ds-textarea.component';
 import { DsSwitchComponent } from '@design-system/components/ds-input/ds-switch/ds-switch.component';
+import { ThemeService } from '@design-system/services/theme.service';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'page-input',
   imports: [
+    CommonModule,
     RouterLink,
     ReactiveFormsModule,
     DsTextInputComponent,
@@ -38,9 +51,16 @@ import { DsSwitchComponent } from '@design-system/components/ds-input/ds-switch/
   styleUrl: './input.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export default class InputComponent implements OnInit {
+export default class InputComponent implements OnInit, AfterViewInit {
+  public readonly themeService = inject(ThemeService);
+  private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
+  private activeSection: HTMLElement | null = null;
+  public activeFragment: string = '';
   private readonly fb = inject(FormBuilder);
   form!: FormGroup;
+
+  @ViewChildren('section') sections!: QueryList<ElementRef>;
 
   textIconSvg = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
@@ -75,5 +95,54 @@ export default class InputComponent implements OnInit {
       textareaInput: [''],
       switchInput: [false],
     });
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        const urlFragment = this.router.parseUrl(this.router.url).fragment;
+        this.activeFragment = urlFragment || '';
+      }
+    });
+  }
+
+  ngAfterViewInit() {
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        const fragment = this.route.snapshot.fragment;
+        if (fragment) {
+          this.scrollToSection(fragment);
+        }
+      });
+  }
+
+  private scrollToSection(fragment: string) {
+    const section = this.sections.find(
+      (sec) => sec.nativeElement.id === fragment,
+    );
+    if (section) {
+      this.activeSection = section.nativeElement;
+      setTimeout(() => {
+        if (this.activeSection) {
+          this.activeSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          });
+          setTimeout(() => {
+            if (this.activeSection) {
+              const yOffset = -40;
+              const y =
+                this.activeSection.getBoundingClientRect().top +
+                window.scrollY +
+                yOffset;
+              window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+          }, 300);
+        }
+      }, 0);
+    }
+  }
+
+  isActive(fragment: string): boolean {
+    return this.activeFragment === fragment;
   }
 }

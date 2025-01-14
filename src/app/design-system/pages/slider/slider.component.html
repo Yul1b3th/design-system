@@ -1,38 +1,37 @@
-<section class="slider">
-  <div class="container">
-    <div>
-      <h1>Slider</h1>
-      <p>
-        El componente de control deslizante (<code>ds-slider</code>) se utiliza
-        para permitir a los usuarios seleccionar un valor de un rango continuo o
-        discreto. Este componente es altamente personalizable y soporta
-        múltiples configuraciones para adaptarse a diferentes contextos de uso.
-      </p>
-    </div>
+<section>
+  <header [ngClass]="[themeService.theme(), 'documentation-header']">
+    <h1>Slider</h1>
+    <p>
+      El componente de control deslizante (<code>ds-slider</code>) se utiliza
+      para permitir a los usuarios seleccionar un valor de un rango continuo o
+      discreto. Este componente es altamente personalizable y soporta múltiples
+      configuraciones para adaptarse a diferentes contextos de uso.
+    </p>
+  </header>
 
-    <hr />
-
-    <!-- Uso -->
-    <div>
+  <!-- Contenido principal -->
+  <div class="documentation-content">
+    <!-- Sección: Uso -->
+    <div class="documentation-section">
       <h2>Uso</h2>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;form [formGroup]="form"&gt;
-  &lt;ds-slider
-    formControlName="sliderValue"
-    id="slider"
-    label="Select Value"
-    [min]="0"
-    [max]="100"
-    [step]="1"
-    [ariaRequired]="true"
-  &gt;&lt;/ds-slider&gt;
-&lt;/form&gt;</code></pre>
+      <pre><code>
+        &lt;form [formGroup]="form"&gt;
+          &lt;ds-slider
+            formControlName="sliderValue"
+            id="slider"
+            label="Select Value"
+            [min]="0"
+            [max]="100"
+            [step]="1"
+            [ariaRequired]="true"
+          &gt;&lt;/ds-slider&gt;
+        &lt;/form&gt;
+    </code></pre>
     </div>
 
-    <hr />
-
-    <!-- Configuración -->
-    <div>
+    <!-- Sección: Configuración -->
+    <div class="documentation-section">
       <h2>Configuración</h2>
       <p>El componente acepta las siguientes propiedades:</p>
 
@@ -103,11 +102,9 @@
       </table>
     </div>
 
-    <hr />
-
-    <!-- Ejemplos de Control Deslizante -->
-    <div>
-      <h2>Ejemplos de Control Deslizante</h2>
+    <!-- Sección: Ejemplo -->
+    <div class="documentation-section">
+      <h2>Ejemplo</h2>
       <form [formGroup]="form">
         <ds-slider
           formControlName="sliderValue"
@@ -122,27 +119,12 @@
       </form>
     </div>
 
-    <hr />
-
-    <!-- Accesibilidad -->
-    <div>
+    <!-- Sección: Accesibilidad -->
+    <div class="documentation-section">
       <h2>Accesibilidad</h2>
       <p>
         El componente de control deslizante incluye soporte para accesibilidad
         mediante el uso de atributos <code>aria</code> y roles adecuados.
-      </p>
-    </div>
-
-    <hr />
-
-    <!-- Conclusión -->
-    <div>
-      <h2>Conclusión</h2>
-      <p>
-        El componente de control deslizante es una herramienta útil para
-        permitir a los usuarios seleccionar un valor de un rango continuo o
-        discreto. Con sus múltiples opciones de configuración y soporte para
-        accesibilidad, es una adición valiosa para cualquier aplicación.
       </p>
     </div>
   </div>

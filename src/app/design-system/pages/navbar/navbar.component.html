@@ -1,35 +1,34 @@
-<section class="navbar">
-  <div class="container">
-    <div>
-      <h1>Navbar</h1>
-      <p>
-        El componente de barra de navegación (<code>ds-navbar</code>) se utiliza
-        para proporcionar una navegación consistente en la parte superior de la
-        aplicación. Este componente es altamente personalizable y soporta
-        múltiples configuraciones para adaptarse a diferentes contextos de uso.
-      </p>
-    </div>
+<section>
+  <header [ngClass]="[themeService.theme(), 'documentation-header']">
+    <h1>Navbar</h1>
+    <p>
+      El componente de barra de navegación (<code>ds-navbar</code>) se utiliza
+      para proporcionar una navegación consistente en la parte superior de la
+      aplicación. Este componente es altamente personalizable y soporta
+      múltiples configuraciones para adaptarse a diferentes contextos de uso.
+    </p>
+  </header>
 
-    <hr />
-
-    <!-- Uso -->
-    <div>
+  <!-- Contenido principal -->
+  <div class="documentation-content">
+    <!-- Sección: Uso -->
+    <div class="documentation-section">
       <h2>Uso</h2>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-navbar&gt;
-  &lt;ds-navbar-brand&gt;Brand&lt;/ds-navbar-brand&gt;
-  &lt;ds-navbar-nav&gt;
-    &lt;ds-navbar-item&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/ds-navbar-item&gt;
-    &lt;ds-navbar-item&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/ds-navbar-item&gt;
-    &lt;ds-navbar-item&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/ds-navbar-item&gt;
-  &lt;/ds-navbar-nav&gt;
-&lt;/ds-navbar&gt;</code></pre>
+      <pre><code>
+        &lt;ds-navbar&gt;
+          &lt;ds-navbar-brand&gt;Brand&lt;/ds-navbar-brand&gt;
+          &lt;ds-navbar-nav&gt;
+            &lt;ds-navbar-item&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/ds-navbar-item&gt;
+            &lt;ds-navbar-item&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/ds-navbar-item&gt;
+            &lt;ds-navbar-item&gt;&lt;a href="#"&gt;Contact&lt;/a&gt;&lt;/ds-navbar-item&gt;
+          &lt;/ds-navbar-nav&gt;
+        &lt;/ds-navbar&gt;
+      </code></pre>
     </div>
 
-    <hr />
-
-    <!-- Configuración -->
-    <div>
+    <!-- Sección: Configuración -->
+    <div class="documentation-section">
       <h2>Configuración</h2>
       <p>
         El componente de barra de navegación acepta las siguientes propiedades
@@ -49,11 +48,9 @@
       </ul>
     </div>
 
-    <hr />
-
-    <!-- Ejemplos de Barra de Navegación -->
-    <div>
-      <h2>Ejemplos de Barra de Navegación</h2>
+    <!-- Sección: Ejemplo -->
+    <div class="documentation-section">
+      <h2>Ejemplo</h2>
       <!-- <ds-navbar>
         <ds-navbar-brand>Brand</ds-navbar-brand>
         <ds-navbar-nav>
@@ -64,27 +61,12 @@
       </ds-navbar> -->
     </div>
 
-    <hr />
-
-    <!-- Accesibilidad -->
-    <div>
+    <!-- Sección: Accesibilidad -->
+    <div class="documentation-section">
       <h2>Accesibilidad</h2>
       <p>
         El componente de barra de navegación incluye soporte para accesibilidad
         mediante el uso de atributos <code>aria</code> y roles adecuados.
-      </p>
-    </div>
-
-    <hr />
-
-    <!-- Conclusión -->
-    <div>
-      <h2>Conclusión</h2>
-      <p>
-        El componente de barra de navegación es una herramienta esencial para
-        proporcionar una navegación consistente en la parte superior de la
-        aplicación. Con sus múltiples opciones de configuración y soporte para
-        accesibilidad, es una adición valiosa para cualquier aplicación.
       </p>
     </div>
   </div>

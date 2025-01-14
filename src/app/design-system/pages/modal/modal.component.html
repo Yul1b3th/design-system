@@ -1,38 +1,37 @@
-<section class="modal">
-  <div class="container">
-    <div>
-      <h1>Modal</h1>
-      <p>
-        El componente modal (<code>ds-modal</code>) se utiliza para mostrar
-        contenido en una ventana emergente sobre la interfaz principal. Este
-        componente es altamente personalizable y soporta múltiples
-        configuraciones para adaptarse a diferentes contextos de uso.
-      </p>
-    </div>
+<section>
+  <header [ngClass]="[themeService.theme(), 'documentation-header']">
+    <h1>Modal</h1>
+    <p>
+      El componente modal (<code>ds-modal</code>) se utiliza para mostrar
+      contenido en una ventana emergente sobre la interfaz principal. Este
+      componente es altamente personalizable y soporta múltiples configuraciones
+      para adaptarse a diferentes contextos de uso.
+    </p>
+  </header>
 
-    <hr />
-
-    <!-- Uso -->
-    <div>
+  <!-- Contenido principal -->
+  <div class="documentation-content">
+    <!-- Sección: Uso -->
+    <div class="documentation-section">
       <h2>Uso</h2>
       <p>Ejemplo de uso en HTML:</p>
-      <pre><code>&lt;ds-modal
-  [title]="'Título del Modal'"
-  [show]="isModalOpen"
-  [showOverlay]="true"
-  (close)="handleClose()"
-  (save)="handleSave()"
-&gt;
-  &lt;div modal-body&gt;
-    &lt;p&gt;Contenido del modal...&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/ds-modal&gt;</code></pre>
+      <pre><code>
+        &lt;ds-modal
+          [title]="'Título del Modal'"
+          [show]="isModalOpen"
+          [showOverlay]="true"
+          (close)="handleClose()"
+          (save)="handleSave()"
+        &gt;
+          &lt;div modal-body&gt;
+            &lt;p&gt;Contenido del modal...&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/ds-modal&gt;
+      </code></pre>
     </div>
 
-    <hr />
-
-    <!-- Configuración -->
-    <div>
+    <!-- Sección: Configuración -->
+    <div class="documentation-section">
       <h2>Configuración</h2>
       <p>
         El componente modal acepta las siguientes propiedades de entrada
@@ -60,12 +59,12 @@
       </ul>
     </div>
 
-    <hr />
-
-    <!-- Ejemplos de Modal -->
-    <div>
-      <h2>Ejemplos de Modal</h2>
-      <ds-button (click)="isModalOpen = true">Abrir Modal</ds-button>
+    <!-- Sección: Ejemplo -->
+    <div class="documentation-section">
+      <h2>Ejemplo</h2>
+      <ds-button (click)="isModalOpen = true"
+        ><span content-button>Abrir Modal</span></ds-button
+      >
       <ds-modal
         [title]="'Título del Modal'"
         [show]="isModalOpen"
@@ -79,27 +78,12 @@
       </ds-modal>
     </div>
 
-    <hr />
-
-    <!-- Accesibilidad -->
-    <div>
+    <!-- Sección: Accesibilidad -->
+    <div class="documentation-section">
       <h2>Accesibilidad</h2>
       <p>
         El componente modal incluye soporte para accesibilidad mediante el uso
         de atributos <code>aria</code> y roles adecuados.
-      </p>
-    </div>
-
-    <hr />
-
-    <!-- Conclusión -->
-    <div>
-      <h2>Conclusión</h2>
-      <p>
-        El componente modal es una herramienta útil para mostrar contenido en
-        una ventana emergente sobre la interfaz principal. Con sus múltiples
-        opciones de configuración y soporte para accesibilidad, es una adición
-        valiosa para cualquier aplicación.
       </p>
     </div>
   </div>

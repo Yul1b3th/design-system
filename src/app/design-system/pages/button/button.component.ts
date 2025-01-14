@@ -3,7 +3,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   inject,
-  Renderer2,
   ElementRef,
   AfterViewInit,
   ViewChildren,
@@ -31,8 +30,6 @@ import { ThemeService } from '@design-system/services/theme.service';
 })
 export default class ButtonComponent implements OnInit, AfterViewInit {
   public readonly themeService = inject(ThemeService);
-  private readonly renderer = inject(Renderer2);
-  private readonly el = inject(ElementRef);
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   private activeSection: HTMLElement | null = null;

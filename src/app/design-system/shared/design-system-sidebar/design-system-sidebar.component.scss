@@ -34,7 +34,7 @@
             font-weight: 500;
             display: block;
             color: inherit;
-            @include apply-transition(all, 0.3s, ease-in-out);
+            @include apply-transition(all, 0.2s, ease-in-out);
 
             &:hover {
               @include apply-box-shadow(
