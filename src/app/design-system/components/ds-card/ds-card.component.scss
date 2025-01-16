@@ -14,7 +14,7 @@
   overflow: hidden;
   @include apply-flex-container(column, space-between, stretch, 0);
   @include apply-box-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
-  @include apply-transition(all, 0.3s, ease-in-out);
+  @include apply-transition(box-shadow, 0.3s, ease-in-out);
 
   &:hover {
     @include apply-box-shadow(0 4px 8px rgba(0, 0, 0, 0.2));

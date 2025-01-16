@@ -57,7 +57,10 @@
 
   // Primary Tertiary
   &.btn-tertiary-primary {
-    border-color: color.adjust(get-color(primary, default), $lightness: -15);
+    border-color: color.adjust(
+      get-color(primary, default),
+      $lightness: -15 * 1%
+    );
     @include apply-theme-colors(
       (utility, transparent),
       (neutral, "dark-300"),
@@ -113,7 +116,7 @@
 
   // Secondary Tertiary Button
   &.btn-tertiary-secondary {
-    border-color: color.adjust(get-color(neutral, gray), $lightness: -15);
+    border-color: color.adjust(get-color(neutral, gray), $lightness: -15 * 1%);
     @include apply-theme-colors(
       (utility, transparent),
       (neutral, "dark-300"),
@@ -132,7 +135,10 @@
 
   // Tertiary Accent Button
   &.btn-tertiary-accent {
-    border-color: color.adjust(get-color(secondary, default), $lightness: -15);
+    border-color: color.adjust(
+      get-color(secondary, default),
+      $lightness: -15 * 1%
+    );
     @include apply-theme-colors(
       (utility, transparent),
       (neutral, "dark-300"),
@@ -151,7 +157,7 @@
 
   // Tertiary Danger Button
   &.btn-tertiary-danger {
-    border-color: color.adjust(get-color(status, danger), $lightness: -15);
+    border-color: color.adjust(get-color(status, danger), $lightness: -15 * 1%);
     @include apply-theme-colors(
       (utility, transparent),
       (neutral, "dark-300"),

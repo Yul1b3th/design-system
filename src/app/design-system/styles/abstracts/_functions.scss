@@ -80,6 +80,11 @@
   @return $color-map;
 }
 
+// Oscurecer un color
+@function darken-color($color, $amount) {
+  @return color.scale($color, $lightness: -$amount);
+}
+
 // Convierte un color a HSL
 @function color-to-hsl($color) {
   @return hsl(
