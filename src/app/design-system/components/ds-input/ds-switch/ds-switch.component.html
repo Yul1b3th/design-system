@@ -18,17 +18,22 @@
       [disabled]="disabled"
       (change)="handleInput($event)"
       (blur)="handleBlur()"
-    />
-    <div class="switch-icons">
-      <div *ngIf="iconOn && !value" class="switch-icon" #iconOnContainer></div>
-      <div
-        *ngIf="iconOff && !value"
-        class="switch-icon"
-        #iconOffContainer
-      ></div>
+      />
+      <div class="switch-icons">
+        @if (iconOn && !value) {
+          <div class="switch-icon" #iconOnContainer></div>
+        }
+        @if (iconOff && !value) {
+          <div
+            class="switch-icon"
+            #iconOffContainer
+          ></div>
+        }
+      </div>
     </div>
+    @if (errorMessage) {
+      <div class="error-message" id="error-msg">
+        {{ errorMessage }}
+      </div>
+    }
   </div>
-  <div *ngIf="errorMessage" class="error-message" id="error-msg">
-    {{ errorMessage }}
-  </div>
-</div>

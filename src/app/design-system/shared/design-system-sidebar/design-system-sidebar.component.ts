@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   ChangeDetectionStrategy,
   Component,
@@ -11,7 +11,7 @@ import { ThemeService } from '@design-system/services/theme.service';
 
 @Component({
   selector: 'design-system-sidebar',
-  imports: [RouterLink, RouterLinkActive, CommonModule],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './design-system-sidebar.component.html',
   styleUrl: './design-system-sidebar.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

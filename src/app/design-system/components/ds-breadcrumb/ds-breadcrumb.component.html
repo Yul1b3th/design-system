@@ -1,16 +1,17 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb" [ngClass]="themeService.theme()">
-    <li
-      *ngFor="let item of items; let last = last"
-      class="breadcrumb-item"
-      [ngClass]="{ active: last }"
-    >
-      <ng-container *ngIf="!last">
-        <a [href]="item.url">{{ item.label }}</a>
-      </ng-container>
-      <ng-container *ngIf="last">
-        {{ item.label }}
-      </ng-container>
-    </li>
+    @for (item of items; track item; let last = $last) {
+      <li
+        class="breadcrumb-item"
+        [ngClass]="{ active: last }"
+        >
+        @if (!last) {
+          <a [href]="item.url">{{ item.label }}</a>
+        }
+        @if (last) {
+          {{ item.label }}
+        }
+      </li>
+    }
   </ol>
 </nav>

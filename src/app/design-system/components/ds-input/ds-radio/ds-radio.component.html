@@ -18,10 +18,12 @@
       [disabled]="disabled"
       (change)="handleInput($event)"
       (blur)="handleBlur()"
-    />
-    <label [for]="id">{{ label }}</label>
+      />
+      <label [for]="id">{{ label }}</label>
+    </div>
+    @if (errorMessage) {
+      <div class="error-message" id="error-msg">
+        {{ errorMessage }}
+      </div>
+    }
   </div>
-  <div *ngIf="errorMessage" class="error-message" id="error-msg">
-    {{ errorMessage }}
-  </div>
-</div>

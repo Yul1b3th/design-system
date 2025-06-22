@@ -20,7 +20,9 @@
       (blur)="handleBlur()"
     ></textarea>
   </div>
-  <div *ngIf="errorMessage" class="error-message" id="error-msg">
-    {{ errorMessage }}
-  </div>
+  @if (errorMessage) {
+    <div class="error-message" id="error-msg">
+      {{ errorMessage }}
+    </div>
+  }
 </div>

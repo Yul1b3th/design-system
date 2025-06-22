@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   AfterViewInit,
   ChangeDetectorRef,
@@ -15,7 +15,7 @@ import { fromEvent, interval, Subscription, throttleTime, timer } from 'rxjs';
 
 @Component({
   selector: 'ds-carousel',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './ds-carousel.component.html',
   styleUrl: './ds-carousel.component.scss',
 })

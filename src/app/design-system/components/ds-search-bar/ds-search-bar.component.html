@@ -19,17 +19,22 @@
       autocomplete="off"
       (blur)="handleBlur()"
       (focus)="handleFocus()"
-    />
-    <ul *ngIf="showOptions && filteredOptions.length > 0" class="options-list">
-      <li
-        *ngFor="let option of filteredOptions"
-        (mousedown)="selectOption(option)"
-      >
-        {{ option }}
-      </li>
-    </ul>
+      />
+      @if (showOptions && filteredOptions.length > 0) {
+        <ul class="options-list">
+          @for (option of filteredOptions; track option) {
+            <li
+              (mousedown)="selectOption(option)"
+              >
+              {{ option }}
+            </li>
+          }
+        </ul>
+      }
+    </div>
+    @if (errorMessage) {
+      <div class="error-message" id="error-msg">
+        {{ errorMessage }}
+      </div>
+    }
   </div>
-  <div *ngIf="errorMessage" class="error-message" id="error-msg">
-    {{ errorMessage }}
-  </div>
-</div>

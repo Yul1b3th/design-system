@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import {
   AfterContentInit,
   Component,
@@ -9,7 +9,7 @@ import {
 
 @Component({
   selector: 'ds-card-skeleton',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './ds-card-skeleton.component.html',
   styleUrls: ['./ds-card-skeleton.component.scss'],
 })
