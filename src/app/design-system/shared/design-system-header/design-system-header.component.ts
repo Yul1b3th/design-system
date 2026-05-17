@@ -1,3 +1,5 @@
+// design-system-header.component.ts
+
 import {
   ChangeDetectionStrategy,
   Component,
