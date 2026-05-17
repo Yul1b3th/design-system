@@ -1,10 +1,63 @@
+<!-- design-system-header.component.html -->
+
 <header [ngClass]="{ scrolled: isScrolled() }">
-  <button
+  <div class="header__container">
+    <!-- LEFT -->
+    <div class="header__left">
+      <button
+        class="menu-toggle"
+        aria-label="Toggle sidebar"
+        (click)="toggleMenu()"
+        [ngClass]="themeService.theme()"
+      >
+        <!-- icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+          />
+        </svg>
+      </button>
+
+      <a class="header__brand" routerLink="/"> Design System </a>
+    </div>
+
+    <!-- CENTER (Google-like search) -->
+    <div class="header__center">
+      <form class="search" role="search">
+        <span class="search__icon">🔍</span>
+
+        <input
+          type="search"
+          class="search__input"
+          placeholder="Search components..."
+          aria-label="Search"
+          autocomplete="off"
+        />
+      </form>
+    </div>
+
+    <!-- RIGHT (actions) -->
+    <div class="header__right">
+      <button class="icon-btn">⚙️</button>
+      <button class="icon-btn">🔔</button>
+      <button class="icon-btn">👤</button>
+    </div>
+  </div>
+
+  <!-- <button
     class="menu-toggle"
     aria-label="Toggle sidebar"
     (click)="toggleMenu()"
     [ngClass]="themeService.theme()"
-    >
+  >
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
@@ -12,63 +65,63 @@
       stroke-width="1.5"
       stroke="currentColor"
       class="size-6"
-      >
+    >
       <path
         stroke-linecap="round"
         stroke-linejoin="round"
         d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
-        />
-      </svg>
-    </button>
-  </header>
+      />
+    </svg>
+  </button> -->
+</header>
 
-  @if (isMenuOpen()) {
-    <div
-      class="mobile-sidebar-overlay"
-      (click)="closeMenu()"
-      [ngClass]="themeService.theme()"
-    ></div>
-  }
+@if (isMenuOpen()) {
+  <div
+    class="mobile-sidebar-overlay"
+    (click)="closeMenu()"
+    [ngClass]="themeService.theme()"
+  ></div>
+}
 
-  <design-system-sidebar
+<design-system-sidebar
   [ngClass]="[
     'mobile-sidebar',
     themeService.theme(),
     isMenuOpen() ? 'open' : '',
   ]"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="sidebarTitle"
-    (linkClick)="handleLinkClick()"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="sidebarTitle"
+  (linkClick)="handleLinkClick()"
+>
+  <div sidebar-header class="sidebar-header">
+    <p id="sidebarTitle" class="sidebar-title">Design System</p>
+    <button
+      #closeButton
+      class="close-btn"
+      aria-label="Close sidebar"
+      (click)="closeMenu()"
     >
-    <div sidebar-header class="sidebar-header">
-      <p id="sidebarTitle" class="sidebar-title">Design System</p>
-      <button
-        #closeButton
-        class="close-btn"
-        aria-label="Close sidebar"
-        (click)="closeMenu()"
-        >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6"
-          width="24"
-          height="24"
-          >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6 18 18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+        width="24"
+        height="24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18 18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+  </div>
 
-      <div sidebar-footer class="sidebar-footer">
-        <small>© {{ year }} Yulibeth Rivero</small>
-      </div>
-    </design-system-sidebar>
+  <div sidebar-footer class="sidebar-footer">
+    <small>© {{ year }} Yulibeth Rivero</small>
+  </div>
+</design-system-sidebar>
